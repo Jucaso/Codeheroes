@@ -5,12 +5,16 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 import {Route, Routes, BrowserRouter} from 'react-router-dom';
 import Login from './components/Login';
+import Onboarding from './components/Onboarding';
+import Juego from './components/Juego';
 
 function Routers() {
   return(
       <BrowserRouter>
         <Routes>
-          <Route  path = "/" element = {<Login/>}/>
+          <Route  path = "/login" element = {<Login/>}/>
+          <Route  path = "/" element = {<Onboarding/>}/>
+          <Route  path = "/juego" element = {<Juego/>}/>
         </Routes>
       </BrowserRouter>
   )
