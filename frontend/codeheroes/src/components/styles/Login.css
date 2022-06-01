@@ -1,0 +1,60 @@
+.centrar{
+    display: block;
+    background: white;
+    text-align: center;  
+}
+
+.texto{
+    width: auto;
+    height: 1000px;
+}
+
+.Login{
+    width: auto;
+    height: auto;
+    display: block;
+    background: white;
+    text-align: center; 
+    background-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,164,255,1) 49%, rgba(54,132,143,1) 100%);
+    background-size: 500%;
+    animation: fanimado 10s infinite;
+}
+
+
+@keyframes fanimado{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #fccb90;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #00B7D4, #505488, #2F3F80, #161569);
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(135deg,
+    #00B7D4, #505488, #2F3F80, #161569,
+    #5A4894, #A950A1, #FF7CAE);
+    background-size: 500%;
+    animation: fanimado 10s infinite;
+    }
+    
+    @media (min-width: 768px) {
+    .gradient-form {
+    height: 100vh !important;
+    }
+    }
+    @media (min-width: 769px) {
+    .gradient-custom-2 {
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+    }
+    }
