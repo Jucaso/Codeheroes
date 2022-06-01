@@ -13,7 +13,7 @@ function Onboarding() {
         <div className="bg_animate">
         <div className="banner contenedor">
           <div className="banner_title">
-            <Link to="/ejercicio" className="btn btn-primary">Codeheroes</Link>
+            <Link to="/juego" className="btn btn-primary">Codeheroes</Link>
             
           </div>
           <div className="banner_img">
