@@ -7,8 +7,9 @@ import {Route, Routes, BrowserRouter} from 'react-router-dom';
 import Login from './components/Login';
 import Onboarding from './components/Onboarding';
 import Juego from './components/Juego';
-
+import Inicio from './components/Inicio';
 import './App.css';
+
 function Routers() {
   return(
       <BrowserRouter>
@@ -36,6 +37,7 @@ function Routers() {
           <Route  path = "/login" element = {<Login/>}/>
           <Route  path = "/" element = {<Onboarding/>}/>
           <Route  path = "/juego" element = {<Juego/>}/>
+          <Route  path = "/inicio" element = {<Inicio/>}/>
         </Routes>
       </BrowserRouter>
   )
