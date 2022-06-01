@@ -50,12 +50,10 @@ function Login() {
             
                             </div>
                         </div>
-                        <div className="col-lg-6 d-flex align-items-center gradient-custom-2">
-                            <div className="text-white px-3 py-4 p-md-5 mx-md-4">
-                            <h4 className="mb-4">Prepárate para ser el heroe que el mundo de la programación necesita!</h4>
-                            <p className="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <div className="col-lg-6 d-flex fondo">
+                            <div className="text-white px-3 py-4 p-md-5 mx-md-4 mb-5 ">
+                            <h4 className="mb-0"> <span className='type clip step'>print("Prepárate para ser el héroe que la galaxia de la programación necesita!")</span></h4>
+                            <p className="small mt-4 mono"> 👋 ¡Bienvenido héroe tripulante! 🦸‍♀️ 👩‍🚀, inicia sesión para comenzar o continuar la aventura 🚀... <br></br> La 🌌 te está esperando!</p>
                             </div>
                         </div>
                         </div>
