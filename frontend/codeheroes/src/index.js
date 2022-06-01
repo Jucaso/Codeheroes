@@ -5,6 +5,12 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 import {Route, Routes, BrowserRouter} from 'react-router-dom';
 import Login from './components/Login';
+import Nivel_1_parte1 from './components/nivel_1_parte1';
+import Nivel_1_parte2 from './components/nivel_1_parte2';
+import Nivel_1_parte3 from './components/nivel_1_parte3';
+
+
+
 import './App.css';
 function Routers() {
   return(
@@ -31,6 +37,10 @@ function Routers() {
     </nav>
         <Routes>
           <Route  path = "/" element = {<Login/>}/>
+          <Route  path = "/nivel_1_parte1" element = {<Nivel_1_parte1/>}/>
+          <Route  path = "/nivel_1_parte2" element = {<Nivel_1_parte2/>}/>
+          <Route  path = "/nivel_1_parte3" element = {<Nivel_1_parte3/>}/>
+          
         </Routes>
       </BrowserRouter>
   )

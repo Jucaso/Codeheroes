@@ -1,0 +1,41 @@
+.zone1 , .zone2, .zone3{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    border-width: thin;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    text-align: center;
+    display: flex;
+}
+
+.caja {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    background-color: red;
+}
+
+.main {
+    width: 100px;
+    height: 100px;
+    float: left;
+    display: block;
+    background-color: red;
+}
+
+#btn {
+    clear: both;
+}
+
+.btnRight {
+    display: block;
+    float: right;
+    text-align: right;
+}
