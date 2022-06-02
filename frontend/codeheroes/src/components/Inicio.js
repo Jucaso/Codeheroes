@@ -1,11 +1,14 @@
 import React from 'react';
 import {Card, ListGroup, ListGroupItem, Button} from 'react-bootstrap';
 import './styles/Inicio.css';
+import Nav from "./navbar.js";
 
 export default function Inicio() {
-
     return (
+        <div>
+        <Nav/>
     <div className='container mt-5'>
+        
         <div className='row ms-4'>
             <div className='col-sm'>
             <Card className='cardHeight' style={{ width: '18rem' }}>
@@ -46,6 +49,7 @@ export default function Inicio() {
             </Card>
             </div>
         </div>
+    </div>
     </div>
     );
 

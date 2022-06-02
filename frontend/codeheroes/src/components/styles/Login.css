@@ -4,11 +4,6 @@
     text-align: center;  
 }
 
-.texto{
-    width: auto;
-    height: 1000px;
-}
-
 .Login{
     width: auto;
     height: auto;
@@ -17,8 +12,7 @@
     text-align: center; 
     background-image: url("https://c.tenor.com/yu4yJBMcidMAAAAd/space.gif");
     background-size: 100%;
-    
-    animation: fanimado 10s infinite;
+    background-repeat: no-repeat;
 }
 
 
@@ -62,7 +56,7 @@
 .fondo{
     background-image: url("https://www.bestdigitalmarketing.biz/images/loader.gif");
     background-color: rgb(12, 0, 41);
-    background-size: auto;
+    background-size: 70%;
     background-repeat: no-repeat;
     background-position: bottom;    
 }
