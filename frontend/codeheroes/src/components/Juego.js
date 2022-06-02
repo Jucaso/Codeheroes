@@ -119,7 +119,7 @@ function Juego() {
                 );
             }}
         >
-            <div className="app">
+            <div className="app1">
                     <h1 className="titulomision"> MISION IMPORTANTE </h1>
                 
                 
