@@ -15,6 +15,7 @@ import Onboarding from './components/Onboarding';
 import Juego from './components/Juego';
 import Inicio from './components/Inicio';
 import './App.css';
+import Mapa from './components/mapa';
 
 function Routers() {
 
@@ -31,6 +32,7 @@ function Routers() {
           <Route  path = "/" element = {<Onboarding/>}/>
           <Route  path = "/juego" element = {<Juego/>}/>
           <Route  path = "/inicio" element = {<Inicio/>}/>
+          <Route  path = "/mapa" element = {<Mapa/>}/>
         </Routes>
       </BrowserRouter>
   )
