@@ -2,8 +2,13 @@ import React, {useState} from 'react';
 import "./styles/Juego.css";
 import { DragDropContext, Droppable, Draggable}  from 'react-beautiful-dnd';
 import {Link} from 'react-router-dom';	
+import {Card} from 'react-bootstrap';
 
 const initialTasks = [
+    {
+        id: "5",
+        text: ")",
+    },
     {
         id: "2",
         text: "HOLA",
@@ -16,6 +21,11 @@ const initialTasks = [
         id: "1",
         text: "PRINT",
     },
+    {
+        id: "4",
+        text: "(",
+    },
+    
 ];
 
 const ordenado = [
@@ -24,12 +34,20 @@ const ordenado = [
         text: "PRINT",
     },
     {
+        id: "4",
+        text: "(",
+    },
+    {
         id: "2",
         text: "HOLA",
     },
     {
         id: "3",
         text: "MUNDO",
+    },
+    {
+        id: "5",
+        text: ")",
     },
 ];
 
@@ -56,10 +74,25 @@ function Juego() {
            tasks[2].id === ordenado[2].id
             )
         {
-            alert("GANASTE");
             const divParent = document.getElementById('main');
-            divParent.innerHTML = '<div> \
-                                    GANASTE </div>';
+            divParent.innerHTML = ' <div className="mensaje1">  \
+                                    ¡QUE BIEN! El mensaje se ha enviado  \
+                                    <div> \
+                                    Por tu gran esfuerzo, guarda este ticket, podrás reclamar cosas impresionantes dentro de la nave ;) \
+                                    </div> \
+                                    <div className="ola"> \
+                                    <a type="button" href="/login" className="btn button5 type1 ola"> \
+                                    EMPECEMOS \
+                                    </a>  \
+                                    </div>';
+        }
+        else {
+            const divParent = document.getElementById('main');
+            divParent.innerHTML = ' <div className="mensaje1"> \
+                                    Hmm, parece que hay un error en el mensaje</div> \
+                                    <div> \
+                                    ¡Intenta de nuevo!</div>';
+
         }
         //Hacer un if donde si tasks [0].id === 1
       
@@ -67,6 +100,7 @@ function Juego() {
     }
 
     return (
+        <div className="bg_animate">
         <DragDropContext
             onDragEnd={(result) => {
                 const { source, destination} = result;
@@ -86,8 +120,10 @@ function Juego() {
             }}
         >
             <div className="app">
-                <h1> MISION IMPORTANTE </h1>
-                <Droppable droppableId="tasks">
+                    <h1 className="titulomision"> MISION IMPORTANTE </h1>
+                
+                
+                <Droppable droppableId="tasks" direction="horizontal">
                     {(provided) => (
                         <ul
                         {...provided.droppableProps}
@@ -112,13 +148,26 @@ function Juego() {
                         </ul>
                     )}
                 </Droppable>
-                <button onClick={Verificar} className="btn btn-primary boton"> Enviar mensaje </button>
+               
                 </div>
+                <br/>
+                <div class="content centered-elements">
+                    <div>
+                        <button onClick={Verificar} className="btn btncito--3 botin">
+                        ENVIAR MENSAJE
+                        </button>
+                    </div>
+                </div>
+                <br/>
+                <h3 className="titulomision"> Resultado del mensaje </h3>
                 <div id="main">
-                
+
                 </div>
+               
+                
                 
             </DragDropContext>
+            </div>
         );
 }
 
