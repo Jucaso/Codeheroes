@@ -53,6 +53,4 @@ export default function Inicio() {
     </div>
     </div>
     );
-
-
 }
