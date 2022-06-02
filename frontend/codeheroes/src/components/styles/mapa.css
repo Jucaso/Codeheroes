@@ -1,6 +1,6 @@
 
 .fondo{
-    background: url(C:\Users\Rasta\Desktop\CODE_HERO_1\Codeheroes\frontend\codeheroes\imgmapa\fondo.png) no-repeat center;
+    background: url("/imgmapa/fondo.png") no-repeat center;
     background-size: 90%;
     width: 1300px; height: 800px;  
     position: relative; 
@@ -10,7 +10,7 @@
 }
 
 .nivel1{
-    background: url(C:\Users\Rasta\Desktop\CODE_HERO_1\Codeheroes\frontend\codeheroes\imgmapa\nivel1.png) no-repeat center;
+    background: url("/imgmapa/nivel1.png") no-repeat center;
     background-size: 70%;
     width: 150px;
     height: 150px;
@@ -20,7 +20,7 @@
     top: 400px;
 }
 .nivel2{
-  background: url(C:\Users\Rasta\Desktop\CODE_HERO_1\Codeheroes\frontend\codeheroes\imgmapa\nivel2.png) no-repeat center;
+  background: url("/imgmapa/nivel2.png") no-repeat center;
   background-size: 60%;
   width: 200px;
   height: 200px;
@@ -30,7 +30,7 @@
   top: 240px;
 }
 .nivel3{
-  background: url(C:\Users\Rasta\Desktop\CODE_HERO_1\Codeheroes\frontend\codeheroes\imgmapa\nivel3.png) no-repeat center;
+  background: url("/imgmapa/nivel3.png") no-repeat center;
   background-size: 65%;
   width: 300px;
   height: 300px; 
@@ -74,7 +74,7 @@
   }
 
   .volar{
-    background: url(C:\Users\Rasta\Desktop\CODE_HERO_1\Codeheroes\frontend\codeheroes\imgmapa\cohete.png) no-repeat center;
+    background: url("/imgmapa/cohete.png") no-repeat center;
     transform: rotate(30deg);
     background-size: 100%;
     display: block;
@@ -87,7 +87,7 @@
   }
 
   .volar1{
-    background: url(C:\Users\Rasta\Desktop\CODE_HERO_1\Codeheroes\frontend\codeheroes\imgmapa\cohete.png) no-repeat center;
+    background: url("/imgmapa/cohete.png") no-repeat center;
     transform: rotate(180deg);
     background-size: 100%;
     display: block;
@@ -100,7 +100,7 @@
   }
 
   .volar2{
-    background: url(C:\Users\Rasta\Desktop\CODE_HERO_1\Codeheroes\frontend\codeheroes\imgmapa\cohete.png) no-repeat center;
+    background: url("/imgmapa/cohete.png") no-repeat center;
     transform: rotate(40deg);
     background-size: 100%;
     display: block;
@@ -113,7 +113,7 @@
   }
 
   .volar3{
-    background: url(C:\Users\Rasta\Desktop\CODE_HERO_1\Codeheroes\frontend\codeheroes\imgmapa\cohete.png) no-repeat center;
+    background: url("/imgmapa/cohete.png") no-repeat center;
     transform: rotate(60deg);
     background-size: 100%;
     display: block;
