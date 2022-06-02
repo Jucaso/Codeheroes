@@ -20,11 +20,9 @@ function Routers() {
       <BrowserRouter>
       {/* navbar iria aqui cuando login sirva */}
         <Routes>
-          <Route  path = "/" element = {<Login/>}/>
           <Route  path = "/nivel_1_parte1" element = {<Nivel_1_parte1/>}/>
           <Route  path = "/nivel_1_parte2" element = {<Nivel_1_parte2/>}/>
-          <Route  path = "/nivel_1_parte3" element = {<Nivel_1_parte3/>}/>
-          
+          <Route  path = "/nivel_1_parte3" element = {<Nivel_1_parte3/>}/>        
           <Route  path = "/login" element = {<Login/>}/>
           <Route  path = "/" element = {<Onboarding/>}/>
           <Route  path = "/juego" element = {<Juego/>}/>
