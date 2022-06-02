@@ -19,7 +19,7 @@ const Mapa = () => {
         else if(contador==1){
             setStyle("volar1");
             contador=2;
-            link="nivel1";
+            link="nivel_1_parte1";
         }else if(contador==2){
             setStyle("volar2");
             contador=3;

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Card, ListGroup, ListGroupItem, Button} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 import './styles/Inicio.css';
 import Nav from "./navbar.js";
 
@@ -32,7 +33,7 @@ export default function Inicio() {
                 <Card.Text>
                     Prepárate para iniciar la campaña con la cual aprenderas mientras te diviertes!
                 </Card.Text>
-                <Button variant="primary">Iniciar</Button>
+                <Link to={"/mapa"} className="btn btn-primary">Iniciar</Link>
                 </Card.Body>
             </Card>
             </div>

@@ -8,9 +8,6 @@ import Login from './components/Login';
 import Nivel_1_parte1 from './components/nivel_1_parte1';
 import Nivel_1_parte2 from './components/nivel_1_parte2';
 import Nivel_1_parte3 from './components/nivel_1_parte3';
-
-
-
 import Onboarding from './components/Onboarding';
 import Juego from './components/Juego';
 import Inicio from './components/Inicio';
