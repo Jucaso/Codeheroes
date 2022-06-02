@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './styles/niveles.css'
-export default function Nivel_1_parte1() {
+export default function Nivel_1_parte3() {
     
     useEffect(() => {
         getData();
