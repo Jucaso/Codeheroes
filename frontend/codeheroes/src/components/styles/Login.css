@@ -4,20 +4,15 @@
     text-align: center;  
 }
 
-.texto{
-    width: auto;
-    height: 1000px;
-}
-
 .Login{
     width: auto;
     height: auto;
     display: block;
     background: white;
     text-align: center; 
-    background-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,164,255,1) 49%, rgba(54,132,143,1) 100%);
-    background-size: 500%;
-    animation: fanimado 10s infinite;
+    background-image: url("https://c.tenor.com/yu4yJBMcidMAAAAd/space.gif");
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 
@@ -58,3 +53,35 @@
     border-bottom-right-radius: .3rem;
     }
     }
+.fondo{
+    background-image: url("https://www.bestdigitalmarketing.biz/images/loader.gif");
+    background-color: rgb(12, 0, 41);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: bottom;    
+}
+.mono {
+    font-family: monospace;
+}
+.type {
+    font-family: monospace;
+    color:#0000;
+    background:
+      linear-gradient(-90deg,#ffffff 5px,#0000 0) 10px 0,
+      linear-gradient(#ffffff 0 0) 0 0;
+    background-size:calc(90*1ch) 200%;
+    -webkit-background-clip:padding-box,text;
+    background-clip:padding-box,text;
+    background-repeat:no-repeat;
+    animation: 
+      b .7s infinite steps(1),   
+      t calc(90*.1s) steps(90) forwards;
+    animation-iteration-count: infinite;
+
+  }
+  @keyframes t{
+    from {background-size:0 200%}
+  }
+  @keyframes b{
+    50% {background-position:0 -100%,0 0}
+  }

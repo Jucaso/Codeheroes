@@ -1,0 +1,12 @@
+.imagen{ /* Clase para la imagen del card de campaña */
+    height: 290px;
+}
+.cardHeight{ /* Clase para emparejar la altura de las cartas*/
+    height: 100% !important;
+}
+#root{
+    background-image: url("https://c.tenor.com/yu4yJBMcidMAAAAd/space.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
