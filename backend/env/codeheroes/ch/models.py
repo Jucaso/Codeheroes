@@ -6,6 +6,7 @@ class Usuario(models.Model):
     estrellas = models.IntegerField(default=0)
     puntaje = models.IntegerField(default=0)
     itemsIds = models.CharField(default="", max_length=10)
+    itemActivo = models.CharField(default="", max_length=10)
     nivel_1 = models.CharField(default="", max_length=10) #Se define un nivel por sus estrellas y puntaje así: "estrellas, puntaje" -> "3, 100"
     nivel_2 = models.CharField(default="", max_length=10)
     nivel_3 = models.CharField(default="", max_length=10)
