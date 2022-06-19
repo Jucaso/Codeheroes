@@ -8,6 +8,12 @@ import Login from './components/Login';
 import Nivel_1_parte1 from './components/nivel_1_parte1';
 import Nivel_1_parte2 from './components/nivel_1_parte2';
 import Nivel_1_parte3 from './components/nivel_1_parte3';
+import Nivel_2_parte1 from './components/nivel_2_parte1';
+import Nivel_2_parte2 from './components/nivel_2_parte2';
+import Nivel_2_parte3 from './components/nivel_2_parte3';
+import Nivel_3_parte1 from './components/nivel_3_parte1';
+import Nivel_3_parte2 from './components/nivel_3_parte2';
+import Nivel_3_parte3 from './components/nivel_3_parte3';
 import Onboarding from './components/Onboarding';
 import Juego from './components/Juego';
 import Inicio from './components/Inicio';
@@ -22,7 +28,13 @@ function Routers() {
         <Routes>
           <Route  path = "/nivel_1_parte1" element = {<Nivel_1_parte1/>}/>
           <Route  path = "/nivel_1_parte2" element = {<Nivel_1_parte2/>}/>
-          <Route  path = "/nivel_1_parte3" element = {<Nivel_1_parte3/>}/>        
+          <Route  path = "/nivel_1_parte3" element = {<Nivel_1_parte3/>}/>
+          <Route  path = "/nivel_2_parte1" element = {<Nivel_2_parte1/>}/>
+          <Route  path = "/nivel_2_parte2" element = {<Nivel_2_parte2/>}/>
+          <Route  path = "/nivel_2_parte3" element = {<Nivel_2_parte3/>}/>  
+          <Route  path = "/nivel_3_parte1" element = {<Nivel_3_parte1/>}/>
+          <Route  path = "/nivel_3_parte2" element = {<Nivel_3_parte2/>}/>
+          <Route  path = "/nivel_3_parte3" element = {<Nivel_3_parte3/>}/>          
           <Route  path = "/login" element = {<Login/>}/>
           <Route  path = "/" element = {<Onboarding/>}/>
           <Route  path = "/juego" element = {<Juego/>}/>
