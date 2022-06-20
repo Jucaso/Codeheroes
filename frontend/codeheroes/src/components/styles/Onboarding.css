@@ -24,17 +24,15 @@
     text-align: center;
     background: radial-gradient(circle, rgba(18,62,70,1) 0%, rgba(18,27,38,1) 100%);
     border-radius: 40px;
+    box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
 }
 
 .hola1{
     z-index: 1000;
-    background: linear-gradient(135deg,
-    #121b26, #123e4d, #1da5bd,
-     #123e4d, #121b26);
-    text-align: center;
-    border-radius: 40px;
-    background-size: 500%;
-    animation: fanimado 10s infinite;
+    background: radial-gradient(circle, rgba(18,62,70,1) 0%, rgba(18,27,38,1) 100%);
+    z-index: 1000;
+    border-radius: 50px;
+    box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
 }
 
 @keyframes fanimado{
@@ -175,6 +173,10 @@
     display: block;
     z-index: 1000;
     justify-content: center;
+}
+
+.imgonb{
+    margin:20px;
 }
 
 /* burbujas */
