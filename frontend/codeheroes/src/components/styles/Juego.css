@@ -114,6 +114,7 @@ z-index: 1000;
   color: white;
   z-index: 1000;
   border: 2px solid black;
+  background: radial-gradient(circle, rgba(18,62,70,1) 0%, rgba(18,27,38,1) 100%);
 }
 
 .centered-elements {

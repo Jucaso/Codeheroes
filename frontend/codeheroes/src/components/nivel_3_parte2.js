@@ -114,12 +114,12 @@ export default function Nivel_3_parte2() {
                         {" "}
                         Obtuviste {puntajeConvertido} de {100}{" "}
                       </span>
-                      <button className="textoresp" onClick={() => (window.location.href = "/inicio")}>
+                      <button className="textoresp button2" onClick={() => (window.location.href = "/inicio")}>
                         {" "}
                         <span className="textoresp">Terminar intento</span>
                       </button>
                       <button
-                      className="textoresp"
+                      className="textoresp button2"
                         onClick={() => {
                           setIsFinished(false);
                           setAnswersShown(true);
@@ -223,57 +223,58 @@ export default function Nivel_3_parte2() {
     
     return(
       <div className='n1p2Contenido'>
-      <div className="n1p2img">
-      <img className="img-fluid" width="250px" height="250px" src="https://cdn-icons-png.flaticon.com/512/2086/2086472.png"/>
-      <br/>
-      <br/>
-      <h1 className="n1p2Texto n1p2img"> Tómate tu tiempo</h1>  
-      </div>
-      <br/>
-        <div className="n1p2card">
-            <div className="card-header">
-                <h1>QUIZ #3:</h1> <h3>Funciones</h3>
-            </div>
-                <div className="card-body">
-                  <main className="app">
-                  <div className="lado-izquierdo n1p2izquierdo">
-                    <div className="numero-pregunta">
-                      <span> Pregunta {preguntaActual + 1} de</span> {preguntas.length}
-                    </div>
-                    <div className="titulo-pregunta">
-                      {preguntas[preguntaActual].titulo}
-                    </div>
-                    <div>
-                    
-                    </div>
-                  </div>
-                  <div className="lado-derecho">
-                    {preguntas[preguntaActual].opciones.map((respuesta) => (   
-                      <button
-                        disabled={areDisabled}
-                        key={respuesta.textoRespuesta}
-                        onClick={(e) => handleAnswerSubmit(respuesta.isCorrect, e)}
-                      >
-                        {respuesta.textoRespuesta}
-                      </button>       
-                    ))}
-                  </div>
-                    </main>                      
+          <div className="n1p2img">
+          <img className="img-fluid" width="250px" height="250px" src="https://cdn-icons-png.flaticon.com/512/2086/2086472.png"/>
+          <br/>
+          <br/>
+          <h1 className="n1p2Texto n1p2img"> Tómate tu tiempo</h1>  
+          </div>
+          <br/>
+            <div className="n1p2card">
+                <div className="card-header">
+                    <h1>QUIZ #3:</h1> <h3>Funciones</h3>
                 </div>
-            
-            <div className="card-footer text-muted copy">
-                <h5 className="copy"> @Copyright CODEHEROES 2022 </h5>
+                    <div className="card-body">
+                      <main className="app">
+                      <div className="lado-izquierdo n1p2izquierdo">
+                        <div className="numero-pregunta">
+                          <span> Pregunta {preguntaActual + 1} de</span> {preguntas.length}
+                        </div>
+                        <div className="titulo-pregunta">
+                          {preguntas[preguntaActual].titulo}
+                        </div>
+                        <div>
+                        
+                        </div>
+                      </div>
+                      <div className="lado-derecho">
+                        {preguntas[preguntaActual].opciones.map((respuesta) => (   
+                          <button
+                          className='button2'
+                            disabled={areDisabled}
+                            key={respuesta.textoRespuesta}
+                            onClick={(e) => handleAnswerSubmit(respuesta.isCorrect, e)}
+                          >
+                            {respuesta.textoRespuesta}
+                          </button>       
+                        ))}
+                      </div>
+                        </main>                      
+                    </div>
+                
+                <div className="card-footer text-muted copy">
+                    <h5 className="copy"> @Copyright CODEHEROES 2022 </h5>
+                </div>
             </div>
+            <div className="burbujas">
+                    <div className="burbuja"></div>
+                    <div className="burbuja"></div>
+                    <div className="burbuja"></div>
+                    <div className="burbuja"></div>
+                    <div className="burbuja"></div>
+                    <div className="burbuja"></div>
+                    <div className="burbuja"></div>
+                </div>
         </div>
-        <div className="burbujas">
-                <div className="burbuja"></div>
-                <div className="burbuja"></div>
-                <div className="burbuja"></div>
-                <div className="burbuja"></div>
-                <div className="burbuja"></div>
-                <div className="burbuja"></div>
-                <div className="burbuja"></div>
-            </div>
-    </div>
     );
 }

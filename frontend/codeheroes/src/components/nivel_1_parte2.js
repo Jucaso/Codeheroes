@@ -118,12 +118,12 @@ export default function Nivel_1_parte2() {
                         {" "}
                         Obtuviste {puntajeConvertido} de {100}{" "}
                       </span>
-                      <button className="textoresp" onClick={() => (window.location.href = "/inicio")}>
+                      <button className="textoresp button2" onClick={() => (window.location.href = "/inicio")}>
                         {" "}
                         <span className="textoresp">Terminar intento</span>
                       </button>
                       <button
-                      className="textoresp"
+                      className="textoresp button2"
                         onClick={() => {
                           setIsFinished(false);
                           setAnswersShown(true);
@@ -254,6 +254,7 @@ export default function Nivel_1_parte2() {
                       <div className="lado-derecho">
                         {preguntas[preguntaActual].opciones.map((respuesta) => (   
                           <button
+                          className='button2'
                             disabled={areDisabled}
                             key={respuesta.textoRespuesta}
                             onClick={(e) => handleAnswerSubmit(respuesta.isCorrect, e)}
