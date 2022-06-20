@@ -3,8 +3,11 @@ import {Card, ListGroup, ListGroupItem, Button} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import './styles/Inicio.css';
 import Nav from "./navbar.js";
+import Context from './Context';
 
 export default function Inicio() {
+    const myContext = React.useContext(Context);
+    console.log("Contexto en inicio:",myContext.id);
     return (
         <div>
         <Nav/>
