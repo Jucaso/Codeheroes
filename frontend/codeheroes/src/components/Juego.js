@@ -3,6 +3,7 @@ import "./styles/Juego.css";
 import { DragDropContext, Droppable, Draggable}  from 'react-beautiful-dnd';
 import {Link} from 'react-router-dom';	
 import {Card} from 'react-bootstrap';
+import Swal from 'sweetalert2';
 
 const initialTasks = [
     {
@@ -74,100 +75,108 @@ function Juego() {
            tasks[2].id === ordenado[2].id
             )
         {
-            const divParent = document.getElementById('main');
-            divParent.innerHTML = ' <div className="mensaje1">  \
-                                    ¡QUE BIEN! El mensaje se ha enviado  \
-                                    <div> \
-                                    Por tu gran esfuerzo, guarda este ticket, podrás reclamar cosas impresionantes dentro de la nave ;) \
-                                    </div> \
-                                    <div className="ola"> \
-                                    <a type="button" href="/login" className="btn button5 type1 ola"> \
-                                    EMPECEMOS \
-                                    </a>  \
-                                    </div>';
+            Swal.fire({
+                title: '¡El mensaje se ha enviado, guarda el código de este tickect para reclamar cosas increíbles dentro de la nave!',
+                width: 500,
+                icon: 'success',
+                padding: '20px',
+                color: '#black',
+                background: '#fff',
+                html: '<a type="button" class="btn btn-success" href="/Login"> ACEPTO </a>',
+                showConfirmButton: false,
+                })
         }
         else {
-            const divParent = document.getElementById('main');
-            divParent.innerHTML = ' <div className="mensaje1"> \
-                                    Hmm, parece que hay un error en el mensaje</div> \
-                                    <div> \
-                                    ¡Intenta de nuevo!</div>';
+            Swal.fire({
+                title: 'Hmm... al parecer hay un error en el mensaje, ¡intenta de nuevo!',
+                width: 500,
+                icon: 'warning',
+                iconColor: '#f44336',
+                padding: '20px',
+                color: '#black',
+                background: '#fff',
+                confirmButtonText: 'Intentar de nuevo',
+                confirmButtonColor: 'orange',
+                })
 
         }
-        //Hacer un if donde si tasks [0].id === 1
-      
-
     }
 
     return (
-        <div className="bg_animate">
-        <DragDropContext
-            onDragEnd={(result) => {
-                const { source, destination} = result;
-                if (!destination) {
-                    return;
-                }
-                if (
-                    source.index === destination.index &&
-                    source.droppableId === destination.droppableId
-                ) {
-                    return;
-                }
-
-                setTasks((prevTasks) =>
-                    reorder(prevTasks, source.index, destination.index)
-                );
-            }}
-        >
+    <div className="ContenedorJuego">
+        <div className="bg_animate2">
+            <DragDropContext
+                onDragEnd={(result) => {
+                    const { source, destination} = result;
+                    if (!destination) {
+                        return;
+                    }
+                    if (
+                        source.index === destination.index &&
+                        source.droppableId === destination.droppableId
+                    ) {
+                        return;
+                    }
+                     setTasks((prevTasks) =>
+                        reorder(prevTasks, source.index, destination.index)
+                    );
+                }}
+            >
             <div className="app">
-                    <h1 className="titulomision"> MISION IMPORTANTE </h1>
-                
-                
-                <Droppable droppableId="tasks" direction="horizontal">
-                    {(provided) => (
-                        <ul
-                        {...provided.droppableProps}
-                        ref={provided.innerRef}
-                        className= "task-container"
+                <h1 className="titulomision"> MISION IMPORTANTE </h1>
+                <div>
+                    Por favor, ordena los siguientes elementos de acuerdo a la secuencia correcta:
+                </div>
+                    <div className="contenidomision">
+                        <Droppable droppableId="tasks" direction="horizontal">
+                            {(provided) => (
+                            <ul
+                            {...provided.droppableProps}
+                            ref={provided.innerRef}
+                            className= "task-container"
                         >
                         {tasks.map((task, index) => (
                             <Draggable key = {task.id} draggableId = {task.id} index = {index}>
                                 {(provided) => (
-                                    <li
-                                    {...provided.draggableProps}
-                                    ref={provided.innerRef}
-                                    {...provided.dragHandleProps}
-                                    className = "task-item"
-                                    >
-                                        {task.text}
-                                    </li>
+                                <li
+                                {...provided.draggableProps}
+                                ref={provided.innerRef}
+                                {...provided.dragHandleProps}
+                                className = "task-item"
+                            >
+                                {task.text}
+                                </li>   
                                 )}
-                                </Draggable>
-                                ))}
+                            </Draggable>
+                        ))}
                                 {provided.placeholder}
-                        </ul>
+                            </ul>
                     )}
-                </Droppable>
-               
-                </div>
-                <br/>
-                <div class="content centered-elements">
-                    <div>
-                        <button onClick={Verificar} className="btn btncito--3 botin">
-                        ENVIAR MENSAJE
-                        </button>
+                        </Droppable>
                     </div>
-                </div>
-                <br/>
-                <h3 className="titulomision"> Resultado del mensaje </h3>
-                <div id="main">
-
-                </div>
-               
-                
-                
-            </DragDropContext>
             </div>
+                    <br/>
+                    <div class="content centered-elements">
+                        <div>
+                            <button onClick={Verificar} className="btn btncito--3 botin">
+                                ENVIAR MENSAJE
+                            </button>
+                        </div>
+                        
+                    </div>
+                    <br/>
+            </DragDropContext>
+                <div className="burbujas">
+                    <div className="burbuja"></div>
+                    <div className="burbuja"></div>
+                    <div className="burbuja"></div>
+                    <div className="burbuja"></div>
+                    <div className="burbuja"></div>
+                    <div className="burbuja"></div>
+                    <div className="burbuja"></div>
+                </div>
+        </div>
+    </div>
         );
 }
 

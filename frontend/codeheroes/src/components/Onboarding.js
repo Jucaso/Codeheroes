@@ -14,15 +14,15 @@ function Onboarding() {
         <div className="bg_animate">
         <div className="banner contenedor">
           <div className="banner_title">
-            <Card className="hola0">
-              <Card.Header className="hola">Tenemos una misión para tí</Card.Header>
+          <img className="img-fluid" width="110px" height="110px" margin="20px" src="https://cdn-icons-png.flaticon.com/512/2026/2026506.png" alt="logo"/>
+            <Card className="card"> 
               <Card.Body className="hola1">
-                <Card.Title >BIENVENIDO HUMANO</Card.Title>
-                <div className="bienvenida">
-                  Estamos buscando entusiastas en la programación para una misión súper importante en el espacio, ¿Quieres unirte?
-                </div>
-                    
-                
+              <div className="titulo">Tenemos una misión para tí</div>
+                <br/>
+                <Card.Title className="Mensaje" >BIENVENIDO HUMANO</Card.Title>
+                 <span className="Mensaje">Estamos buscando entusiastas en la programación para una misión súper importante en el espacio.</span>
+
+                 <span className="Mensaje">¿Quieres Unirte?</span>
                 <div className="botones">
                   <Link to="/juego" className="btn button5 type1">
                   ACEPTO
@@ -32,12 +32,9 @@ function Onboarding() {
                   </Link>  
                 </div>
               </Card.Body>
-            </Card>
-                  
+            </Card>       
           </div>
-          <div className="banner_img">
-            <img src="https://media.discordapp.net/attachments/924106496059539557/981331949320798304/lg1.png" alt="logo"/>
-          </div>
+          
         </div>
         <div className="burbujas">
           <div className="burbuja"></div>
