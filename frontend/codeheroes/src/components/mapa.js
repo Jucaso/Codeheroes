@@ -46,7 +46,7 @@ const Mapa = () => {
         }else if(contador==2){
             setStyle("volar1");
             contador=1;
-            link="nivel1";
+            link="nivel_1_parte1";
         }else if(contador==3){
             setStyle("volar2");
             contador=2;
@@ -64,23 +64,16 @@ const Mapa = () => {
     }
 
       return (
-        <body className="">
+    <body className="">
         <div className='fondo'>
-            
-
             <div className='nivel1'> </div>
             <div className='nivel2'> </div>
             <div className='nivel3'> </div>
-
             <div id="v" className={style}></div>
-            
-
             <a id="btnizq" className="izq" onClick={izquierda} type="button"></a>
             <a id="btnder" className="der" onClick={derecha} type="button"></a>
             <a id="btnsel1" className="sel1" href={link}  type="button"></a>
         </div>
-
-
     </body> 
       );
     }
