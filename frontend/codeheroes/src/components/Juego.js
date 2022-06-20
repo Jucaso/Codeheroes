@@ -156,7 +156,7 @@ function Juego() {
                     </div>
             </div>
                     <br/>
-                    <div class="content centered-elements">
+                    <div className="content centered-elements">
                         <div>
                             <button onClick={Verificar} className="btn btncito--3 botin">
                                 ENVIAR MENSAJE
