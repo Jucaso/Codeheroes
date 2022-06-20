@@ -15,7 +15,7 @@ function Onboarding() {
         <div className="banner contenedor">
           <div className="banner_title">
           <img className="img-fluid" width="110px" height="110px" margin="20px" src="https://cdn-icons-png.flaticon.com/512/2026/2026506.png" alt="logo"/>
-            <Card className="card"> 
+            <Card className="card2"> 
               <Card.Body className="hola1">
               <div className="titulo">Tenemos una misión para tí</div>
                 <br/>

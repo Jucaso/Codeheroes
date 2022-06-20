@@ -122,9 +122,9 @@ function Juego() {
                     );
                 }}
             >
-            <div className="app">
+            <div className="app1">
                 <h1 className="titulomision"> MISION IMPORTANTE </h1>
-                <div>
+                <div className="textomision">
                     Por favor, ordena los siguientes elementos de acuerdo a la secuencia correcta:
                 </div>
                     <div className="contenidomision">

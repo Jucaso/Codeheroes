@@ -21,6 +21,14 @@
     display: block;
     z-index: 1000;
 }
+
+.textomision{
+  color: #fff;
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .bg_animate2{
   background: #121b26;
   z-index: 1000;
@@ -33,7 +41,6 @@
     background: #121b26;
     width: 100%;
     height: 100vh;
-    background: #121b26;
     z-index: 1000;
 }
 
