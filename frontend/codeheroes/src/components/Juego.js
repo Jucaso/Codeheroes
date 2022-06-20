@@ -83,7 +83,7 @@ function Juego() {
                 color: '#black',
                 background: '#fff',
                 // eslint-disable-next-line no-multi-str
-                html: '<img src="https://o.remove.bg/downloads/2c196a03-6958-485c-9273-bceedb30af85/image-removebg-preview.png"/> \
+                html: '<img src="https://media.discordapp.net/attachments/981331949501181962/988559765477163018/ticket.png"/> \
                         </br> </br>\
                         <a type="button" class="btn btn-success" href="/Login"> ¡GENIAL! GRACIAS </a> ',
                 showConfirmButton: false,

@@ -19,12 +19,11 @@ export default function Nivel_1_parte1() {
     }
     
     return(
-
         <div className='container n1p1contenedor'>
             <h1 className="n1p1titulo">Teoría #1 - Variables y operciones aritméticas</h1> 
-            <Accordion defaultActiveKey="0">
-            <Accordion.Item eventKey="0">
-            <Accordion.Header>Breve descripción de python</Accordion.Header>
+            <Accordion className="n1p1acordeon" defaultActiveKey="0">
+            <Accordion.Item className="n1p1Aitem"eventKey="0">
+            <Accordion.Header className="n1p1Aheader">Breve descripción de python</Accordion.Header>
             <Accordion.Body>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim

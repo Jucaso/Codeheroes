@@ -11,5 +11,15 @@
     font-weight: bold;
     color: rgb(200, 255, 225);
     text-align: center;
-   
+}
+.n1p1acordeon{
+    width: 100%;
+}
+.n1p1Aitem{
+    background: rgba(18,27,38);
+    color: white;
+}
+.n1p1Aheader{
+    background: blue;
+    color: white;
 }
