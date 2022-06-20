@@ -13,7 +13,7 @@ function Login() {
                         <div className="col-lg-6">
                             <div className="card-body mx-md-4">
                             <div className="text-center">
-                                <img className='img-fluid' width="150px" height="150px" src="https://media.discordapp.net/attachments/924106496059539557/981331949320798304/lg1.png"
+                                <img className='img-fluid' width="150px" height="150px" src="https://media.discordapp.net/attachments/981331949501181962/988536134168641556/verde.png"
                                 alt="logo"/>
                                 <h4 className="mt-1 mb-5 pb-1">Iniciar Sesión</h4>
                             </div>
