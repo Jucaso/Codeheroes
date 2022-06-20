@@ -4,31 +4,59 @@
     box-sizing: border-box;
 }
 
+.Mensaje{
+    display: block;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+    text-align: center;
+    font-family: Tahoma;
+    color: white;
+}
 
 
-.hola{
+.titulo{
     z-index: 1000;
     font-size: 25px;
     color: white;
     text-align: center;
-    background: linear-gradient(to right,
-    #090b63, #2735d3);
-    border-radius: 10px;
+    background: radial-gradient(circle, rgba(18,62,70,1) 0%, rgba(18,27,38,1) 100%);
+    border-radius: 40px;
 }
 
 .hola1{
     z-index: 1000;
-    background: #050322;
-    color: white;
+    background: linear-gradient(135deg,
+    #121b26, #123e4d, #1da5bd,
+     #123e4d, #121b26);
     text-align: center;
-    border-radius: 10px;
-
+    border-radius: 40px;
+    background-size: 500%;
+    animation: fanimado 10s infinite;
 }
 
-.hola0{
-    background: #050322;
-    border-radius: 10px;
+@keyframes fanimado{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
 }
+
+.card2{
+    background: #000000;
+    border-radius: 10px;
+    width: 400px;
+    justify-content: center;
+    border-radius: 100px;
+}
+
 
 .bienvenida{
     width: 500px;
@@ -41,8 +69,7 @@
     position:relative;
     padding:10px 10px;
     border:none;
-    background: linear-gradient(to right,
-    #090b63, #2735d3);
+    background:radial-gradient(circle, rgba(18,62,70,1) 0%, rgba(18,27,38,1) 100%);
     cursor:pointer;
     outline:0;
     font-size:18px;
@@ -78,7 +105,9 @@
     height:100%
 }
 
-
+.img-fluid2{
+    margin: 20px;
+}
 
 
 .popup{
@@ -121,10 +150,10 @@
 .bg_animate{
     width: 100%;
     height: 100vh;
-    background: #15133C;
+    background: #121b26;
 }
 
-.contenedor{
+.contenedor2{
     width: 90%;
     max-width: 1200px;
     margin: auto;
@@ -132,31 +161,27 @@
 
 .banner{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 100%;
 }
 
-.banner_title h1{
+.banner_title{
     color: white;
-    font-size: 20px;
-    text-decoration: none;
-    display: inline-block;
-    background: #1A2849;
-    padding: 20px;
+    text-align: center;
 }
 
-.banner_img img{
-    width: 400px;
+.banner_img{
     display: block;
     z-index: 1000;
+    justify-content: center;
 }
 
 /* burbujas */
 
 .burbuja{
     z-index: 1;
-    background: #ea37a3;
+    background: #20dbd8;
     opacity: 0.3;
     border-radius: 50px;
     position: absolute;
