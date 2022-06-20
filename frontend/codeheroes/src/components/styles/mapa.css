@@ -1,12 +1,12 @@
-
 .fondo{
     background: url("/imgmapa/fondo.png") no-repeat center;
-    background-size: 90%;
-    width: 1300px; height: 800px;  
-    position: relative; 
-    margin: 0 auto;
+    background-size: 100%;
+    width: 950px; 
+    height: 800px;  
+    position: fixed; 
+    margin-top: -100px;
+    margin-left: 190px;
     display: flex;
-    align-items: center;
 }
 
 .nivel1{
@@ -16,8 +16,8 @@
     height: 150px;
     border: none;
     position: absolute;
-    left: 285px;
-    top: 400px;
+    left: 165px;
+    top: 370px;
 }
 .nivel2{
   background: url("/imgmapa/nivel2.png") no-repeat center;
@@ -26,7 +26,7 @@
   height: 200px;
   border: none;
   position: absolute;
-  left: 580px;
+  left: 395px;
   top: 240px;
 }
 .nivel3{
@@ -36,41 +36,44 @@
   height: 300px; 
   border: none;
   position: absolute;
-  left: 920px;
+  left: 660px;
   top: 50px;
 }
 
 .izq{
+    background-image: url("/imgmapa/izq.png"); 
+    background-size: 100%;
     display: block;
     width: 50px;
     height: 50px;
-    background:rgb(251, 255, 0); 
     border: none;
     position: absolute;
-    left: 100px;
-    top: 500px;
+    left: 20px;
+    top: 550px;
   }
 
   .der{
+    background-image: url("/imgmapa/der.png"); 
+    background-size: 100%;
     display: block;
     width: 50px;
     height: 50px;
-    background:rgb(251, 255, 0); 
     border: none;
     position: absolute;
-    left: 170px;
-    top: 500px;
+    left: 80px;
+    top: 550px;
   }
 
   .sel1{
+    background-image: url("/imgmapa/select.png"); 
+    background-size: 100%;
     display: block;
     width: 50px;
     height: 50px;
-    background:rgb(251, 255, 0); 
     border: none;
     position: absolute;
-    left: 240px;
-    top: 500px;
+    left: 140px;
+    top: 550px;
   }
 
   .volar{
@@ -82,8 +85,8 @@
     height: 160px;
     border: none;
     position: absolute;
-    left: 200px;
-    top: -20px;
+    left: 140px;
+    top: 90px;
   }
 
   .volar1{
@@ -95,8 +98,8 @@
     height: 160px;
     border: none;
     position: absolute;
-    left: 350px;
-    top: 320px;
+    left: 190px;
+    top: 270px;
   }
 
   .volar2{
@@ -108,8 +111,8 @@
     height: 160px;
     border: none;
     position: absolute;
-    left: 600px;
-    top: 400px;
+    left: 350px;
+    top: 300px;
   }
 
   .volar3{
@@ -121,7 +124,7 @@
     height: 160px;
     border: none;
     position: absolute;
-    left: 910px;
+    left: 650px;
     top: 150px;
   }
 
