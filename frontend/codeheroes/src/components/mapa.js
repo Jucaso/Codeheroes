@@ -27,9 +27,7 @@ const Mapa = () => {
         }else if(contador==3){
             setStyle("volar3");
             link="nivel3";
-        }
-      
-        
+        }     
     };
     const izquierda = () => {
         
