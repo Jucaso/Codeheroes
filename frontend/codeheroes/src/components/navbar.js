@@ -27,7 +27,7 @@ function Nav() {
                     </ul>
                     <ul className="nav navbar-nav">
                         <li className="nav-item active">
-                            <button name="" id="" className="btn btn-light" onClick={() => logOut()} role="button">Cerrar sesión</button>
+                            <button name="" id="" className="btn btncito--3 buttonback" onClick={() => logOut()} role="button">Cerrar sesión</button>
                         </li>
                     </ul>
                 </div>

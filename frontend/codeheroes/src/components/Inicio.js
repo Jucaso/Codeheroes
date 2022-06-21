@@ -71,8 +71,8 @@ export default function Inicio() {
                     <Card.Title>Usuario: {user.username}</Card.Title>
                 
                 <ListGroup className="list-group-flush">
-                    <ListGroupItem>Estrellas: {userStats.estrellas}</ListGroupItem>
-                    <ListGroupItem>Puntos conseguidos: {userStats.puntaje}</ListGroupItem>
+                    <ListGroupItem className='cardbackground'>Estrellas: {userStats.estrellas}</ListGroupItem>
+                    <ListGroupItem className='cardbackground'>Puntos conseguidos: {userStats.puntaje}</ListGroupItem>
                 </ListGroup>
 
                 </Card.Body>

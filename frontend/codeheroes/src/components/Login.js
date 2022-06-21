@@ -117,7 +117,7 @@ function Login() {
                                 <div className="col-lg-6">
                                     <div className="card-body mx-md-4">
                                     <div className="text-center">
-                                        <img className='img-fluid' width="150px" height="150px" src="https://media.discordapp.net/attachments/924106496059539557/981331949320798304/lg1.png"
+                                        <img className='img-fluid' width="150px" height="150px" src="https://media.discordapp.net/attachments/981331949501181962/988536134168641556/verde.png"
                                         alt="logo"/>
                                         <h4 className="mt-1 mb-5 pb-1">Iniciar Sesión</h4>
                                     </div>
@@ -134,8 +134,7 @@ function Login() {
                                         </div>
                     
                                         <div className="text-center pt-1 mb-5 pb-1">
-                                        <button className="btn btn-primary btn-block fa-lg gradient-custom-2" type="submit">Log in</button>
-                                        <a className="text-muted" href="#!">¿Olvidaste la contraseña?</a>
+                                        <button className="btn btn-primary btn-block fa-lg gradient-custom-2" type="submit">Iniciar sesión</button>
                                         </div>
                     
                                         <div className="d-flex align-items-center justify-content-center pb-4">
@@ -174,7 +173,7 @@ function Login() {
                                 <div className="col-lg-6">
                                     <div className="card-body mx-md-4">
                                     <div className="text-center">
-                                        <img className='img-fluid' width="150px" height="150px" src="https://media.discordapp.net/attachments/924106496059539557/981331949320798304/lg1.png"
+                                        <img className='img-fluid' width="150px" height="150px" src="https://media.discordapp.net/attachments/981331949501181962/988536134168641556/verde.png"
                                         alt="logo"/>
                                         <h4 className="mt-1 mb-5 pb-1">Registrate</h4>
                                     </div>
@@ -192,7 +191,6 @@ function Login() {
                     
                                         <div className="text-center pt-1 mb-5 pb-1">
                                         <button className="btn btn-primary btn-block fa-lg gradient-custom-2" type="submit">Registrarse</button>
-                                        <a className="text-muted" href="#!">¿Olvidaste la contraseña?</a>
                                         </div>
                     
                                         <div className="d-flex align-items-center justify-content-center pb-4">
