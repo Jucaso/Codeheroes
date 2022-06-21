@@ -3,8 +3,61 @@ import {Card, ListGroup, ListGroupItem, Button} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import './styles/Inicio.css';
 import Nav from "./navbar.js";
+import Cookies from 'universal-cookie';
+//import Context from './Context';
 
 export default function Inicio() {
+    const cookies = new Cookies();
+    //const [users, setUsers] = React.useState([]);
+    const [userStats, setUserStats] = React.useState([]);
+    const [user, setUser] = React.useState([]);
+    //const myContext = React.useContext(Context);
+    //console.log("Id en inicio:", cookies.get('idUsuario'));
+
+    React.useEffect(() => {
+        loadUser(); 
+        loadUserStats();
+    }, []);
+
+    const loadUser = async function() {
+        fetch("http://127.0.0.1:8000/users/"+cookies.get('idUsuario')+"/",{
+            method: "GET"
+        })
+      .then(response => response.json()) 
+      .then((data)=>{
+        setUser(data);
+        //console.log("Users Data loaded succesfully:",data);
+      }) 
+      .catch(error => console.log(error));
+    }
+    
+    const loadUserStats = async function() {
+    fetch("http://127.0.0.1:8000/usuarios/",{
+        method: "GET"
+    })
+    .then(response => response.json()) 
+    .then((data)=>{
+    setUserStats(data);
+    findUser(data);
+    //console.log("Users stats data loaded succesfully:",data);
+    }) 
+    .catch(error => console.log(error));
+    }
+
+    const findUser = function(data) {
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].user == cookies.get('idUsuario')) {
+            //console.log("User:", data[i]);
+            setUserStats(data[i]);
+        }
+    }
+        //const user = userStats.find(user => user.id == cookies.get('idUsuario'));
+        //return user;
+        //console.log("User stats:", userStats);
+        //console.log("User", user);
+
+    }
+    
     return (
         <div className='fondoiniciojaja'>
         <Nav/>
@@ -15,13 +68,13 @@ export default function Inicio() {
             <Card className='cardHeight cardbackground' style={{ width: '18rem' }}>
                 <Card.Img variant="top" src="https://media.discordapp.net/attachments/981331949501181962/988637239405862962/ddddd.png?width=630&height=473" height="290px" />
                 <Card.Body>
-                    <Card.Title>[inserte nombre aqui]</Card.Title>
+                    <Card.Title>Usuario: {user.username}</Card.Title>
                 
-                <ListGroup className="list-group-flush cardbackground">
-                    <ListGroupItem className="cardbackground">Nivel actual: </ListGroupItem>
-                    <ListGroupItem className="cardbackground">Estrellas: </ListGroupItem>
-                    <ListGroupItem className="cardbackground">Campaña completada: </ListGroupItem>
+                <ListGroup className="list-group-flush">
+                    <ListGroupItem>Estrellas: {userStats.estrellas}</ListGroupItem>
+                    <ListGroupItem>Puntos conseguidos: {userStats.puntaje}</ListGroupItem>
                 </ListGroup>
+
                 </Card.Body>
             </Card>
             </div>
