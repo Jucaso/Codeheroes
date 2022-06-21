@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./styles/mapa.css";
-
+import Nav from "./navbar.js";
 var contador=0;
 var iniciar=0;
 var link="";
@@ -23,10 +23,10 @@ const Mapa = () => {
         }else if(contador==2){
             setStyle("volar2");
             contador=3;
-            link="nivel2";
+            link="nivel_2_parte1";
         }else if(contador==3){
             setStyle("volar3");
-            link="nivel3";
+            link="nivel_3_parte1";
         }
       
         
@@ -50,7 +50,7 @@ const Mapa = () => {
         }else if(contador==3){
             setStyle("volar2");
             contador=2;
-            link="nivel2";
+            link="nivel_2_parte1";
         }
       
         
@@ -64,6 +64,7 @@ const Mapa = () => {
     }
 
       return (
+        
     <body className="">
         <div className='fondo'>
             <div className='nivel1'> </div>
