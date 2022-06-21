@@ -77,19 +77,22 @@ function Juego() {
         {
             Swal.fire({
                 title: '¡El mensaje se ha enviado, guarda el código de este tickect para reclamar cosas increíbles dentro de la nave!',
-                width: 500,
+                width: 700,
                 icon: 'success',
                 padding: '20px',
                 color: '#black',
                 background: '#fff',
-                html: '<a type="button" class="btn btn-success" href="/Login"> ACEPTO </a>',
+                // eslint-disable-next-line no-multi-str
+                html: '<img src="https://media.discordapp.net/attachments/981331949501181962/988559765477163018/ticket.png"/> \
+                        </br> </br>\
+                        <a type="button" class="btn btn-success" href="/Login"> ¡GENIAL! GRACIAS </a> ',
                 showConfirmButton: false,
                 })
         }
         else {
             Swal.fire({
                 title: 'Hmm... al parecer hay un error en el mensaje, ¡intenta de nuevo!',
-                width: 500,
+                width: 700,
                 icon: 'warning',
                 iconColor: '#f44336',
                 padding: '20px',
@@ -105,6 +108,8 @@ function Juego() {
     return (
     <div className="ContenedorJuego">
         <div className="bg_animate2">
+            <div className="juegoimgcont">
+                <div className="juegoimgcont2">
             <DragDropContext
                 onDragEnd={(result) => {
                     const { source, destination} = result;
@@ -123,7 +128,7 @@ function Juego() {
                 }}
             >
             <div className="app1">
-                <h1 className="titulomision"> MISION IMPORTANTE </h1>
+                <h1 className="titulomision"> MISIÓN IMPORTANTE </h1>
                 <div className="textomision">
                     Por favor, ordena los siguientes elementos de acuerdo a la secuencia correcta:
                 </div>
@@ -155,17 +160,18 @@ function Juego() {
                         </Droppable>
                     </div>
             </div>
-                    <br/>
-                    <div className="content centered-elements">
-                        <div>
-                            <button onClick={Verificar} className="btn btncito--3 botin">
-                                ENVIAR MENSAJE
-                            </button>
-                        </div>
-                        
-                    </div>
-                    <br/>
             </DragDropContext>
+            <img className='img-fluid imgas' width="280px" src='https://media.discordapp.net/attachments/981331949501181962/988548899952283658/Sin_titulo.png'/>
+            </div>
+            <div className="bation">
+                <div className='bation'>
+                    <button  onClick={Verificar} className="btn btncito--3 botin bation">
+                        ENVIAR MENSAJE
+                    </button>
+                </div>
+            </div>
+            </div>
+            
                 <div className="burbujas">
                     <div className="burbuja"></div>
                     <div className="burbuja"></div>

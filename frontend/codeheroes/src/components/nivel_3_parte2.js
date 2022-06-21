@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './styles/niveles.css'
+import './styles/n1p2.css'
 export default function Nivel_3_parte2() {
   const preguntas = [
         {
@@ -95,72 +95,119 @@ export default function Nivel_3_parte2() {
 
   if (isFinished)
     return (
-      <div className="card">
-          <div className="card-header">
-              Header
+      <div className='n1p2Contenido'>
+        <div className="n1p2TextoTerminado"> 
+          <h1 className="n1p2colortexto"> ¡Genial! Hemos terminado </h1>
+          <h5 className="n1p2colortexto"> Este es tu resultado: </h5>
+            <div className="n1p2imgcont">
+              <div className="n1p2img">   
+                <img className="img-fluid n1p2img2" width="250px" height="250px" src="https://cdn-icons-png.flaticon.com/512/2026/2026480.png"/>
+              </div>
+              <div className="n1p2card">
+                <div className='card-header'>
+                  <h3 className="n1p2colortexto"> Resultado </h3>
+                </div>
+                <div className="card-body">
+                  <main className="app">
+                    <div className="juego-terminado">
+                      <span>
+                        {" "}
+                        Obtuviste {puntajeConvertido} de {100}{" "}
+                      </span>
+                      <button className="textoresp button2" onClick={() => (window.location.href = "/inicio")}>
+                        {" "}
+                        <span className="textoresp">Terminar intento</span>
+                      </button>
+                      <button
+                      className="textoresp button2"
+                        onClick={() => {
+                          setIsFinished(false);
+                          setAnswersShown(true);
+                          setPreguntaActual(0);
+                        }}
+                      >
+                        <span className="textoresp">Ver respuestas</span> 
+                      </button>
+                    </div>
+                  </main>
+                </div>
+                <div className="card-footer text-muted">
+                  <h5 className="copy"> @Copyright CODEHEROES 2022 </h5>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="card-body">
-          <main className="app">
-        <div className="juego-terminado">
-          <span>
-            {" "}
-            Obtuviste {puntajeConvertido} de {100}{" "}
-          </span>
-          <button onClick={() => (window.location.href = "/")}>
-            {" "}
-            Terminar intento
-          </button>
-          <button
-            onClick={() => {
-              setIsFinished(false);
-              setAnswersShown(true);
-              setPreguntaActual(0);
-            }}
-          >
-            Ver respuestas
-          </button>
+          <div className="burbujas">
+            <div className="burbuja"></div>
+            <div className="burbuja"></div>
+            <div className="burbuja"></div>
+            <div className="burbuja"></div>
+            <div className="burbuja"></div>
+            <div className="burbuja"></div>
+            <div className="burbuja"></div>
+          </div>
         </div>
-      </main>
-          </div>
-          <div className="card-footer text-muted">
-            @Copyright CODEHEROES 2022
-          </div>
-      </div>
     );
 
   if (answersShown)
 
       return (
-      <main className="app">
-        <div className="lado-izquierdo">
-          <div className="numero-pregunta">
-            <span> Pregunta {preguntaActual + 1} de</span> {preguntas.length}
+        <div className='n1p2Contenido'>
+        <div className="n1p2TextoTerminado"> 
+          <h1 className="n1p2colortexto"> ¡Perfecto!</h1>
+          <h2 className="n1p2colortexto"> Echemos un vistazo <img className="img-fluid" width="50px" src="https://cdn-icons.flaticon.com/png/512/4459/premium/4459306.png?token=exp=1655757694~hmac=b0b75cdd26d29c8c80f84b0fbc00aaca"/> </h2>
+          <div className="n1p2imgcont">
+            <div className="n1p2img">
+            <img className="img-fluid" width="250px" height="250px" src="https://cdn-icons-png.flaticon.com/512/926/926318.png"/>
+            <br/>
+            <br/>
+            </div>
+            <div className="n1p2espimgcont">
+              <main className="app">
+                <div className="lado-izquierdo n1p2contenidosig">
+                  <div className="numero-pregunta">
+                    <h3> Pregunta {preguntaActual + 1} de {preguntas.length} </h3>
+                  </div>
+                  <div className="titulo-pregunta">
+                      {preguntas[preguntaActual].titulo}
+                  </div>
+                  <div>
+                    <h3> Respuesta Correcta: </h3>
+                    {
+                      preguntas[preguntaActual].opciones.filter(
+                        (opcion) => opcion.isCorrect
+                      )[0].textoRespuesta
+                    }
+                  </div>
+                  <button
+                  className="n1p2botonsig"
+                    onClick={() => {
+                      if (preguntaActual === preguntas.length - 1) {
+                        window.location.href = "/"; //Aquí debería redirigir a los 3 modulos del nivel
+                      } else {
+                        setPreguntaActual(preguntaActual + 1);
+                      }
+                    }}
+                  >
+                    {preguntaActual === preguntas.length - 1
+                      ? <h5 className="n1p2textoresult">Terminar intento   <img className="img-fluid" width="30px" height="30px" src="https://cdn-icons-png.flaticon.com/512/32/32282.png"/></h5> 
+                      :  <h5 className="n1p2textoresult">Siguiente   <img className="img-fluid" width="30px" height="30px" src="https://cdn-icons.flaticon.com/png/512/3585/premium/3585717.png?token=exp=1655758654~hmac=e698aebeca19711321e614a29416c03c"/></h5> }
+                  </button>
+                </div>
+              </main>
+            </div>
           </div>
-          <div className="titulo-pregunta">
-            {preguntas[preguntaActual].titulo}
           </div>
-          <div>
-            {
-              preguntas[preguntaActual].opciones.filter(
-                (opcion) => opcion.isCorrect
-              )[0].textoRespuesta
-            }
+         <div className="burbujas">
+            <div className="burbuja"></div>
+            <div className="burbuja"></div>
+            <div className="burbuja"></div>
+            <div className="burbuja"></div>
+            <div className="burbuja"></div>
+            <div className="burbuja"></div>
+            <div className="burbuja"></div>
           </div>
-          <button
-            onClick={() => {
-              if (preguntaActual === preguntas.length - 1) {
-                window.location.href = "/"; //Aquí debería redirigir a los 3 modulos del nivel
-              } else {
-                setPreguntaActual(preguntaActual + 1);
-              }
-            }}
-          >
-            {preguntaActual === preguntas.length - 1
-              ? "Terminar intento"
-              : "Siguiente"}
-          </button>
-        </div>
-      </main>
+      </div>
     );
 
     async function getData(){
@@ -175,14 +222,21 @@ export default function Nivel_3_parte2() {
     }
     
     return(
-        <div className='container'>
-            <div className="card">
+      <div className='n1p2Contenido'>
+          <div className="n1p2img">
+          <img className="img-fluid" width="250px" height="250px" src="https://cdn-icons-png.flaticon.com/512/2086/2086472.png"/>
+          <br/>
+          <br/>
+          <h1 className="n1p2Texto n1p2img"> Tómate tu tiempo</h1>  
+          </div>
+          <br/>
+            <div className="n1p2card">
                 <div className="card-header">
-                    Quiz #3 - Funciones
+                    <h1>QUIZ #3:</h1> <h3>Funciones</h3>
                 </div>
                     <div className="card-body">
                       <main className="app">
-                      <div className="lado-izquierdo">
+                      <div className="lado-izquierdo n1p2izquierdo">
                         <div className="numero-pregunta">
                           <span> Pregunta {preguntaActual + 1} de</span> {preguntas.length}
                         </div>
@@ -196,6 +250,7 @@ export default function Nivel_3_parte2() {
                       <div className="lado-derecho">
                         {preguntas[preguntaActual].opciones.map((respuesta) => (   
                           <button
+                          className='button2'
                             disabled={areDisabled}
                             key={respuesta.textoRespuesta}
                             onClick={(e) => handleAnswerSubmit(respuesta.isCorrect, e)}
@@ -207,10 +262,19 @@ export default function Nivel_3_parte2() {
                         </main>                      
                     </div>
                 
-                <div className="card-footer text-muted">
-                    @Copyright CODEHEROES 2022
+                <div className="card-footer text-muted copy">
+                    <h5 className="copy"> @Copyright CODEHEROES 2022 </h5>
                 </div>
             </div>
+            <div className="burbujas">
+                    <div className="burbuja"></div>
+                    <div className="burbuja"></div>
+                    <div className="burbuja"></div>
+                    <div className="burbuja"></div>
+                    <div className="burbuja"></div>
+                    <div className="burbuja"></div>
+                    <div className="burbuja"></div>
+                </div>
         </div>
     );
 }

@@ -19,6 +19,7 @@ import Juego from './components/Juego';
 import Inicio from './components/Inicio';
 import './App.css';
 import Mapa from './components/mapa';
+import Tienda from './components/Tienda';
 
 function Routers() {
 
@@ -34,7 +35,8 @@ function Routers() {
           <Route  path = "/nivel_2_parte3" element = {<Nivel_2_parte3/>}/>  
           <Route  path = "/nivel_3_parte1" element = {<Nivel_3_parte1/>}/>
           <Route  path = "/nivel_3_parte2" element = {<Nivel_3_parte2/>}/>
-          <Route  path = "/nivel_3_parte3" element = {<Nivel_3_parte3/>}/>          
+          <Route  path = "/nivel_3_parte3" element = {<Nivel_3_parte3/>}/>
+          <Route  path = "/tienda" element = {<Tienda/>}/>          
           <Route  path = "/login" element = {<Login/>}/>
           <Route  path = "/" element = {<Onboarding/>}/>
           <Route  path = "/juego" element = {<Juego/>}/>
