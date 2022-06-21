@@ -32,7 +32,11 @@
     height: 50px;
     margin: 15px;
     text-align: justify;
-
+    background:radial-gradient(circle, rgba(44,125,113,1) 0%, rgba(18,27,38,1) 100%);
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 10px;
+    box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
 }
 
 .n1p2espimgcont{
@@ -56,7 +60,7 @@
     margin: 50px;
     background: radial-gradient(circle, rgba(44,125,113,1) 0%, rgba(18,27,38,1) 100%);
     color: white;
-    border-radius: 50px;
+   border-radius: 15px;
     z-index: 1000;
 }
 
