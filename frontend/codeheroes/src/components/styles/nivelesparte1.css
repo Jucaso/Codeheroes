@@ -1,19 +1,42 @@
-.imagen{ /* Clase para la imagen del card de campaña */
-    height: 290px;
-}
-.cardHeight{ /* Clase para emparejar la altura de las cartas*/
-    height: 100% !important;
-}
-#root{
+.n1p1contenedor{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-image: url("/imgmapa/fondologin.gif");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-    min-height: auto;
-    max-height: fit-content;
 }
-.cardbackground{
-    background-color: black;
+.contenidoAco{
+    width: 90%;
+    height: auto;
+    display: block;
+    margin: 50px;
+}
+.n1p1titulo{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: rgb(200, 255, 225);
+    text-align: center;
+}
+.n1p1acordeon{
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+}
+.n1p1Aitem{
+    background: rgb(0, 0, 0);
+    color: white;
+}
+.n1p1Aheader{
+    background: rgb(0, 0, 0);
+    color: white;
+}
+.accordion-button:not(.collapsed){
+    background: radial-gradient(circle, rgba(11,79,61,1) 0%, rgba(11,33,33,1) 71%);
+    color: white;
+}
+.accordion-button{
+    background: radial-gradient(circle, rgba(11,79,61,1) 0%, rgba(11,33,33,1) 71%);
     color: white;
 }
 .btncito {

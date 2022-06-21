@@ -118,12 +118,12 @@ export default function Nivel_1_parte2() {
                         {" "}
                         Obtuviste {puntajeConvertido} de {100}{" "}
                       </span>
-                      <button className="textoresp" onClick={() => (window.location.href = "/inicio")}>
+                      <button className="textoresp button2" onClick={() => (window.location.href = "/inicio")}>
                         {" "}
                         <span className="textoresp">Terminar intento</span>
                       </button>
                       <button
-                      className="textoresp"
+                      className="textoresp button2" 
                         onClick={() => {
                           setIsFinished(false);
                           setAnswersShown(true);
@@ -184,7 +184,7 @@ export default function Nivel_1_parte2() {
                       }
                     </div>
                     <button
-                    className="n1p2botonsig"
+                    className="n1p2botonsig button2"
                       onClick={() => {
                         if (preguntaActual === preguntas.length - 1) {
                           window.location.href = "/"; //Aquí debería redirigir a los 3 modulos del nivel
@@ -253,7 +253,7 @@ export default function Nivel_1_parte2() {
                       </div>
                       <div className="lado-derecho">
                         {preguntas[preguntaActual].opciones.map((respuesta) => (   
-                          <button
+                          <button className="button2"
                             disabled={areDisabled}
                             key={respuesta.textoRespuesta}
                             onClick={(e) => handleAnswerSubmit(respuesta.isCorrect, e)}

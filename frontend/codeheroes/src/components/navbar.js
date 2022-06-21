@@ -18,7 +18,7 @@ function Nav() {
                     </ul>
                     <ul className="nav navbar-nav">
                         <li className="nav-item active">
-                            <a name="" id="" className="btn btn-light" href="#" role="button">Cerrar sesión</a>
+                            <a name="" id="" className="btn btncito--3 buttonback" href="#" role="button">Cerrar sesión</a>
                         </li>
                     </ul>
                 </div>

@@ -137,20 +137,3 @@
     justify-content: space-evenly;
   }
   
-  button:hover {
-    background-color: #234668;
-  }
-  
-  button[disabled] {
-    background-color: #555e7d;
-    color: #ffffff;
-    cursor: not-allowed;
-  }
-  
-  button:focus {
-    outline: none;
-  }
-  
-  button svg {
-    margin-right: 5px;
-  }
