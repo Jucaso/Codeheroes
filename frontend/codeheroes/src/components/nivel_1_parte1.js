@@ -20,7 +20,7 @@ export default function Nivel_1_parte1() {
     
     return(
         <div>
-        <div className='ContenedorJuego2'>
+        <div className='n1p1contenedor'>
             <div className='contenidoAco'>
             <h1 className="n1p1titulo">Teoría #1 - Variables y operaciones aritméticas</h1> 
             <Accordion className="n1p1acordeon" defaultActiveKey="0">
