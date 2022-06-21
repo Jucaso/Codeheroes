@@ -4,6 +4,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 import {Route, Routes, BrowserRouter} from 'react-router-dom';
+import Context from './components/Context';
 import Login from './components/Login';
 import Nivel_1_parte1 from './components/nivel_1_parte1';
 import Nivel_1_parte2 from './components/nivel_1_parte2';
@@ -22,8 +23,9 @@ import Mapa from './components/mapa';
 import Tienda from './components/Tienda';
 
 function Routers() {
-
+  const [id, setId] = React.useState(0);
   return(
+    <Context.Provider value={{id, setId}}>
       <BrowserRouter>
       {/* navbar iria aqui cuando login sirva */}
         <Routes>
@@ -44,6 +46,7 @@ function Routers() {
           <Route  path = "/mapa" element = {<Mapa/>}/>
         </Routes>
       </BrowserRouter>
+      </Context.Provider>
   )
 }
 
