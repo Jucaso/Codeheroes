@@ -1,7 +1,16 @@
 import React from 'react';
 import "../index.css";
+import { useNavigate } from "react-router-dom";
+import Cookies from 'universal-cookie';
 
 function Nav() {
+    const cookies = new Cookies();
+    let navigate = useNavigate();
+
+    const logOut = function (){
+        cookies.remove('idUsuario');
+        navigate("/login");
+    }
     return (
         <nav className="navbar navbar-expand navbar-dark navbar-custom">
             <a className="navbar-brand" href="#">
@@ -18,7 +27,7 @@ function Nav() {
                     </ul>
                     <ul className="nav navbar-nav">
                         <li className="nav-item active">
-                            <a name="" id="" className="btn btncito--3 buttonback" href="#" role="button">Cerrar sesión</a>
+                            <button name="" id="" className="btn btncito--3 buttonback" onClick={() => logOut()} role="button">Cerrar sesión</button>
                         </li>
                     </ul>
                 </div>

@@ -30,7 +30,40 @@
 
 .juegoimgcont2{
   display: flex;
+    background: linear-gradient(135deg,
+    #121b26, #123e4d, #1da5bd,
+     #123e4d);
+     background-size: 500%;
+    animation: fanimado 10s infinite;
+  z-index: 1000;
 }
+
+.app-levels{
+   
+  padding: 50px;
+  background: #1da5bd72 ;
+  background-size: 500%;
+  animation: fanimado 10s infinite;
+  border-radius: 30px;
+  color: white;
+  box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
+} 
+
+.lvl3-container{
+  width: 100%;
+  height: auto;
+  padding: 100px;
+  background-color: #121b26;
+  display: flex;
+  justify-content: center;
+  
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+  box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
+}
+
+
 
 .titulomision{
     padding: 20px;
@@ -81,6 +114,17 @@
     z-index: 1000;
 }
 
+.task-container-levels{
+  margin: 0;
+  list-style: none;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 3rem;
+  display: inline-flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
 .task-item{
     color:  whitesmoke;
     box-shadow: 0px, 2px, 4px, #4a4c4e;
@@ -101,6 +145,26 @@
     z-index: 1000;
 }
 
+.task-item-levels{
+  color:  whitesmoke;
+  box-shadow: 0px, 2px, 4px, #4a4c4e;
+  border-radius: 10px;
+  padding: 30px 30px;
+  background: radial-gradient(circle, rgba(18,62,70,1) 0%, rgba(18,27,38,1) 100%);
+  
+  margin: 5px;
+  border: 2px solid transparent;
+  font-size: 25px;
+  width: auto;
+  z-index: 1000;
+}
+
+.task-item-levels:focus{
+  outline: none;
+  border: 2px solid #4a9af5;
+  z-index: 1000;
+}
+
  .mensaje1{
 font-size: 30px;
 font-family: 'Varela', sans-serif;
@@ -117,6 +181,13 @@ z-index: 1000;
   background: radial-gradient(circle, rgba(18,62,70,1) 0%, rgba(18,27,38,1) 100%);
 }
 
+.botin-levels{
+  color: white;
+  width: auto;
+  background-color: #2c7d71;
+  z-index: 1000;
+}
+
 .centered-elements {
     display: flex;
     justify-content: center;
@@ -125,6 +196,19 @@ z-index: 1000;
   }
   
   .content {
+    background-color: #43434300;
+    z-index: 1000;
+  }
+
+  .centered-elements-check {
+    display: flex;
+    width: 200px;
+    margin-top: 10px;
+    justify-content: space-around;
+    z-index: 1000;
+  }
+  
+  .content-check {
     background-color: #43434300;
     z-index: 1000;
   }
@@ -163,6 +247,12 @@ z-index: 1000;
   .btncito--3:hover {
     animation: shadow-pulse 1000ms 1;
     background-color: #1da5bd;
+    color: #ffffff;
+  }
+
+  .btncito--3-levels:hover {
+    animation: shadow-pulse 1000ms 1;
+    background-color: #0d5a68;
     color: #ffffff;
   }
   
