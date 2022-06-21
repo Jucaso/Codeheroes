@@ -1,17 +1,20 @@
 .n1p1contenedor{
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: url("/imgmapa/fondologin.gif");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #121b26;
+  width: 100%;
+  height: auto;
+  z-index: 1000;
+  padding-bottom: 50px;
+  padding-top: 50px;
 }
+
 .contenidoAco{
     width: 90%;
     height: auto;
     display: block;
-    margin: 50px;
+
 }
 .n1p1titulo{
     font-size: 2.5rem;

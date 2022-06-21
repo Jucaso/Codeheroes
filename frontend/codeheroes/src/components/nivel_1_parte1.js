@@ -19,7 +19,8 @@ export default function Nivel_1_parte1() {
     }
     
     return(
-        <div className='n1p1contenedor'>
+        <div>
+        <div className='ContenedorJuego2'>
             <div className='contenidoAco'>
             <h1 className="n1p1titulo">Teoría #1 - Variables y operaciones aritméticas</h1> 
             <Accordion className="n1p1acordeon" defaultActiveKey="0">
@@ -65,7 +66,7 @@ export default function Nivel_1_parte1() {
 
             <Accordion.Item className="n1p1Aitem" eventKey="4">
             <Accordion.Header>Operaciones Aritméticas</Accordion.Header>
-            <Accordion.Body>
+            <Accordion.Body className= "n1p1body">
             En python existen operaciones aritméticas, estas se realizan con el signo de suma (+), resta (-), multiplicación (*), división (/) y exponenciación (**).
             Existen más this especiales como el signo de división entre dos números (//) y el signo de residuo (%).<br></br>
             <img src="https://media.discordapp.net/attachments/981331949501181962/988576761971372163/XDDD.png" className="img-fluid|thumbnail rounded-top" alt=""></img>
@@ -76,6 +77,7 @@ export default function Nivel_1_parte1() {
 
             </Accordion>
             </div>
+        </div>
         </div>
     );
 }

@@ -65,7 +65,7 @@ const Mapa = () => {
 
       return (
         
-    <body className="">
+    <div className="centradomapa">
         <div className='fondo'>
             <div className='nivel1'> </div>
             <div className='nivel2'> </div>
@@ -75,7 +75,8 @@ const Mapa = () => {
             <a id="btnder" className="der" onClick={derecha} type="button"></a>
             <a id="btnsel1" className="sel1" href={link}  type="button"></a>
         </div>
-    </body> 
+    </div> 
+
       );
     }
   

@@ -4,8 +4,8 @@ import "./styles/Login.css";
 function Login() {
   return (
     <div className="Login">
-            <section className="h-300 gradient-form">
-                <div className="container py-3 h-200">
+        <section className="h-300 gradient-form">
+            <div className="container py-3 h-200">
                 <div className="row d-flex justify-content-center h-100">
                     <div className="col-xl-10">
                     <div className="card rounded-3 text-black">
@@ -54,9 +54,9 @@ function Login() {
                     </div>
                     </div>
                 </div>
-                </div>
-            </section>
-        </div>
+            </div>
+        </section>
+    </div>
   )
 }
 

@@ -6,7 +6,7 @@ import Nav from "./navbar.js";
 
 export default function Inicio() {
     return (
-        <div>
+        <div className='fondoiniciojaja'>
         <Nav/>
     <div className='container mt-5'>
         

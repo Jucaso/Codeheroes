@@ -5,12 +5,17 @@
     height: 100% !important;
 }
 #root{
-    background-image: url("/imgmapa/fondologin.gif");
-    background-size: cover;
-    background-repeat: no-repeat;
+     background: #121b26;
     height: 100vh;
     min-height: auto;
     max-height: fit-content;
+}
+
+.fondoiniciojaja{
+  background-image: url("/imgmapa/fondologin.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
 }
 .cardbackground{
     background-color: black;

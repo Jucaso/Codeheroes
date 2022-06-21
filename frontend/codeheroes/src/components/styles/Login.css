@@ -7,9 +7,13 @@
 .Login{
     width: auto;
     height: auto;
-    display: block;
+    display: flex;
     background: white;
     text-align: center; 
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
     background-image: url("/imgmapa/fondologin.gif");
     background-position: center;
     background-size: 100%;
