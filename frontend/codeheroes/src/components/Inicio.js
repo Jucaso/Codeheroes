@@ -49,6 +49,7 @@ export default function Inicio() {
         if (data[i].user == cookies.get('idUsuario')) {
             //console.log("User:", data[i]);
             setUserStats(data[i]);
+            cookies.set('idUsuarioStats', data[i].id, {path: '/'});
         }
     }
         //const user = userStats.find(user => user.id == cookies.get('idUsuario'));

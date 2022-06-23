@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import './styles/n1p2.css'
+import Cookies from 'universal-cookie';
+
 export default function Nivel_1_parte2() {
   const preguntas = [
         {
@@ -29,10 +32,16 @@ export default function Nivel_1_parte2() {
         },
 
       ];
+  let navigate = useNavigate();
+  const cookies = new Cookies();
   const [users, setUsers] = useState([]);  
   const [preguntaActual, setPreguntaActual] = useState(0);
   const [puntuacion, setPuntuacion] = useState(0);
   const [puntajeConvertido, setPuntajeConvertido] = useState(0);
+  const [puntajeId, setPuntajeId] = useState(0);
+  const [estrellas, setEstrellas] = useState(0);
+  const [nivelStats, setNivelStats] = useState(0);
+  const [estrellasId, setEstrellasId] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
   const [tiempoRestante, setTiempoRestante] = useState(10);
   const [areDisabled, setAreDisabled] = useState(false);
@@ -61,37 +70,105 @@ export default function Nivel_1_parte2() {
       getData();
       transformarPuntaje(puntuacion);
   }, [puntuacion]);
-  function ejemplo(a){
-    console.log(puntuacion);
-  }
-  
-  function terminarIntento(){
-    let estrellas = 0;
-    let puntaje = puntajeConvertido;
 
-    if(puntaje == 100){
-      estrellas = 1;
+  async function getData(){
+    try {
+        const request = await fetch("http://127.0.0.1:8000/usuarios/"+cookies.get('idUsuarioStats')+"/");
+        const data = await request.json();
+        console.log(data);
+        setPuntajeId(data.puntaje);
+        setNivelStats(data.nivel_1);
+        setEstrellasId(data.estrellas);
+    } catch (error) {
+        console.log(error);
     }
-    console.log("estrellas: " + estrellas);
-    console.log("puntaje: " + estrellas);
-    //window.location.href = "/nivel_1_parte2"
+}
+
+  function terminarIntento(){
+    var estrellasAnteriores = nivelStats[2];
+    var auxPuntaje = puntajeConvertido;
+    console.log("Estrellas:", estrellas);
+    console.log("EstrellasAnteriores:", estrellasAnteriores);
+
+    
+
+    if(estrellas > estrellasAnteriores){
+      if(estrellasAnteriores == 1){
+        auxPuntaje = auxPuntaje - 13;
+      }
+      else if(estrellasAnteriores == 2){
+        auxPuntaje = auxPuntaje - 26;
+      }
+
+      console.log("estrellas: " + estrellas);
+      console.log("puntaje: " + puntajeConvertido);
+      console.log("puntajeId:", puntajeId);
+      console.log("nivelStats:", nivelStats);
+      console.log("estrellasId:", estrellasId);
+      //window.location.href = "/nivel_1_parte2"
+      var auxComa = 0;
+      let newNivelStats = ""; // Aqui se guarda el progreso del nivel 1 parte 2
+      var newEstrellas = estrellasId + estrellas - estrellasAnteriores; // Aquí se guarda el total de estrellas conseguidas hasta el momento
+      console.log("Estrellas totales: " + newEstrellas);
+      //let newPuntaje = 0;
+
+      for(let i=0;i<nivelStats.length;i++){
+        if (auxComa != 1){
+          newNivelStats = newNivelStats + nivelStats[i];
+        }
+        else{
+          auxComa=2;
+        }
+        
+        if (nivelStats[i] == ',' && auxComa == 0){
+          //console.log("Se encontró:", newNivelStats[i+1])
+          auxComa++;
+          newNivelStats = newNivelStats + estrellas;
+        }
+      }
+      console.log("newNivelStats:", newNivelStats);
+
+      try {
+        fetch("http://127.0.0.1:8000/usuarios/"+cookies.get('idUsuarioStats')+"/", {
+        'method':'PUT',
+        headers: {
+            'Content-Type':'application/json',           
+        }, 
+        body:JSON.stringify({estrellas: newEstrellas,
+                            puntaje: auxPuntaje + puntajeId,
+                            nivel_1: newNivelStats,
+                            user: cookies.get('idUsuario')
+                            })
+        }).then(() => {
+            //setMode(true);
+            navigate('/nivel_1_parte3');
+        })
+      } catch (error) {
+          console.log(error);
+      } 
+      }
+      else{
+        navigate('/nivel_1_parte3');
+      }
   }
   
   function transformarPuntaje(puntaje){
       if (puntaje == 0){
-          setPuntajeConvertido(0);
+        setPuntajeConvertido(0);
          
       }
       if (puntaje == 1){
-          setPuntajeConvertido(33);
-        
+        setPuntajeConvertido(13);
+        setEstrellas(1);
       }
       if (puntaje == 2){
-          setPuntajeConvertido(66);
-         
+
+        setPuntajeConvertido(26);
+        setEstrellas(2);
       }
       if (puntaje == 3){
-          setPuntajeConvertido(100);
+        setPuntajeConvertido(40);
+        setEstrellas(3);
        
       }
   }
@@ -116,9 +193,9 @@ export default function Nivel_1_parte2() {
                     <div className="juego-terminado">
                       <span>
                         {" "}
-                        Obtuviste {puntajeConvertido} de {100}{" "}
+                        Obtuviste {puntajeConvertido} de {40}{" "}
                       </span>
-                      <button className="textoresp button2" onClick={() => (window.location.href = "/inicio")}>
+                      <button className="textoresp button2" onClick={() => terminarIntento()}>
                         {" "}
                         <span className="textoresp">Terminar intento</span>
                       </button>
@@ -213,18 +290,7 @@ export default function Nivel_1_parte2() {
             </div>
         </div>
     );
-
-    async function getData(){
-        try {
-            const request = await fetch('http://127.0.0.1:8000/usuarios/');
-            const data = await request.json();
-            console.log(data);
-            setUsers(data);
-        } catch (error) {
-            console.log(error);
-        }
-    }
-    
+  
     return(
         <div className='n1p2Contenido'>
           <div className="n1p2img">
