@@ -169,6 +169,7 @@ export default function Nivel_1_parte2() {
 
 
 
+  
   function terminarIntento(){
     var estrellasAnteriores = nivelStats[2];
     var auxPuntaje = puntajeConvertido;
@@ -294,6 +295,7 @@ export default function Nivel_1_parte2() {
                           setIsFinished(false);
                           setAnswersShown(true);
                           setPreguntaActual(0);
+                          
                         }}
                       >
                         <span className="textoresp">Ver respuestas</span> 
@@ -355,6 +357,7 @@ export default function Nivel_1_parte2() {
                         if (preguntaActual === preguntas.length - 1) {
                           ConteoEstrellas();
                           //window.location.href = "/"; //Aquí debería redirigir a los 3 modulos del nivel
+                          terminarIntento(); //Aquí debería redirigir a los 3 modulos del nivel
                         } else {
                           setPreguntaActual(preguntaActual + 1);
                         }
