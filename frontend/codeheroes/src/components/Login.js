@@ -79,12 +79,12 @@ function Login() {
                     }, 
                     body:JSON.stringify({estrellas: 0,
                                         puntaje: 0,
-                                        itemsIds: "0",
-                                        itemActivo: "0",
-                                        nivel_1: "0,0",
-                                        nivel_2: "0,0",
-                                        nivel_3: "0,0",
-                                        nivel_4: "0,0",
+                                        itemsIds: "6",
+                                        itemActivo: "6",
+                                        nivel_1: "0,0,0",
+                                        nivel_2: "0,0,0",
+                                        nivel_3: "0,0,0",
+                                        nivel_4: "0,0,0",
                                         user: idAux})
                     }).then(() => {
                         //setMode(true);

@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom";
+import Cookies from 'universal-cookie';
 import './styles/n1p2.css'
+import Swal from 'sweetalert2';
+import 'animate.css';
+
 export default function Nivel_2_parte2() {
   const preguntas = [
         {
@@ -26,74 +31,227 @@ export default function Nivel_2_parte2() {
 
           ],
         },
-      ];
-  const [users, setUsers] = useState([]);  
-  const [preguntaActual, setPreguntaActual] = useState(0);
-  const [puntuacion, setPuntuacion] = useState(0);
-  const [puntajeConvertido, setPuntajeConvertido] = useState(0);
-  const [isFinished, setIsFinished] = useState(false);
-  const [tiempoRestante, setTiempoRestante] = useState(10);
-  const [areDisabled, setAreDisabled] = useState(false);
-  const [answersShown, setAnswersShown] = useState(false);
+  ];
+      let navigate = useNavigate();
+      const cookies = new Cookies();
+      const [users, setUsers] = useState([]);  
+      const [preguntaActual, setPreguntaActual] = useState(0);
+      const [puntuacion, setPuntuacion] = useState(0);
+      const [puntajeConvertido, setPuntajeConvertido] = useState(0);
+      const [puntajeId, setPuntajeId] = useState(0);
+      const [estrellas, setEstrellas] = useState(0);
+      const [nivelStats, setNivelStats] = useState(0);
+      const [estrellasId, setEstrellasId] = useState(0);
+      const [isFinished, setIsFinished] = useState(false);
+      const [tiempoRestante, setTiempoRestante] = useState(10);
+      const [areDisabled, setAreDisabled] = useState(false);
+      const [answersShown, setAnswersShown] = useState(false);
 
-  function handleAnswerSubmit(isCorrect, e) {  
-    // añadir puntuación
-    if (isCorrect) setPuntuacion(puntuacion + 1);
+      function handleAnswerSubmit(isCorrect, e) {  
+        // añadir puntuación
+        if (isCorrect) setPuntuacion(puntuacion + 1);
+    
+        // añadir estilos de pregunta
+        e.target.classList.add(isCorrect ? "correct" : "incorrect");
+        // cambiar a la siguiente pregunta
+    
+        setTimeout(() => {     
+          if (preguntaActual == preguntas.length - 1) {
+            setIsFinished(true);      
+          } else {
+            setPreguntaActual(preguntaActual + 1);
+    
+          }
+          //console.log("isFinished:", isFinished);
+        }, 500);
+      }
+    
+      useEffect(() => {
+          getData();
+          transformarPuntaje(puntuacion);
+      }, [puntuacion]);
+    
+      async function getData(){
+        try {
+            const request = await fetch("http://127.0.0.1:8000/usuarios/"+cookies.get('idUsuarioStats')+"/");
+            const data = await request.json();
+            console.log(data);
+            setPuntajeId(data.puntaje);
+            setNivelStats(data.nivel_2);
+            setEstrellasId(data.estrellas);
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
-    // añadir estilos de pregunta
-    e.target.classList.add(isCorrect ? "correct" : "incorrect");
-    // cambiar a la siguiente pregunta
+    function ConteoEstrellas(){
 
-    setTimeout(() => {     
-      if (preguntaActual == preguntas.length - 1) {
-        setIsFinished(true);      
-      } else {
-        setPreguntaActual(preguntaActual + 1);
+      Swal.fire({
+        title: '¡Hemos terminado!',
+        text: "Ahora, echemos un vistazo a los resultados",
+        width: 700,
+        height: 700,
+        icon: 'success',
+        iconColor: 'orange',
+        color: 'white',
+        background: 'radial-gradient(circle, rgba(44,125,113,1) 0%, rgba(18,27,38,1) 100%)',
+        confirmButtonColor: '#0d2736',
+                confirmButtonText: '<img width="20px" src="https://cdn.discordapp.com/attachments/981331949501181962/989673233072672798/bien.png"/>  ¡Vamos allá!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          if(estrellas === 1){
+            Swal.fire({
+              title: '¡Estás son las estrellas que obtuviste!',
+              width: 700,
+              color: 'white',
+              background: ' url("/imgmapa/fondologin.gif")',
+              html: ' <img class="animate__animated animate__fadeInDown"  width="50px" \
+                src="https://cdn.discordapp.com/attachments/981331949501181962/988638636402679868/estrella.png"/>',
+                confirmButtonColor: '#0d2736',
+                confirmButtonText: '<img width="20px" src="https://cdn.discordapp.com/attachments/981331949501181962/989673233072672798/bien.png"/>  ¡Genial, sigamos!'
+            })
+          }
+          else if(estrellas === 2){
+            Swal.fire({
+              title: '¡Estás son las estrellas que obtuviste!',
+              width: 700,
+              color: 'white',
+              background: 'radial-gradient(circle, rgba(44,125,113,1) 0%, rgba(18,27,38,1) 100%)',
+              html: ' <img class="animate__animated animate__fadeInBottomLeft"  width="50px" \
+                src="https://cdn.discordapp.com/attachments/981331949501181962/988638636402679868/estrella.png"/>\
+                <img class="animate__animated animate__fadeInBottomRight"  width="50px" \
+                src="https://cdn.discordapp.com/attachments/981331949501181962/988638636402679868/estrella.png"/>',
+                confirmButtonColor: '#0d2736',
+                confirmButtonText: '<img width="20px" src="https://cdn.discordapp.com/attachments/981331949501181962/989673233072672798/bien.png"/>  ¡Genial, sigamos!'
+            })
+            }
+            else if(estrellas === 3){
+              Swal.fire({
+                title: '¡Estás son las estrellas que obtuviste!',
+                width: 700,
+                color: 'white',
+                background: 'radial-gradient(circle, rgba(44,125,113,1) 0%, rgba(18,27,38,1) 100%)',
+                html: ' <div style={{height: "400px"}}>\
+                <img class="animate__animated animate__fadeInBottomLeft"  width="50px" \
+                src="https://cdn.discordapp.com/attachments/981331949501181962/988638636402679868/estrella.png"/>\
+                <img class="animate__animated animate__fadeInDown"  width="50px" \
+                src="https://cdn.discordapp.com/attachments/981331949501181962/988638636402679868/estrella.png"/>\
+                <img class="animate__animated animate__fadeInBottomRight"  width="50px" \
+                src="https://cdn.discordapp.com/attachments/981331949501181962/988638636402679868/estrella.png"/>\
+                </div>',
+                confirmButtonColor: '#0d2736',
+                confirmButtonText: '<img width="20px" src="https://cdn.discordapp.com/attachments/981331949501181962/989673233072672798/bien.png"/>  ¡Genial, sigamos!'
+              })
+              }
+              else if(estrellas === 0){
+                Swal.fire({
+                  title: '¡No obtuviste estrellas!',
+                  text: "Pero tranqui, hay más formas de conseguirlas",
+                  width: 700,
+                  color: 'white',
+                  background: 'radial-gradient(circle, rgba(44,125,113,1) 0%, rgba(18,27,38,1) 100%)',
+                  html: ' <div style={{height: "400px"}}>\
+                  <img class="animate__animated animate__fadeIn"  width="100px" \
+                  src="https://cdn.discordapp.com/attachments/981331949501181962/989677805111504896/astro2.png"/>\
+                  </div>',
+                  confirmButtonColor: '#0d2736',
+                  confirmButtonText: '<img width="20px" src="https://cdn.discordapp.com/attachments/981331949501181962/989673233072672798/bien.png"/>  ¡Está bien!'
+                })
+                }
+        }
+      })
 
+    }
+      
+      function terminarIntento(){
+        var estrellasAnteriores = nivelStats[2];
+        var auxPuntaje = puntajeConvertido;
+        console.log("Estrellas:", estrellas);
+        console.log("EstrellasAnteriores:", estrellasAnteriores);
+    
+        
+        if(estrellas > estrellasAnteriores){
+          if(estrellasAnteriores == 1){
+            auxPuntaje = auxPuntaje - 13;
+          }
+          else if(estrellasAnteriores == 2){
+            auxPuntaje = auxPuntaje - 26;
+          }
+    
+          console.log("estrellas: " + estrellas);
+          console.log("puntaje: " + puntajeConvertido);
+          console.log("puntajeId:", puntajeId);
+          console.log("nivelStats:", nivelStats);
+          console.log("estrellasId:", estrellasId);
+          //window.location.href = "/nivel_1_parte2"
+          var auxComa = 0;
+          let newNivelStats = ""; // Aqui se guarda el progreso del nivel 1 parte 2
+          var newEstrellas = estrellasId + estrellas - estrellasAnteriores; // Aquí se guarda el total de estrellas conseguidas hasta el momento
+          console.log("Estrellas totales: " + newEstrellas);
+          //let newPuntaje = 0;
+    
+          for(let i=0;i<nivelStats.length;i++){
+            if (auxComa != 1){
+              newNivelStats = newNivelStats + nivelStats[i];
+            }
+            else{
+              auxComa=2;
+            }
+            
+            if (nivelStats[i] == ',' && auxComa == 0){
+              //console.log("Se encontró:", newNivelStats[i+1])
+              auxComa++;
+              newNivelStats = newNivelStats + estrellas;
+            }
+          }
+          console.log("newNivelStats:", newNivelStats);
+    
+          try {
+            fetch("http://127.0.0.1:8000/usuarios/"+cookies.get('idUsuarioStats')+"/", {
+            'method':'PUT',
+            headers: {
+                'Content-Type':'application/json',           
+            }, 
+            body:JSON.stringify({estrellas: newEstrellas,
+                                puntaje: auxPuntaje + puntajeId,
+                                nivel_2: newNivelStats,
+                                user: cookies.get('idUsuario')
+                                })
+            }).then(() => {
+                //setMode(true);
+                navigate('/nivel_2_parte3');
+            })
+          } catch (error) {
+              console.log(error);
+          } 
+          }
+          else{
+            navigate('/nivel_2_parte3');
+          }
+
+          ConteoEstrellas();
       }
       
-      //console.log("isFinished:", isFinished);
-    }, 500);
-  }
-
-  useEffect(() => {
-      getData();
-      transformarPuntaje(puntuacion);
-  }, [puntuacion]);
-  function ejemplo(a){
-    console.log(puntuacion);
-  }
-  
-  function terminarIntento(){
-    let estrellas = 0;
-    let puntaje = puntajeConvertido;
-
-    if(puntaje == 100){
-      estrellas = 1;
-    }
-    console.log("estrellas: " + estrellas);
-    console.log("puntaje: " + estrellas);
-    //window.location.href = "/nivel_1_parte2"
-  }
-  
-  function transformarPuntaje(puntaje){
-      if (puntaje == 0){
-          setPuntajeConvertido(0);
-         
+      function transformarPuntaje(puntaje){
+          if (puntaje == 0){
+            setPuntajeConvertido(0);
+             
+          }
+          if (puntaje == 1){
+            setPuntajeConvertido(13);
+            setEstrellas(1);
+          }
+          if (puntaje == 2){
+    
+            setPuntajeConvertido(26);
+            setEstrellas(2);
+          }
+          if (puntaje == 3){
+            setPuntajeConvertido(40);
+            setEstrellas(3);
+           
+          }
       }
-      if (puntaje == 1){
-          setPuntajeConvertido(33);
-        
-      }
-      if (puntaje == 2){
-          setPuntajeConvertido(66);
-         
-      }
-      if (puntaje == 3){
-          setPuntajeConvertido(100);
-       
-      }
-  }
 
   if (isFinished)
     return (
@@ -114,9 +272,9 @@ export default function Nivel_2_parte2() {
                     <div className="juego-terminado">
                       <span>
                         {" "}
-                        Obtuviste {puntajeConvertido} de {100}{" "}
+                        Obtuviste {puntajeConvertido} de {40}{" "}
                       </span>
-                      <button className="textoresp button2" onClick={() => (window.location.href = "/inicio")}>
+                      <button className="textoresp button2" onClick={() => terminarIntento()}>
                         {" "}
                         <span className="textoresp">Terminar intento</span>
                       </button>
@@ -126,6 +284,7 @@ export default function Nivel_2_parte2() {
                           setIsFinished(false);
                           setAnswersShown(true);
                           setPreguntaActual(0);
+                          
                         }}
                       >
                         <span className="textoresp">Ver respuestas</span> 
@@ -185,7 +344,7 @@ export default function Nivel_2_parte2() {
                     className="n1p2botonsig"
                       onClick={() => {
                         if (preguntaActual === preguntas.length - 1) {
-                          window.location.href = "/"; //Aquí debería redirigir a los 3 modulos del nivel
+                          terminarIntento(); //Aquí debería redirigir a los 3 modulos del nivel
                         } else {
                           setPreguntaActual(preguntaActual + 1);
                         }
@@ -211,18 +370,7 @@ export default function Nivel_2_parte2() {
             </div>
         </div>
     );
-
-    async function getData(){
-        try {
-            const request = await fetch('http://127.0.0.1:8000/usuarios/');
-            const data = await request.json();
-            console.log(data);
-            setUsers(data);
-        } catch (error) {
-            console.log(error);
-        }
-    }
-    
+   
     return(
       <div className='n1p2Contenido'>
           <div className="n1p2img">

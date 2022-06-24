@@ -10,7 +10,7 @@ const Mapa = () => {
     const [style, setStyle] = useState("cont");
      
     const derecha = () => {
-        
+        console.log(contador);
         if(contador==0){
             setStyle("volar");
             contador=1;
@@ -32,7 +32,7 @@ const Mapa = () => {
         
     };
     const izquierda = () => {
-        
+        console.log(contador);
         if(contador==0){
             setStyle("volar");
             contador=0;
