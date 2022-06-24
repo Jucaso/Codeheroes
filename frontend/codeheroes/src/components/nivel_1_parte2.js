@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import './styles/n1p2.css'
 import Cookies from 'universal-cookie';
+import Swal from 'sweetalert2';
+import 'animate.css';
+
 
 export default function Nivel_1_parte2() {
   const preguntas = [
@@ -83,6 +86,89 @@ export default function Nivel_1_parte2() {
         console.log(error);
     }
 }
+
+    function ConteoEstrellas(){
+
+      Swal.fire({
+        title: '¡Hemos terminado!',
+        text: "Ahora, echemos un vistazo a los resultados",
+        width: 700,
+        height: 700,
+        icon: 'success',
+        iconColor: 'orange',
+        color: 'white',
+        background: 'radial-gradient(circle, rgba(44,125,113,1) 0%, rgba(18,27,38,1) 100%)',
+        confirmButtonColor: '#0d2736',
+                confirmButtonText: '<img width="20px" src="https://cdn.discordapp.com/attachments/981331949501181962/989673233072672798/bien.png"/>  ¡Vamos allá!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          if(estrellas === 1){
+            Swal.fire({
+              title: '¡Estás son las estrellas que obtuviste!',
+              width: 700,
+              color: 'white',
+              background: ' url("/imgmapa/fondologin.gif")',
+              html: ' <img class="animate__animated animate__fadeInDown"  width="50px" \
+                src="https://cdn.discordapp.com/attachments/981331949501181962/988638636402679868/estrella.png"/>',
+                confirmButtonColor: '#0d2736',
+                confirmButtonText: '<img width="20px" src="https://cdn.discordapp.com/attachments/981331949501181962/989673233072672798/bien.png"/>  ¡Genial, sigamos!'
+            })
+          }
+          else if(estrellas === 2){
+            Swal.fire({
+              title: '¡Estás son las estrellas que obtuviste!',
+              width: 700,
+              color: 'white',
+              background: 'radial-gradient(circle, rgba(44,125,113,1) 0%, rgba(18,27,38,1) 100%)',
+              html: ' <img class="animate__animated animate__fadeInBottomLeft"  width="50px" \
+                src="https://cdn.discordapp.com/attachments/981331949501181962/988638636402679868/estrella.png"/>\
+                <img class="animate__animated animate__fadeInBottomRight"  width="50px" \
+                src="https://cdn.discordapp.com/attachments/981331949501181962/988638636402679868/estrella.png"/>',
+                confirmButtonColor: '#0d2736',
+                confirmButtonText: '<img width="20px" src="https://cdn.discordapp.com/attachments/981331949501181962/989673233072672798/bien.png"/>  ¡Genial, sigamos!'
+            })
+            }
+            else if(estrellas === 3){
+              Swal.fire({
+                title: '¡Estás son las estrellas que obtuviste!',
+                width: 700,
+                color: 'white',
+                background: 'radial-gradient(circle, rgba(44,125,113,1) 0%, rgba(18,27,38,1) 100%)',
+                html: ' <div style={{height: "400px"}}>\
+                <img class="animate__animated animate__fadeInBottomLeft"  width="50px" \
+                src="https://cdn.discordapp.com/attachments/981331949501181962/988638636402679868/estrella.png"/>\
+                <img class="animate__animated animate__fadeInDown"  width="50px" \
+                src="https://cdn.discordapp.com/attachments/981331949501181962/988638636402679868/estrella.png"/>\
+                <img class="animate__animated animate__fadeInBottomRight"  width="50px" \
+                src="https://cdn.discordapp.com/attachments/981331949501181962/988638636402679868/estrella.png"/>\
+                </div>',
+                confirmButtonColor: '#0d2736',
+                confirmButtonText: '<img width="20px" src="https://cdn.discordapp.com/attachments/981331949501181962/989673233072672798/bien.png"/>  ¡Genial, sigamos!'
+              })
+              }
+              else if(estrellas === 0){
+                Swal.fire({
+                  title: '¡No obtuviste estrellas!',
+                  text: "Pero tranqui, hay más formas de conseguirlas",
+                  width: 700,
+                  color: 'white',
+                  background: 'radial-gradient(circle, rgba(44,125,113,1) 0%, rgba(18,27,38,1) 100%)',
+                  html: ' <div style={{height: "400px"}}>\
+                  <img class="animate__animated animate__fadeIn"  width="100px" \
+                  src="https://cdn.discordapp.com/attachments/981331949501181962/989677805111504896/astro2.png"/>\
+                  </div>',
+                  confirmButtonColor: '#0d2736',
+                  confirmButtonText: '<img width="20px" src="https://cdn.discordapp.com/attachments/981331949501181962/989673233072672798/bien.png"/>  ¡Está bien!'
+                })
+                }
+        }
+      })
+
+    }
+
+
+
+
   
   function terminarIntento(){
     var estrellasAnteriores = nivelStats[2];
@@ -127,6 +213,8 @@ export default function Nivel_1_parte2() {
         }
       }
       console.log("newNivelStats:", newNivelStats);
+      
+
 
       try {
         fetch("http://127.0.0.1:8000/usuarios/"+cookies.get('idUsuarioStats')+"/", {
@@ -141,15 +229,17 @@ export default function Nivel_1_parte2() {
                             })
         }).then(() => {
             //setMode(true);
-            navigate('/nivel_1_parte3');
+            //navigate('/nivel_1_parte3');
         })
       } catch (error) {
           console.log(error);
       } 
       }
       else{
-        navigate('/nivel_1_parte3');
+       // navigate('/nivel_1_parte3');
       }
+
+      ConteoEstrellas();
   }
   
   function transformarPuntaje(puntaje){
@@ -265,6 +355,8 @@ export default function Nivel_1_parte2() {
                     className="n1p2botonsig button2"
                       onClick={() => {
                         if (preguntaActual === preguntas.length - 1) {
+                          ConteoEstrellas();
+                          //window.location.href = "/"; //Aquí debería redirigir a los 3 modulos del nivel
                           terminarIntento(); //Aquí debería redirigir a los 3 modulos del nivel
                         } else {
                           setPreguntaActual(preguntaActual + 1);
