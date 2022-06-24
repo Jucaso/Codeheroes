@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import "./styles/Tienda.css";
 import { DragDropContext, Droppable, Draggable}  from 'react-beautiful-dnd';
 import {Link} from 'react-router-dom';	
-import {Card, Button, Modal} from 'react-bootstrap';
+import {Card, Button, Modal, Spinner} from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import Cookies from 'universal-cookie';
 
@@ -23,6 +23,7 @@ function Tienda() {
     const [estrellas, setEstrellas] = useState(0);
     const [itemsJugador, setItemsJugador] = useState([]);
     const [itemActivo, setItemActivo] = useState(0);
+    const [loading, setLoading] = useState(true);
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -68,6 +69,7 @@ function Tienda() {
             const data = await request.json();
             console.log("Username:",data.username);
             setUsername(data.username);
+            
         } catch (error) {
             console.log(error);
         }
@@ -79,6 +81,7 @@ function Tienda() {
             setEstrellas(data.estrellas);
             setItemActivo(data.itemActivo);
             setItemsOnVector(data.itemsIds);
+            setLoading(false);
         } catch (error) {
             console.log(error);
         }
@@ -159,145 +162,153 @@ function Tienda() {
 
 
     return (
-    <div className="ContenedorJuego">
-        <div className="bg_animate2">
-            <div className="pertien-container">
-                <div className="cardperfil">
-                    <div className="headerperfil">
-                    <img className="img-fluid img_perfil" style={{ border: items[itemActivo].color}}  width="150px" height="150px"
-                    src={items[itemActivo].fuente}/> 
-                    </div>
-                    <div className="contperfilusu">
-                    <img className="img-fluid"  width="30px" height="50px"
-                    src="https://cdn.discordapp.com/attachments/981331949501181962/988649441101774859/nombre.png"/>   <h2 className="perfilusu"> Nombre:
-                     </h2> <h4 className="perfilusu user"> {username} </h4>
-                    </div>
-                    <div className="contperfilusu">
-                    <img className="img-fluid"  width="30px" height="50px"
-                    src="https://cdn.discordapp.com/attachments/981331949501181962/988638636402679868/estrella.png"/><h2 className="perfilusu"> Estrellas:
-                     </h2> <h4 className="perfilusu user"> {estrellas} </h4>
-                    
-                    </div>
-                    <h5 className="tiendasc"> Codeheroe <img className="img-fluid" width="30px" src="https://cdn.discordapp.com/attachments/981331949501181962/988648592598257674/medalla.png"/> </h5>           
-                    <div className="editarPerfil">
-                        <button className="editarPerfilBtn" onClick={handleShow}>Editar</button>
-                    </div>
-                          
-                    </div>
-                <div className="titletienda">
-                <h1 className="titulotienda"> TIENDA </h1>
-                <div className="tienda_container">
-                    <div className="juegoimgcont">
-                        
-                        <div className="juegoimgcont3">
-                            <Card style={{ background: 'transparent', border: 'none' }}>
-                                <div className="ticketypro">
-                                    <button type='button' className="botoneti " onClick={() => Compra(0)}>
-                                        <img className="img-fluid etiqueta"
-                                        src="https://media.discordapp.net/attachments/741712963601432617/988609464355684352/etiqueta1.png"/>
-                                    </button>
-                                        <Card.Img variant="top" className="venta1" 
-                                        src={items[0].fuente}/>
-                                </div>
-                            </Card>
-                            <Card style={{ background: 'transparent', border: 'none' }}>
-                                <div className="ticketypro">
-                                    <button type='button' className="botoneti " onClick={() => Compra(1)}>
-                                        <img className="img-fluid etiqueta"
-                                        src="https://media.discordapp.net/attachments/741712963601432617/988609464355684352/etiqueta1.png"/>
-                                    </button>
-                                        <Card.Img variant="top" className="venta2" 
-                                        src={items[1].fuente} />
-                                </div>
-                            </Card>
-                            <Card style={{ background: 'transparent', border: 'none' }}>
-                                <div className="ticketypro">
-                                    <button type='button' className="botoneti " onClick={() => Compra(2)}>
-                                        <img className="img-fluid etiqueta"
-                                        src="https://media.discordapp.net/attachments/741712963601432617/988609464355684352/etiqueta1.png"/>
-                                    </button>
-                                        <Card.Img variant="top" className="venta3" 
-                                        src={items[2].fuente} />
-                                </div>
-                            </Card>
-                        </div>
-                        <img className="img-fluid tablon" src="https://media.discordapp.net/attachments/981331949501181962/988641705853075476/tablon.png?width=1020&height=174"/>
-                    </div>
-                    <div className="juegoimgcont">
-                        <div className="juegoimgcont3">
-                            <Card style={{ background: 'transparent', border: 'none' }}>
-                                <div className="ticketypro">
-                                    <button type='button' className="botoneti " onClick={() => Compra(3)}>
-                                        <img className="img-fluid etiqueta"
-                                        src="https://media.discordapp.net/attachments/741712963601432617/988609464355684352/etiqueta1.png"/>
-                                    </button>
-                                        <Card.Img variant="top" className="venta4" 
-                                        src={items[3].fuente} />
-                                </div>
-                            </Card>
-                            <Card style={{ background: 'transparent', border: 'none' }}>
-                                <div className="ticketypro">
-                                    <button type='button' className="botoneti" onClick={() => Compra(4)}>
-                                        <img className="img-fluid etiqueta"
-                                        src="https://media.discordapp.net/attachments/741712963601432617/988609464355684352/etiqueta1.png"/>
-                                    </button>
-                                        <Card.Img variant="top" className="venta5"
-                                        src={items[4].fuente} />
-                                </div>
-                            </Card>
-                            <Card style={{ background: 'transparent', border: 'none' }}>
-                                <div className="ticketypro">
-                                    <button type='button' className="botoneti" onClick={() => Compra(5)}>
-                                        <img className="img-fluid etiqueta" width="200px"
-                                        src="https://media.discordapp.net/attachments/741712963601432617/988609464355684352/etiqueta1.png"/>
-                                    </button>
-                                        <Card.Img variant="top" className="venta6" 
-                                        src={items[5].fuente} />
-                                </div>
-                            </Card>
-                        </div>
-                            <img className="img-fluid tablon" src="https://media.discordapp.net/attachments/981331949501181962/988641705853075476/tablon.png?width=1020&height=174"/>
-                    </div>
-                </div>
-                </div>
-            </div>
-                    <div className="burbujas">
-                        <div className="burbuja"></div>
-                        <div className="burbuja"></div>
-                        <div className="burbuja"></div>
-                        <div className="burbuja"></div>
-                        <div className="burbuja"></div>
-                        <div className="burbuja"></div>
-                        <div className="burbuja"></div>
-                    </div>
+        <div>
+            {loading ? (<div className="d-flex justify-content-center">
+        <Spinner animation="border" />
+       </div>)
+       :
+       (<div className="ContenedorJuego">
+       <div className="bg_animate2">
+           <div className="pertien-container">
+               <div className="cardperfil">
+                   <div className="headerperfil">
+                   <img className="img-fluid img_perfil" style={{ border: items[itemActivo].color}}  width="150px" height="150px"
+                   src={items[itemActivo].fuente}/> 
+                   </div>
+                   <div className="contperfilusu">
+                   <img className="img-fluid"  width="30px" height="50px"
+                   src="https://cdn.discordapp.com/attachments/981331949501181962/988649441101774859/nombre.png"/>   <h2 className="perfilusu"> Nombre:
+                    </h2> <h4 className="perfilusu user"> {username} </h4>
+                   </div>
+                   <div className="contperfilusu">
+                   <img className="img-fluid"  width="30px" height="50px"
+                   src="https://cdn.discordapp.com/attachments/981331949501181962/988638636402679868/estrella.png"/><h2 className="perfilusu"> Estrellas:
+                    </h2> <h4 className="perfilusu user"> {estrellas} </h4>
+                   
+                   </div>
+                   <h5 className="tiendasc"> Codeheroe <img className="img-fluid" width="30px" src="https://cdn.discordapp.com/attachments/981331949501181962/988648592598257674/medalla.png"/> </h5>           
+                   <div className="editarPerfil">
+                       <button className="editarPerfilBtn" onClick={handleShow}>Editar</button>
+                   </div>
+                         
+                   </div>
+               <div className="titletienda">
+               <h1 className="titulotienda"> TIENDA </h1>
+               <div className="tienda_container">
+                   <div className="juegoimgcont">
+                       
+                       <div className="juegoimgcont3">
+                           <Card style={{ background: 'transparent', border: 'none' }}>
+                               <div className="ticketypro">
+                                   <button type='button' className="botoneti " onClick={() => Compra(0)}>
+                                       <img className="img-fluid etiqueta"
+                                       src="https://media.discordapp.net/attachments/741712963601432617/988609464355684352/etiqueta1.png"/>
+                                   </button>
+                                       <Card.Img variant="top" className="venta1" 
+                                       src={items[0].fuente}/>
+                               </div>
+                           </Card>
+                           <Card style={{ background: 'transparent', border: 'none' }}>
+                               <div className="ticketypro">
+                                   <button type='button' className="botoneti " onClick={() => Compra(1)}>
+                                       <img className="img-fluid etiqueta"
+                                       src="https://media.discordapp.net/attachments/741712963601432617/988609464355684352/etiqueta1.png"/>
+                                   </button>
+                                       <Card.Img variant="top" className="venta2" 
+                                       src={items[1].fuente} />
+                               </div>
+                           </Card>
+                           <Card style={{ background: 'transparent', border: 'none' }}>
+                               <div className="ticketypro">
+                                   <button type='button' className="botoneti " onClick={() => Compra(2)}>
+                                       <img className="img-fluid etiqueta"
+                                       src="https://media.discordapp.net/attachments/741712963601432617/988609464355684352/etiqueta1.png"/>
+                                   </button>
+                                       <Card.Img variant="top" className="venta3" 
+                                       src={items[2].fuente} />
+                               </div>
+                           </Card>
+                       </div>
+                       <img className="img-fluid tablon" src="https://media.discordapp.net/attachments/981331949501181962/988641705853075476/tablon.png?width=1020&height=174"/>
+                   </div>
+                   <div className="juegoimgcont">
+                       <div className="juegoimgcont3">
+                           <Card style={{ background: 'transparent', border: 'none' }}>
+                               <div className="ticketypro">
+                                   <button type='button' className="botoneti " onClick={() => Compra(3)}>
+                                       <img className="img-fluid etiqueta"
+                                       src="https://media.discordapp.net/attachments/741712963601432617/988609464355684352/etiqueta1.png"/>
+                                   </button>
+                                       <Card.Img variant="top" className="venta4" 
+                                       src={items[3].fuente} />
+                               </div>
+                           </Card>
+                           <Card style={{ background: 'transparent', border: 'none' }}>
+                               <div className="ticketypro">
+                                   <button type='button' className="botoneti" onClick={() => Compra(4)}>
+                                       <img className="img-fluid etiqueta"
+                                       src="https://media.discordapp.net/attachments/741712963601432617/988609464355684352/etiqueta1.png"/>
+                                   </button>
+                                       <Card.Img variant="top" className="venta5"
+                                       src={items[4].fuente} />
+                               </div>
+                           </Card>
+                           <Card style={{ background: 'transparent', border: 'none' }}>
+                               <div className="ticketypro">
+                                   <button type='button' className="botoneti" onClick={() => Compra(5)}>
+                                       <img className="img-fluid etiqueta" width="200px"
+                                       src="https://media.discordapp.net/attachments/741712963601432617/988609464355684352/etiqueta1.png"/>
+                                   </button>
+                                       <Card.Img variant="top" className="venta6" 
+                                       src={items[5].fuente} />
+                               </div>
+                           </Card>
+                       </div>
+                           <img className="img-fluid tablon" src="https://media.discordapp.net/attachments/981331949501181962/988641705853075476/tablon.png?width=1020&height=174"/>
+                   </div>
+               </div>
+               </div>
+           </div>
+                   <div className="burbujas">
+                       <div className="burbuja"></div>
+                       <div className="burbuja"></div>
+                       <div className="burbuja"></div>
+                       <div className="burbuja"></div>
+                       <div className="burbuja"></div>
+                       <div className="burbuja"></div>
+                       <div className="burbuja"></div>
+                   </div>
+       </div>
+
+       <Modal show={show} onHide={handleClose}>
+       <Modal.Header closeButton className="modalSides">
+         <Modal.Title>Editar perfil</Modal.Title>
+       </Modal.Header>
+       <Modal.Body className="modalEditarContainer">
+           
+       {itemsJugador.map(item => (
+           <Card style={{ background: 'transparent', border: 'none' }}>             
+               <Card.Img variant="top" className="venta5" style={{ border: items[item].color}}
+               src={items[item].fuente} />
+
+               <button type='button' className="editarPerfilBtn" onClick={() => equipar(item)}>
+                       Equipar 
+                   </button>
+               
+           </Card>
+       ))}
+       </Modal.Body>
+       <Modal.Footer className="modalSides editarPerfil">
+         <Button variant="secondary" className="editarPerfilBtn" onClick={handleClose}>
+           Cerrar
+         </Button>
+
+       </Modal.Footer>
+     </Modal>
+   </div>)
+        }
         </div>
-
-        <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton className="modalSides">
-          <Modal.Title>Editar perfil</Modal.Title>
-        </Modal.Header>
-        <Modal.Body className="modalEditarContainer">
-            
-        {itemsJugador.map(item => (
-            <Card style={{ background: 'transparent', border: 'none' }}>             
-                <Card.Img variant="top" className="venta5" style={{ border: items[item].color}}
-                src={items[item].fuente} />
-
-                <button type='button' className="editarPerfilBtn" onClick={() => equipar(item)}>
-                        Equipar 
-                    </button>
-                
-            </Card>
-        ))}
-        </Modal.Body>
-        <Modal.Footer className="modalSides editarPerfil">
-          <Button variant="secondary" className="editarPerfilBtn" onClick={handleClose}>
-            Cerrar
-          </Button>
-
-        </Modal.Footer>
-      </Modal>
-    </div>
+    
         );
 }
 

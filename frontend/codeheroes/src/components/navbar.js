@@ -9,6 +9,7 @@ function Nav() {
 
     const logOut = function (){
         cookies.remove('idUsuario');
+        cookies.remove('idUsuarioStats');
         navigate("/login");
     }
     return (
