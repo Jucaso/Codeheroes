@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Card, ListGroup, ListGroupItem, Button} from 'react-bootstrap';
+import {Card, ListGroup, ListGroupItem, Button, Spinner} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import './styles/Inicio.css';
 import Nav from "./navbar.js";
@@ -24,6 +24,7 @@ export default function Inicio() {
     const [estrellas, setEstrellas] = useState(0);
     const [itemsJugador, setItemsJugador] = useState();
     const [itemActivo, setItemActivo] = useState(0);
+    const [loading, setLoading] = useState(true);
 
     //const [users, setUsers] = React.useState([]);
     const [userStats, setUserStats] = React.useState([]);
@@ -43,7 +44,8 @@ export default function Inicio() {
       .then(response => response.json()) 
       .then((data)=>{
         setUser(data);
-        //console.log("Users Data loaded succesfully:",data);
+        //console.log("Usuario:", data);
+        //console.log("itemActivo:", data.itemActivo);
       }) 
       .catch(error => console.log(error));
     }
@@ -54,18 +56,23 @@ export default function Inicio() {
     })
     .then(response => response.json()) 
     .then((data)=>{
-    setUserStats(data);
+    //setUserStats(data);
+    //setItemActivo(data.itemActivo);
     findUser(data);
+    setLoading(false);
     //console.log("Users stats data loaded succesfully:",data);
     }) 
     .catch(error => console.log(error));
     }
 
     const findUser = function(data) {
+        console.log("idUsuario:",cookies.get('idUsuario'))
     for (let i = 0; i < data.length; i++) {
         if (data[i].user == cookies.get('idUsuario')) {
             //console.log("User:", data[i]);
             setUserStats(data[i]);
+            setItemActivo(data[i].itemActivo);
+            console.log("userStats:",data[i]);
             cookies.set('idUsuarioStats', data[i].id, {path: '/'});
         }
     }
@@ -77,13 +84,21 @@ export default function Inicio() {
     }
     
     return (
-    <div className='fondoiniciojaja'>
+        <div>
+            {loading ?
+             (<div className="d-flex justify-content-center">
+             <Spinner animation="border" />
+            </div>)
+                :
+                (
+                    <div className='fondoiniciojaja'>
         <Nav/>
         <div className="contenidoInicio">
         <div className="IzquierdaAbajo">
             <div className="cardperfilinicio" style={{ boxShadow: items[itemActivo].colorcard}}>
+                
                 <div className="headerperfil">
-                    <img className="img-fluid img_perfilinicio" style={{ border: items[itemActivo].color}}  width="100px"
+                    <img className="img-fluid img_perfilinicio"  width="100px" 
                     src={items[itemActivo].fuente}/> 
                 </div>
                 <div className="contenidocardinicio">
@@ -150,5 +165,8 @@ export default function Inicio() {
             
     
     </div>
+                )
+            }
+        </div>
     );
 }
