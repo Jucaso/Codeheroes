@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './styles/niveles.css'
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import Swal from 'sweetalert2';
+import Cookies from 'universal-cookie';
+import { useNavigate } from "react-router-dom";
 
 export default function Nivel_3_parte3() {
     
@@ -53,19 +55,37 @@ export default function Nivel_3_parte3() {
         text: "print(\"Total:\",calculaTotal(precioManzana, manzanas))",
         },
     ];
-      
-      const reorder = (list, startIndex, endIndex) => {
-        const result = [...list];
-        const [removed] = result.splice(startIndex, 1);
-        result.splice(endIndex, 0, removed);
-      
-        return result;
-      };
+    let navigate = useNavigate();
+    const cookies = new Cookies();
+    const [estrellas, setEstrellas] = useState(0);
+    const [puntaje, setPuntaje] = useState(0);
+    const [nivelStats, setNivelStats] = useState(0);
+    const [estrellasId, setEstrellasId] = useState(0);
 
     useEffect(() => {
+      getData();
+    });
 
-        });
-       
+    async function getData(){
+      try {
+          const request = await fetch("http://127.0.0.1:8000/usuarios/"+cookies.get('idUsuarioStats')+"/");
+          const data = await request.json();
+          console.log(data);
+          setPuntaje(data.puntaje);
+          setNivelStats(data.nivel_3);
+          setEstrellas(data.estrellas);
+      } catch (error) {
+          console.log(error);
+      }
+    }
+
+    const reorder = (list, startIndex, endIndex) => {
+      const result = [...list];
+      const [removed] = result.splice(startIndex, 1);
+      result.splice(endIndex, 0, removed);
+    
+      return result;
+    };
         
     const [tasks, setTasks] = useState(initialTasks);
     
@@ -93,31 +113,80 @@ export default function Nivel_3_parte3() {
             tasks[3].id === ordenado[1].id &&
             tasks[4].id === ordenado[4].id)
             )
-        {
-            Swal.fire({
-                title: '¡Acertaste!',
-                width: 500,
-                icon: 'success',
-                padding: '20px',
-                color: '#black',
-                background: '#fff',
-                html: '<a type="button" class="btn btn-success" href="#"> CONTINUAR </a>',
-                showConfirmButton: false,
+            {
+
+              var estrellasAnteriores = nivelStats[4];
+    
+              if(estrellasAnteriores == 0){
+                var newEstrellas = estrellas + 3;
+                var newLevelStats = "";
+                var newPuntaje = puntaje + 40;
+                var auxComa = 0;
+    
+                for(var i = 0; i < nivelStats.length; i++){
+                  if (auxComa != 2){
+                    newLevelStats = newLevelStats + nivelStats[i];
+                  }
+    
+                  if(nivelStats[i] == ','){
+                    if(auxComa == 1){
+                      newLevelStats = newLevelStats + 3;
+                      auxComa++;
+                    }
+                    else{
+                      auxComa++;
+                    }              
+                  }
+                }
+    
+                console.log("newEstrellas: " + newEstrellas);
+                console.log("newLevelStats: " + newLevelStats);
+                console.log("newPuntaje: " + newPuntaje); 
+                try {
+                  fetch("http://127.0.0.1:8000/usuarios/"+cookies.get('idUsuarioStats')+"/", {
+                  'method':'PUT',
+                  headers: {
+                      'Content-Type':'application/json',           
+                  }, 
+                  body:JSON.stringify({estrellas: newEstrellas,
+                                      puntaje: newPuntaje,
+                                      nivel_3: newLevelStats,
+                                      user: cookies.get('idUsuario')
+                                      })
+                  }).then(() => {
+                      //setMode(true);
+                      navigate('/nivel_3_parte3');
+                  })
+                } catch (error) {
+                    console.log(error);
+                }
+    
+              }
+              
+              Swal.fire({
+                  title: '¡Acertaste!',
+                  width: 500,
+                  icon: 'success',
+                  padding: '20px',
+                  color: '#black',
+                  background: '#fff',
+                  html: '<a type="button" class="btn btn-success" href="/nivel_3_parte3"> CONTINUAR </a>',
+                  showConfirmButton: false,
+                  })
+            }
+            else {
+                Swal.fire({
+                    title: 'Hay algo mal, ¡intenta de nuevo!',
+                    width: 500,
+                    icon: 'warning',
+                    iconColor: '#f44336',
+                    padding: '20px',
+                    color: '#black',
+                    background: '#fff',
+                    confirmButtonText: 'Intentar de nuevo',
+                    confirmButtonColor: 'orange',
                 })
-        }
-        else {
-            Swal.fire({
-                title: 'Hay algo mal, ¡intenta de nuevo!',
-                width: 500,
-                icon: 'warning',
-                iconColor: '#f44336',
-                padding: '20px',
-                color: '#black',
-                background: '#fff',
-                confirmButtonText: 'Intentar de nuevo',
-                confirmButtonColor: 'orange',
-            })
-        }
+            }
     }
 
     const ayuda = () => {

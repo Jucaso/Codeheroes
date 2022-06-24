@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import "./styles/Tienda.css";
 import { DragDropContext, Droppable, Draggable}  from 'react-beautiful-dnd';
 import {Link} from 'react-router-dom';	
-import {Card, Button} from 'react-bootstrap';
+import {Card, Button, Modal} from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import Cookies from 'universal-cookie';
 
@@ -17,15 +17,50 @@ function Tienda() {
         {id: 5, fuente: "https://images-ext-2.discordapp.net/external/P0jnDvbql44x53NBa72fkkzxgGWVUaNW9oLCM1ebVbY/https/supercpps.com/assets/images/avatars/super-club-penguin-avatar.jpg", color: "3px solid rgb(29, 77, 233)", precio: 1},
         {id: 6, fuente: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", color: "3px solid white", precio: 0},
     ]
+
     const cookies = new Cookies();
     const [username, setUsername] = useState([]);
     const [estrellas, setEstrellas] = useState(0);
-    const [itemsJugador, setItemsJugador] = useState();
+    const [itemsJugador, setItemsJugador] = useState([]);
     const [itemActivo, setItemActivo] = useState(0);
+
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     useEffect(() => {
         getData();
     }, []);
+
+    function setItemsOnVector(items){
+        let itemsVector = [];
+        for(let i = 0; i < items.length; i++){
+            if(items[i] != ',')
+            itemsVector.push(items[i]);
+        }
+        console.log("itemsVector: " + itemsVector);
+        setItemsJugador(itemsVector);   
+    }
+
+    function equipar(item){
+        try {
+            fetch("http://127.0.0.1:8000/usuarios/"+cookies.get('idUsuarioStats')+"/", {
+            'method':'PUT',
+            headers: {
+                'Content-Type':'application/json',           
+            }, 
+            body:JSON.stringify({itemActivo: item,
+                                user: cookies.get('idUsuario')
+                                })
+            }).then(() => {
+                //setMode(true);
+                getData();
+                //navigate('/nivel_1_parte2');
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     async function getData(){
         try {
@@ -43,17 +78,41 @@ function Tienda() {
             console.log("Estrellas:",data.estrellas);
             setEstrellas(data.estrellas);
             setItemActivo(data.itemActivo);
-            setItemsJugador(data.itemsIds);
+            setItemsOnVector(data.itemsIds);
         } catch (error) {
             console.log(error);
         }
     }
 
+    function verificaTiene(item){
+        for(let i=0;i<itemsJugador.length;i++){
+            if(itemsJugador[i]==item){
+                return true;
+            }
+        }
+        return false;
+    }
+
     const Compra = (id) => {
+        
+        if(verificaTiene(id)){
+            Swal.fire({
+                title: 'Ya tienes este artículo',
+                width: 400,
+                icon: 'warning',
+                padding: '20px',
+                color: '#black',
+                background: '#fff',
+                showConfirmButton: true,
+            })
+        }
+        else{
+
         
         if(items[id].precio <= estrellas){
             //setItemActivo(id)
-            var newItemsJugador = itemsJugador + "," + id;
+            console.log(id)
+                var newItemsJugador = itemsJugador + "," + id;
             var estrellasNuevas = estrellas - items[id].precio;
             try {
                 fetch("http://127.0.0.1:8000/usuarios/"+cookies.get('idUsuarioStats')+"/", {
@@ -82,7 +141,8 @@ function Tienda() {
                 background: '#fff',
                 showConfirmButton: true,
             })
-        }
+           
+        }  
         else{
             Swal.fire({
                 title: 'Ups, no tienes suficientes estrellas para adquirir este artículo.',
@@ -93,9 +153,8 @@ function Tienda() {
                 background: '#fff',
                 showConfirmButton: true,
             })
-        }
-        
-        
+        } 
+    }          
     }
 
 
@@ -119,8 +178,12 @@ function Tienda() {
                      </h2> <h4 className="perfilusu user"> {estrellas} </h4>
                     
                     </div>
-                    <h5 className="tiendasc"> Codeheroe <img className="img-fluid" width="30px" src="https://cdn.discordapp.com/attachments/981331949501181962/988648592598257674/medalla.png"/> </h5> 
-                </div>
+                    <h5 className="tiendasc"> Codeheroe <img className="img-fluid" width="30px" src="https://cdn.discordapp.com/attachments/981331949501181962/988648592598257674/medalla.png"/> </h5>           
+                    <div className="editarPerfil">
+                        <button className="editarPerfilBtn" onClick={handleShow}>Editar</button>
+                    </div>
+                          
+                    </div>
                 <div className="titletienda">
                 <h1 className="titulotienda"> TIENDA </h1>
                 <div className="tienda_container">
@@ -208,6 +271,32 @@ function Tienda() {
                         <div className="burbuja"></div>
                     </div>
         </div>
+
+        <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton className="modalSides">
+          <Modal.Title>Editar perfil</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="modalEditarContainer">
+            
+        {itemsJugador.map(item => (
+            <Card style={{ background: 'transparent', border: 'none' }}>             
+                <Card.Img variant="top" className="venta5" style={{ border: items[item].color}}
+                src={items[item].fuente} />
+
+                <button type='button' className="editarPerfilBtn" onClick={() => equipar(item)}>
+                        Equipar 
+                    </button>
+                
+            </Card>
+        ))}
+        </Modal.Body>
+        <Modal.Footer className="modalSides editarPerfil">
+          <Button variant="secondary" className="editarPerfilBtn" onClick={handleClose}>
+            Cerrar
+          </Button>
+
+        </Modal.Footer>
+      </Modal>
     </div>
         );
 }

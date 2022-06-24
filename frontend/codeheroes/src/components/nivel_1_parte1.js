@@ -3,6 +3,7 @@ import { Accordion } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
 import './styles/nivelesparte1.css'
 import Cookies from 'universal-cookie';
+
 export default function Nivel_1_parte1() {
     
     let navigate = useNavigate();
@@ -40,7 +41,7 @@ export default function Nivel_1_parte1() {
         // Revisa si ha conseguido estrellas en el nivel actual, en caso de que no, le suma los puntos por completar a los puntos que tiene
         if(currentLevelStars == 0){
             puntajeAux = puntajeAux + 20
-            var auxEstrellas = 3 + estrellas;
+            auxEstrellas = 3 + estrellas;
         }
         
         for(let i=0;i<levelStats.length;i++){

@@ -3,6 +3,7 @@ import './styles/niveles.css'
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import Swal from 'sweetalert2';
 import Cookies from 'universal-cookie';
+import { useNavigate } from "react-router-dom";
 
 export default function Nivel_1_parte3() {
     
@@ -22,7 +23,7 @@ export default function Nivel_1_parte3() {
         
     ];
 
-      const ordenado = [
+    const ordenado = [
         {
         id: "1",
         text: "cantidadPerros = 5",
@@ -37,6 +38,7 @@ export default function Nivel_1_parte3() {
         },
     ];
     
+    let navigate = useNavigate();
     const cookies = new Cookies();
     const [estrellas, setEstrellas] = useState(0);
     const [puntaje, setPuntaje] = useState(0);

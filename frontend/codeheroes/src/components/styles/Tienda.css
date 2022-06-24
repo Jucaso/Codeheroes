@@ -73,7 +73,7 @@
 }
 
 .tienda_container{
-    background: radial-gradient(circle, rgba(44,125,113,1) 0%, rgba(18,27,38,1) 100%);
+    background: radial-gradient(circle, rgba(78,117,175,1) 0%, rgba(13,26,54,1) 80%);
     padding: 20px;
     border-radius: 50px;
     z-index: 1000;
@@ -160,4 +160,32 @@
     height: 60px;
     display:flex;
     margin-left: 20px;
+}
+
+.editarPerfil{
+    display: block;
+    text-align: center;
+    
+    /* background-color:red; */
+}
+
+.editarPerfilBtn{
+    /* margin-left: 10px; */
+    color:#fff;
+    background: radial-gradient(circle, rgba(78,117,175,1) 0%, rgba(13,26,54,1) 80%); 
+    margin: 10px;
+    padding: 5px;
+    width: 100px;
+    border-radius: 10px;   
+}
+
+.modalEditarContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: radial-gradient(circle, rgba(78,117,175,1) 0%, rgba(13,26,54,1) 80%);
+}
+
+.modalSides{
+    background: radial-gradient(circle, rgba(78,117,175,1) 0%, rgba(13,26,54,1) 80%);
+    color: white;
 }

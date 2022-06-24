@@ -83,7 +83,7 @@ export default function Nivel_1_parte2() {
         console.log(error);
     }
 }
-
+  
   function terminarIntento(){
     var estrellasAnteriores = nivelStats[2];
     var auxPuntaje = puntajeConvertido;
@@ -205,6 +205,7 @@ export default function Nivel_1_parte2() {
                           setIsFinished(false);
                           setAnswersShown(true);
                           setPreguntaActual(0);
+                          
                         }}
                       >
                         <span className="textoresp">Ver respuestas</span> 
@@ -264,7 +265,7 @@ export default function Nivel_1_parte2() {
                     className="n1p2botonsig button2"
                       onClick={() => {
                         if (preguntaActual === preguntas.length - 1) {
-                          window.location.href = "/"; //Aquí debería redirigir a los 3 modulos del nivel
+                          terminarIntento(); //Aquí debería redirigir a los 3 modulos del nivel
                         } else {
                           setPreguntaActual(preguntaActual + 1);
                         }

@@ -31,7 +31,7 @@ export default function Inicio() {
       .catch(error => console.log(error));
     }
     
-    const loadUserStats = async function() {
+    const loadUserStats = async function() {    
     fetch("http://127.0.0.1:8000/usuarios/",{
         method: "GET"
     })
