@@ -21,6 +21,7 @@ import Inicio from './components/Inicio';
 import './App.css';
 import Mapa from './components/mapa';
 import Tienda from './components/Tienda';
+import Prueba from './components/Prueba';
 
 function Routers() {
   const [id, setId] = React.useState(0);
@@ -44,6 +45,7 @@ function Routers() {
           <Route  path = "/juego" element = {<Juego/>}/>
           <Route  path = "/inicio" element = {<Inicio/>}/>
           <Route  path = "/mapa" element = {<Mapa/>}/>
+          <Route  path = "/prueba" element = {<Prueba/>}/>
         </Routes>
       </BrowserRouter>
       </Context.Provider>
