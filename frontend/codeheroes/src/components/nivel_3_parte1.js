@@ -3,6 +3,9 @@ import { Accordion } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
 import './styles/nivelesparte1.css'
 import Cookies from 'universal-cookie';
+import Swal from 'sweetalert2';
+import 'animate.css';
+import { motion } from 'framer-motion';
 
 export default function Nivel_3_parte1() {
     
@@ -31,6 +34,41 @@ export default function Nivel_3_parte1() {
         }
     }
 
+    function ConteoEstrellas(){
+
+        Swal.fire({
+          title: '¡Hemos terminado!',
+          text: "Ahora, echemos un vistazo a los resultados",
+          width: 700,
+          height: 700,
+          icon: 'success',
+          iconColor: 'orange',
+          color: 'white',
+          background: 'radial-gradient(circle, rgba(44,125,113,1) 0%, rgba(18,27,38,1) 100%)',
+          confirmButtonColor: '#0d2736',
+                  confirmButtonText: '<img width="20px" src="https://cdn.discordapp.com/attachments/981331949501181962/989673233072672798/bien.png"/>  ¡Vamos allá!'
+        }).then((result) => {
+          if (result.isConfirmed) {     
+                Swal.fire({
+                  title: '¡Estás son las estrellas que obtuviste!',
+                  width: 700,
+                  color: 'white',
+                  background: 'radial-gradient(circle, rgba(44,125,113,1) 0%, rgba(18,27,38,1) 100%)',
+                  html: ' <div style={{height: "400px"}}>\
+                  <img class="animate__animated animate__fadeInBottomLeft"  width="50px" \
+                  src="https://cdn.discordapp.com/attachments/981331949501181962/988638636402679868/estrella.png"/>\
+                  <img class="animate__animated animate__fadeInDown"  width="50px" \
+                  src="https://cdn.discordapp.com/attachments/981331949501181962/988638636402679868/estrella.png"/>\
+                  <img class="animate__animated animate__fadeInBottomRight"  width="50px" \
+                  src="https://cdn.discordapp.com/attachments/981331949501181962/988638636402679868/estrella.png"/>\
+                  </div>',
+                  confirmButtonColor: '#0d2736',
+                  confirmButtonText: '<img width="20px" src="https://cdn.discordapp.com/attachments/981331949501181962/989673233072672798/bien.png"/>  ¡Genial, sigamos!'
+                })         
+          }
+        })
+  
+      }    
     
     const terminar =     function() {
         var currentLevelStars = levelStats[0];
@@ -76,10 +114,15 @@ export default function Nivel_3_parte1() {
         } catch (error) {
             console.log(error);
         } 
+        ConteoEstrellas();
     }
     
     return(
-        <div className='n1p1contenedor'>
+        <motion.div 
+        
+        initial={{width: 0}}
+        animate={{width: "100%"}}
+        exit={ {x: window.innerWidth, transition: {duration: 1}}} className='n1p1contenedor'>
             <div className='contenidoAco'>
                 <h1 className="n1p1titulo">Teoría #3 - Funciones</h1> 
                 
@@ -101,6 +144,6 @@ export default function Nivel_3_parte1() {
 
                 </Accordion>
             </div>
-        </div>
+        </motion.div>
     );
 }

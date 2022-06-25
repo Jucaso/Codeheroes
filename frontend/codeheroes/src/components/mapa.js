@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./styles/mapa.css";
 import Nav from "./navbar.js";
+import { motion } from 'framer-motion';
 var contador=0;
 var iniciar=0;
 var link="";
@@ -19,14 +20,14 @@ const Mapa = () => {
         else if(contador==1){
             setStyle("volar1");
             contador=2;
-            link="nivel_1_parte1";
+            link="nivel_1_partes";
         }else if(contador==2){
             setStyle("volar2");
             contador=3;
-            link="nivel_2_parte1";
+            link="nivel_2_partes";
         }else if(contador==3){
             setStyle("volar3");
-            link="nivel_3_parte1";
+            link="nivel_3_partes";
         }
       
         
@@ -46,11 +47,11 @@ const Mapa = () => {
         }else if(contador==2){
             setStyle("volar1");
             contador=1;
-            link="nivel_1_parte1";
+            link="nivel_1_partes";
         }else if(contador==3){
             setStyle("volar2");
             contador=2;
-            link="nivel_2_parte1";
+            link="nivel_2_partes";
         }
       
         
@@ -65,7 +66,13 @@ const Mapa = () => {
 
       return (
         
-    <div className="centradomapa">
+    <motion.div 
+        
+    initial={{width: 0}}
+    animate={{width: "100%"}}
+    exit={ {x: window.innerWidth, transition: {duration: 1}}}
+    
+     className="centradomapa">
         <div className='fondo'>
             <div className='nivel1'> </div>
             <div className='nivel2'> </div>
@@ -75,7 +82,7 @@ const Mapa = () => {
             <a id="btnder" className="der" onClick={derecha} type="button"></a>
             <a id="btnsel1" className="sel1" href={link}  type="button"></a>
         </div>
-    </div> 
+    </motion.div> 
 
       );
     }
