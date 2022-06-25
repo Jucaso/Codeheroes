@@ -197,7 +197,7 @@ function Tienda() {
                          
                    </div>
                <div className="titletienda">
-               <h1 className="titulotienda"> TIENDA </h1>
+               <h1 className="titulotienda"> TIENDA  </h1>
                <div className="tienda_container">
                    <div className="juegoimgcont">
                        
