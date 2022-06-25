@@ -23,13 +23,13 @@
 
 .nivel1{
     background: url("/imgmapa/nivel1.png") no-repeat center;
-    background-size: 70%;
+    background-size: 55%;
     width: 150px;
     height: 150px;
     border: none;
     position: absolute;
     left: 135px;
-    top: 370px;
+    top: 365px;
 }
 .nivel2{
   background: url("/imgmapa/nivel2.png") no-repeat center;
@@ -38,18 +38,18 @@
   height: 200px;
   border: none;
   position: absolute;
-  left: 345px;
-  top: 240px;
+  left: 340px;
+  top: 250px;
 }
 .nivel3{
   background: url("/imgmapa/nivel3.png") no-repeat center;
-  background-size: 65%;
+  background-size: 85%;
   width: 300px;
   height: 300px; 
   border: none;
   position: absolute;
-  left: 580px;
-  top: 50px;
+  left: 570px;
+  top: 70px;
 }
 
 .izq{
