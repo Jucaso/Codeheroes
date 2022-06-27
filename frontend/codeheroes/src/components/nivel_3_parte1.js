@@ -5,6 +5,7 @@ import './styles/nivelesparte1.css'
 import Cookies from 'universal-cookie';
 import Swal from 'sweetalert2';
 import 'animate.css';
+import { motion } from 'framer-motion';
 
 export default function Nivel_3_parte1() {
     
@@ -117,7 +118,11 @@ export default function Nivel_3_parte1() {
     }
     
     return(
-        <div className='n1p1contenedor'>
+        <motion.div 
+        
+        initial={{width: 0}}
+        animate={{width: "100%"}}
+        exit={ {x: window.innerWidth, transition: {duration: 1}}} className='n1p1contenedor'>
             <div className='contenidoAco'>
                 <h1 className="n1p1titulo">Teoría #3 - Funciones</h1> 
                 
@@ -139,6 +144,6 @@ export default function Nivel_3_parte1() {
 
                 </Accordion>
             </div>
-        </div>
+        </motion.div>
     );
 }

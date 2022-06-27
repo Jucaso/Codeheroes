@@ -5,6 +5,7 @@ import './styles/nivelesparte1.css'
 import Cookies from 'universal-cookie';
 import Swal from 'sweetalert2';
 import 'animate.css';
+import {motion} from 'framer-motion';
 
 export default function Nivel_1_parte1() {
     
@@ -118,7 +119,13 @@ export default function Nivel_1_parte1() {
     }
     
     return(
-        <div>
+        <motion.div 
+        
+        initial={{width: 0}}
+        animate={{width: "100%"}}
+        exit={ {x: window.innerWidth, transition: {duration: 1}}}
+        
+        >
         <div className='n1p1contenedor'>
             <div className='contenidoAco'>
             <h1 className="n1p1titulo">Teoría #1 - Variables y operaciones aritméticas</h1> 
@@ -177,6 +184,6 @@ export default function Nivel_1_parte1() {
             </Accordion>
             </div>
         </div>
-        </div>
+        </motion.div>
     );
 }

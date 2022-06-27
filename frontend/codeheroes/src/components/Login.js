@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./styles/Login.css";
 //import Context from './Context';
 import Cookies from 'universal-cookie';
+import { motion } from 'framer-motion';
 
 function Login() {
     let navigate = useNavigate();
@@ -107,7 +108,11 @@ function Login() {
 
     if(mode){
         return (
-            <div className="Login">
+            <motion.div 
+        
+            initial={{width: 0}}
+            animate={{width: "100%"}}
+            exit={ {x: window.innerWidth, transition: {duration: 1}}} className="Login">
                     <section className="h-300 gradient-form">
                         <div className="container py-3 h-200">
                         <div className="row d-flex justify-content-center h-100">
@@ -158,7 +163,7 @@ function Login() {
                         </div>
                         </div>
                     </section>
-                </div>
+                </motion.div>
         )
     }
     else{

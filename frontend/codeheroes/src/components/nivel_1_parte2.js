@@ -4,7 +4,7 @@ import './styles/n1p2.css'
 import Cookies from 'universal-cookie';
 import Swal from 'sweetalert2';
 import 'animate.css';
-
+import {motion} from 'framer-motion';
 
 export default function Nivel_1_parte2() {
   const preguntas = [
@@ -266,7 +266,13 @@ export default function Nivel_1_parte2() {
   if (isFinished)
 
     return (
-      <div className='n1p2Contenido'>
+      <motion.div 
+        
+      initial={{width: 0}}
+      animate={{width: "100%"}}
+      exit={ {x: window.innerWidth, transition: {duration: 1}}}
+      
+       className='n1p2Contenido'>
         <div className="n1p2TextoTerminado"> 
           <h1 className="n1p2colortexto"> ¡Genial! Hemos terminado </h1>
           <h5 className="n1p2colortexto"> Este es tu resultado: </h5>
@@ -318,7 +324,7 @@ export default function Nivel_1_parte2() {
             <div className="burbuja"></div>
             <div className="burbuja"></div>
           </div>
-        </div>
+        </motion.div>
     );
 
   if (answersShown)

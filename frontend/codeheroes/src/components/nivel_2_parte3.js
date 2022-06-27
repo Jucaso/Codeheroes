@@ -4,6 +4,7 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import Swal from 'sweetalert2';
 import Cookies from 'universal-cookie';
 import 'animate.css';
+import { motion } from 'framer-motion';
 
 export default function Nivel_2_parte3() {
     
@@ -248,7 +249,11 @@ export default function Nivel_2_parte3() {
     }
 
     return(
-        <div className="lvl3-container">
+        <motion.div 
+        
+        initial={{width: 0}}
+        animate={{width: "100%"}}
+        exit={ {x: window.innerWidth, transition: {duration: 1}}} className="lvl3-container">
             <DragDropContext
         onDragEnd={(result) => {
           const { source, destination } = result;
@@ -309,6 +314,6 @@ export default function Nivel_2_parte3() {
                 </button>
                       
             </div>
-        </div>
+        </motion.div>
     );
 }

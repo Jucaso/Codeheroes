@@ -107,7 +107,7 @@ function Juego() {
     }
 
     return (
-    <div className="ContenedorJuego">
+    <div className="ContenedorJuego2">
         <div className="bg_animate2">
             <div className="juegoimgcont">
                 <div className="juegoimgcont2">

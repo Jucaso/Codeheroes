@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import {Card, Button, Modal, Spinner} from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import Cookies from 'universal-cookie';
-
+import { motion } from 'framer-motion';
 
 function Tienda() {
     const items = [
@@ -162,13 +162,17 @@ function Tienda() {
 
 
     return (
-        <div>
+        <motion.div
+        initial={{width: 0}}
+        animate={{width: "100%"}}
+        exit={ {x: window.innerWidth, transition: {duration: 1}}}
+        >
             {loading ? (<div className="d-flex justify-content-center">
         <Spinner animation="border" />
        </div>)
        :
        (<div className="ContenedorJuego">
-       <div className="bg_animate2">
+       <div className="">
            <div className="pertien-container">
                <div className="cardperfil">
                    <div className="headerperfil">
@@ -193,7 +197,7 @@ function Tienda() {
                          
                    </div>
                <div className="titletienda">
-               <h1 className="titulotienda"> TIENDA </h1>
+               <h1 className="titulotienda"> TIENDA  </h1>
                <div className="tienda_container">
                    <div className="juegoimgcont">
                        
@@ -307,7 +311,7 @@ function Tienda() {
      </Modal>
    </div>)
         }
-        </div>
+        </motion.div>
     
         );
 }
