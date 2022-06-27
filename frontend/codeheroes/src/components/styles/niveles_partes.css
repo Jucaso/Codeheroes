@@ -4,7 +4,7 @@
     background-image: url("https://cdn.discordapp.com/attachments/981331949501181962/990354345205837874/escena-espacio-exterior-nave-espacial-estacion_1308-64557.webp");
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    height: 100%;
+    height: auto;
     padding-left: 50px;
     padding-right: 50px;
   }
@@ -46,13 +46,14 @@
     display: flex;
     color: white;
     width: 100%;
+    height: auto;
     justify-content: space-around;
   }
   
   .MapaInicioNP{
     display: block;
     text-align: center;
-    margin: 25px;
+    margin-bottom: 17px;
   }
   
   .ContenidoMapaInicioNP{
@@ -61,13 +62,15 @@
     height: 300px;
     text-align: center;
     justify-content: center;
+    
   }
   
   .TituloMapaInicioNP{
+
     display: flex;
     justify-content: center;
     width: 200px;
-    height: auto;
+    height: 100px;
     background: radial-gradient(circle, rgba(57,55,55,1) 4%, rgba(0,0,0,1) 71%);
     color: whitesmoke;
     border-radius: 25px;
