@@ -64,12 +64,14 @@
 
 .lvl3-container{
   width: 100%;
-  height: auto;
-  padding: 100px;
+  height: 100%;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 41px;
+  padding-bottom: 41px;
   background-color: #121b26;
   display: flex;
   justify-content: center;
-  
   align-items: center;
   flex-direction: column;
   z-index: 1000;

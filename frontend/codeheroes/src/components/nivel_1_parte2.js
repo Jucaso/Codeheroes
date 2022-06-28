@@ -229,7 +229,7 @@ export default function Nivel_1_parte2() {
                             })
         }).then(() => {
             //setMode(true);
-            //navigate('/nivel_1_parte3');
+            navigate('/nivel_1_partes');
         })
       } catch (error) {
           console.log(error);

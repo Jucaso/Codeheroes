@@ -31,6 +31,7 @@ function Tienda() {
     const [itemActivo, setItemActivo] = useState(0);
     const [loading, setLoading] = useState(true);
     const [etiquetasItems, setEtiquetasItems] = useState([]);
+    const [codigo, setCodigo]  = useState("");
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -130,6 +131,8 @@ function Tienda() {
 
 
     const Canjear = () => {
+
+        console.log(codigo);
         Swal.fire({
                 title: 'Canjeao mano',
                 width: 400,
@@ -248,13 +251,9 @@ function Tienda() {
                         <h1 className="titulotienda"> TIENDA  </h1>
                         <div className="codigotienda">
                             <h5 className="ingresacodigo"> Ingresa tu código </h5>
-                            <FloatingLabel
-                                controlId="floatingInput"
-                                label="Código"
-                                className="mb-3 codigoticket"
-                            >
-                                <Form.Control type="text" />
-                            </FloatingLabel>
+                            <form>
+                                <input className='codigoticket' value={codigo} onChange={text => setCodigo(text.target.value)} type="text" name="name" />
+                            </form>
                             <button className="btn btn-primary botonagrio" onClick={() => Canjear()}> Canjear </button>
                         </div> 
                     </div>

@@ -164,7 +164,7 @@ export default function Nivel_1_parte3() {
                                   })
               }).then(() => {
                   //setMode(true);
-                  //navigate('/nivel_1_parte3');
+                  navigate('/nivel_1_partes');
               })
             } catch (error) {
                 console.log(error);
@@ -179,7 +179,7 @@ export default function Nivel_1_parte3() {
               padding: '20px',
               color: '#black',
               background: '#fff',
-              html: '<a type="button" class="btn btn-success" href="/nivel_1_parte3"> CONTINUAR </a>',
+              html: '<a type="button" class="btn btn-success" href="/nivel_1_partes"> CONTINUAR </a>',
               showConfirmButton: false,
               })
               ConteoEstrellas();
@@ -206,8 +206,8 @@ export default function Nivel_1_parte3() {
             width: 500,
             icon: 'question',
             padding: '20px',
-            color: '#black',
-            background: '#fff',
+            color: 'white',
+            background: 'radial-gradient(circle, rgba(44,125,113,1) 0%, rgba(18,27,38,1) 100%)',
             confirmButtonText: 'VALE',
             showConfirmButton: true,
             confirmButtonColor: 'blue',
