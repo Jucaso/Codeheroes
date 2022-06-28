@@ -113,7 +113,8 @@ export default function Nivel_1_parte3() {
     }
 
     const Verificar = () => {
-        
+        console.log("Tasks:", tasks);
+        console.log("Ordenado:", ordenado);
         if((tasks[0].id === ordenado[0].id &&
            tasks[1].id === ordenado[1].id &&
            tasks[2].id === ordenado[2].id) || 
@@ -181,6 +182,7 @@ export default function Nivel_1_parte3() {
               html: '<a type="button" class="btn btn-success" href="/nivel_1_parte3"> CONTINUAR </a>',
               showConfirmButton: false,
               })
+              ConteoEstrellas();
         }
         else {
             Swal.fire({
@@ -195,7 +197,7 @@ export default function Nivel_1_parte3() {
                 confirmButtonColor: 'orange',
             })
         }
-        ConteoEstrellas();
+        
     }
 
     const ayuda = () => {

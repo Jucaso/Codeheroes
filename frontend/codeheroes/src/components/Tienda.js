@@ -9,24 +9,19 @@ import { motion } from 'framer-motion';
 import Nav from "./navbar.js";
 
 function Tienda() {
-    const items = [
-        {id: 0, fuente: "https://whatsondisneyplus.com/wp-content/uploads/2022/05/vader.png", color: "3px solid rgb(219, 55, 55)", precio: 2},
-        {id: 1, fuente: "https://www.disneyplusinformer.com/wp-content/uploads/2022/03/Moon-Knight-Profile-Avatar.png", color: "3px solid rgb(99, 98, 98)", precio: 2},
-        {id: 2, fuente: "https://media.discordapp.net/attachments/924106496059539557/988614847535145030/avatar3.png?width=473&height=473", color: "3px solid rgb(233, 229, 29)", precio: 2},
-        {id: 3, fuente: "https://images-ext-2.discordapp.net/external/bbjEG3HEfVWTXFXNzBl616iEkSVY1dDQNw6kFydZM08/https/assets.reedpopcdn.com/master-chief-removes-helmet-in-halo-tv-series-to-show-his-human-side-says-343-industries-1648650530651.jpg/BROK/thumbnail/1200x900/quality/100/master-chief-removes-helmet-in-halo-tv-series-to-show-his-human-side-says-343-industries-1648650530651.jpg?width=631&height=473", color: "3px solid rgb(43, 73, 24)", precio: 1},
-        {id: 4, fuente: "https://www.nacionflix.com/__export/1608862619334/sites/debate/img/2020/12/24/la-razxn-por-la-que-gal-gadot-es-tan-importante-para-mujer-maravilla.jpg_2062789929.jpg", color: "3px solid rgb(233, 162, 29)", precio: 1},
-        {id: 5, fuente: "https://images-ext-2.discordapp.net/external/P0jnDvbql44x53NBa72fkkzxgGWVUaNW9oLCM1ebVbY/https/supercpps.com/assets/images/avatars/super-club-penguin-avatar.jpg", color: "3px solid rgb(29, 77, 233)", precio: 1},
-        {id: 6, fuente: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", color: "3px solid white", precio: 0},
+    var items = [
+        {id: 0, fuente: "https://whatsondisneyplus.com/wp-content/uploads/2022/05/vader.png", color: "3px solid rgb(219, 55, 55)", precio: 6, estado: 0},
+        {id: 1, fuente: "https://www.disneyplusinformer.com/wp-content/uploads/2022/03/Moon-Knight-Profile-Avatar.png", color: "3px solid rgb(99, 98, 98)", precio: 6, estado: 0},
+        {id: 2, fuente: "https://media.discordapp.net/attachments/924106496059539557/988614847535145030/avatar3.png?width=473&height=473", color: "3px solid rgb(233, 229, 29)", precio: 6, estado: 0 },
+        {id: 3, fuente: "https://images-ext-2.discordapp.net/external/bbjEG3HEfVWTXFXNzBl616iEkSVY1dDQNw6kFydZM08/https/assets.reedpopcdn.com/master-chief-removes-helmet-in-halo-tv-series-to-show-his-human-side-says-343-industries-1648650530651.jpg/BROK/thumbnail/1200x900/quality/100/master-chief-removes-helmet-in-halo-tv-series-to-show-his-human-side-says-343-industries-1648650530651.jpg?width=631&height=473", color: "3px solid rgb(43, 73, 24)", precio: 3, estado: 0},
+        {id: 4, fuente: "https://www.nacionflix.com/__export/1608862619334/sites/debate/img/2020/12/24/la-razxn-por-la-que-gal-gadot-es-tan-importante-para-mujer-maravilla.jpg_2062789929.jpg", color: "3px solid rgb(233, 162, 29)", precio: 3, estado: 0},
+        {id: 5, fuente: "https://images-ext-2.discordapp.net/external/P0jnDvbql44x53NBa72fkkzxgGWVUaNW9oLCM1ebVbY/https/supercpps.com/assets/images/avatars/super-club-penguin-avatar.jpg", color: "3px solid rgb(29, 77, 233)", precio: 3, estado: 0},
+        {id: 6, fuente: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", color: "3px solid white", precio: 3, estado: 0},
     ]
 
-    const items2 = [
-        {id: 0, fuente: "https://cdn.discordapp.com/attachments/981331949501181962/991144416666468463/comprado.png", color: "3px solid rgb(219, 55, 55)", precio: 2},
-        {id: 1, fuente: "https://cdn.discordapp.com/attachments/981331949501181962/991144416666468463/comprado.png", color: "3px solid rgb(99, 98, 98)", precio: 2},
-        {id: 2, fuente: "https://cdn.discordapp.com/attachments/981331949501181962/991144416666468463/comprado.png", color: "3px solid rgb(233, 229, 29)", precio: 2},
-        {id: 3, fuente: "https://cdn.discordapp.com/attachments/981331949501181962/991144416666468463/comprado.png", color: "3px solid rgb(43, 73, 24)", precio: 1},
-        {id: 4, fuente: "https://cdn.discordapp.com/attachments/981331949501181962/991144416666468463/comprado.png", color: "3px solid rgb(233, 162, 29)", precio: 1},
-        {id: 5, fuente: "https://cdn.discordapp.com/attachments/981331949501181962/991144416666468463/comprado.png", color: "3px solid rgb(29, 77, 233)", precio: 1},
-        {id: 6, fuente: "https://cdn.discordapp.com/attachments/981331949501181962/991144416666468463/comprado.png", color: "3px solid white", precio: 0},
+    var etiquetas = [
+        {fuenteSinComprar6: "https://discord.com/channels/736265463960567808/981331949501181962/991146568939999242" , fuenteSinComprar3: "https://discord.com/channels/736265463960567808/981331949501181962/991146568939999242"},
+        {fuenteComprado: "https://discord.com/channels/736265463960567808/981331949501181962/991144416909742080"}
     ]
 
     const cookies = new Cookies();
@@ -35,6 +30,7 @@ function Tienda() {
     const [itemsJugador, setItemsJugador] = useState([]);
     const [itemActivo, setItemActivo] = useState(0);
     const [loading, setLoading] = useState(true);
+    const [etiquetasItems, setEtiquetasItems] = useState([]);
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -44,14 +40,39 @@ function Tienda() {
         getData();
     }, []);
 
+
+
     function setItemsOnVector(items){
         let itemsVector = [];
         for(let i = 0; i < items.length; i++){
             if(items[i] != ',')
-            itemsVector.push(items[i]);
+            itemsVector.push(parseInt(items[i]));
         }
-        console.log("itemsVector: " + itemsVector);
-        setItemsJugador(itemsVector);   
+        
+        //console.log("itemsVector: " + itemsVector);
+        setItemsJugador(itemsVector);  
+        // itemsVector.sort(function(a, b) {
+        //     return a - b;
+        //   });
+
+        let etiquetasVector = [];
+        for(let i=0; i<6; i++){
+            console.log(itemsVector+" includes " + i + ": " + itemsVector.includes(i));
+            if(itemsVector.includes(i)){
+                etiquetasVector.push("https://media.discordapp.net/attachments/981331949501181962/991144416666468463/comprado.png");          
+            }
+            else{
+                if(i < 3){
+                    etiquetasVector.push("https://media.discordapp.net/attachments/981331949501181962/991146568541536256/compra6.png");
+                }
+                else{
+                    etiquetasVector.push("https://media.discordapp.net/attachments/981331949501181962/991146568776425503/compra3.png");
+                }
+            }
+        }
+        //console.log("etiquetasVector: " + etiquetasVector);
+        setEtiquetasItems(etiquetasVector);        
+
     }
 
     function equipar(item){
@@ -107,6 +128,7 @@ function Tienda() {
         return false;
     }
 
+
     const Canjear = () => {
         Swal.fire({
                 title: 'Canjeao mano',
@@ -151,6 +173,7 @@ function Tienda() {
                                     user: cookies.get('idUsuario')
                                     })
                 }).then(() => {
+                    getData()
                     //setMode(true);
                     //navigate('/nivel_1_parte2');
                 })
@@ -242,7 +265,7 @@ function Tienda() {
                                     <div className="ticketypro">
                                         <button type='button' className="botoneti " onClick={() => Compra(0)}>
                                             <img className="img-fluid etiqueta"
-                                            src="https://cdn.discordapp.com/attachments/981331949501181962/991146568541536256/compra6.png"/>
+                                            src={etiquetasItems[0]}/>
                                         </button>
                                             <Card.Img variant="top" className="venta1" 
                                             src={items[0].fuente}/>
@@ -252,7 +275,7 @@ function Tienda() {
                                     <div className="ticketypro">
                                         <button type='button' className="botoneti " onClick={() => Compra(1)}>
                                             <img className="img-fluid etiqueta"
-                                            src="https://cdn.discordapp.com/attachments/981331949501181962/991146568541536256/compra6.png"/>
+                                            src={etiquetasItems[1]}/>
                                         </button>
                                             <Card.Img variant="top" className="venta2" 
                                             src={items[1].fuente} />
@@ -262,7 +285,7 @@ function Tienda() {
                                     <div className="ticketypro">
                                         <button type='button' className="botoneti " onClick={() => Compra(2)}>
                                             <img className="img-fluid etiqueta"
-                                            src="https://cdn.discordapp.com/attachments/981331949501181962/991146568541536256/compra6.png"/>
+                                            src={etiquetasItems[2]}/>
                                         </button>
                                             <Card.Img variant="top" className="venta3" 
                                             src={items[2].fuente} />
@@ -277,7 +300,7 @@ function Tienda() {
                                     <div className="ticketypro">
                                         <button type='button' className="botoneti " onClick={() => Compra(3)}>
                                             <img className="img-fluid etiqueta"
-                                            src="https://cdn.discordapp.com/attachments/981331949501181962/991146568776425503/compra3.png"/>
+                                            src={etiquetasItems[3]}/>
                                         </button>
                                             <Card.Img variant="top" className="venta4" 
                                             src={items[3].fuente} />
@@ -287,7 +310,7 @@ function Tienda() {
                                     <div className="ticketypro">
                                         <button type='button' className="botoneti" onClick={() => Compra(4)}>
                                             <img className="img-fluid etiqueta"
-                                            src="https://cdn.discordapp.com/attachments/981331949501181962/991146568776425503/compra3.png"/>
+                                            src={etiquetasItems[4]}/>
                                         </button>
                                             <Card.Img variant="top" className="venta5"
                                             src={items[4].fuente} />
@@ -297,7 +320,7 @@ function Tienda() {
                                     <div className="ticketypro">
                                         <button type='button' className="botoneti" onClick={() => Compra(5)}>
                                             <img className="img-fluid etiqueta" width="200px"
-                                            src="https://cdn.discordapp.com/attachments/981331949501181962/991146568776425503/compra3.png"/>
+                                            src={etiquetasItems[5]}/>
                                         </button>
                                             <Card.Img variant="top" className="venta6" 
                                             src={items[5].fuente} />
