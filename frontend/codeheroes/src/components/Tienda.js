@@ -222,7 +222,7 @@ function Tienda() {
                             >
                                 <Form.Control type="text" />
                             </FloatingLabel>
-                            <button className="btn btn-primary" onClick={() => Canjear()}> Canjear </button>
+                            <button className="btn btn-primary botonagrio" onClick={() => Canjear()}> Canjear </button>
                         </div> 
                     </div>
                     <div className="tienda_container">
