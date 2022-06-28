@@ -59,7 +59,7 @@ function Tienda() {
 
         let etiquetasVector = [];
         for(let i=0; i<6; i++){
-            console.log(itemsVector+" includes " + i + ": " + itemsVector.includes(i));
+            //console.log(itemsVector+" includes " + i + ": " + itemsVector.includes(i));
             if(itemsVector.includes(i)){
                 etiquetasVector.push("https://media.discordapp.net/attachments/981331949501181962/991144416666468463/comprado.png");          
             }
@@ -302,7 +302,7 @@ function Tienda() {
                         <div className="codigotienda">
                             <h5 className="ingresacodigo"> Ingresa tu código </h5>
                             <form>
-                                <input className='codigoticket' value={codigo} onChange={text => setCodigo(text.target.value)} type="text" name="name" />
+                                <input className='codigoticket' autoComplete="off" value={codigo} onChange={text => setCodigo(text.target.value)} type="text" name="name" />
                             </form>
                             <button className="btn btn-primary botonagrio" onClick={() => Canjear()}> Canjear </button>
                         </div> 
