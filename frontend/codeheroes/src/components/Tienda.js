@@ -132,7 +132,7 @@ function Tienda() {
 
 
     const Canjear = () => {
-        if(codigo == "TYPYTHON"){
+        if(codigo.toUpperCase() == "TYPYTHON"){
             if(!itemsJugador.includes(7)){
                 var newItemsJugador = itemsJugador + "," + 7;
                 try {
