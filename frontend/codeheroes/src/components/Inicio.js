@@ -17,6 +17,7 @@ export default function Inicio() {
         {id: 4, fuente: "https://www.nacionflix.com/__export/1608862619334/sites/debate/img/2020/12/24/la-razxn-por-la-que-gal-gadot-es-tan-importante-para-mujer-maravilla.jpg_2062789929.jpg", color: "3px solid rgb(233, 162, 29)", precio: 1, colorcard: "10px 10px 42px 0px rgba(233, 162, 29, 0.75)"},
         {id: 5, fuente: "https://images-ext-2.discordapp.net/external/P0jnDvbql44x53NBa72fkkzxgGWVUaNW9oLCM1ebVbY/https/supercpps.com/assets/images/avatars/super-club-penguin-avatar.jpg", color: "3px solid rgb(29, 77, 233)", precio: 1, colorcard: "10px 10px 42px 0px rgba(29, 77, 233, 0.75)"},
         {id: 6, fuente: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", color: "3px solid white", precio: 0, colorcard: "10px 10px 42px 0px gba(255, 255, 255, 0.75)"},
+        {id: 7, fuente: "https://media.discordapp.net/attachments/981331949501181962/991168923510775908/pepe.jpg?width=473&height=473", color: "3px solid white", precio: 0, estado: 0}
     ]
 
 
