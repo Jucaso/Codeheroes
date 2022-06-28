@@ -1,30 +1,30 @@
 .contenidoInicioNP{
-    display:block;
+    display:flex;
     width: 100%;
     background-image: url("https://cdn.discordapp.com/attachments/981331949501181962/990354345205837874/escena-espacio-exterior-nave-espacial-estacion_1308-64557.webp");
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    height: auto;
+    height: 100vh;
     padding-left: 50px;
     padding-right: 50px;
   }
 .contenidoInicioNP2{
-    display:block;
+    display:flex;
     width: 100%;
     background-image: url("https://cdn.discordapp.com/attachments/924106496059539557/990360700021010442/xdddddd.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    height: 100%;
+    height: 100vh;
     padding-left: 50px;
     padding-right: 50px;
 }
 .contenidoInicioNP3{
-    display:block;
+    display:flex;
     width: 100%;
     background-image: url("https://cdn.discordapp.com/attachments/924106496059539557/990361664492797982/paisaje-juego-espacial-fantasia_87749-202.webp");
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    height: 100%;
+    height: 100vh;
     padding-left: 50px;
     padding-right: 50px;
 }
