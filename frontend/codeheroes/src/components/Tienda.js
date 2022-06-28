@@ -19,6 +19,16 @@ function Tienda() {
         {id: 6, fuente: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", color: "3px solid white", precio: 0},
     ]
 
+    const items2 = [
+        {id: 0, fuente: "https://cdn.discordapp.com/attachments/981331949501181962/991144416666468463/comprado.png", color: "3px solid rgb(219, 55, 55)", precio: 2},
+        {id: 1, fuente: "https://cdn.discordapp.com/attachments/981331949501181962/991144416666468463/comprado.png", color: "3px solid rgb(99, 98, 98)", precio: 2},
+        {id: 2, fuente: "https://cdn.discordapp.com/attachments/981331949501181962/991144416666468463/comprado.png", color: "3px solid rgb(233, 229, 29)", precio: 2},
+        {id: 3, fuente: "https://cdn.discordapp.com/attachments/981331949501181962/991144416666468463/comprado.png", color: "3px solid rgb(43, 73, 24)", precio: 1},
+        {id: 4, fuente: "https://cdn.discordapp.com/attachments/981331949501181962/991144416666468463/comprado.png", color: "3px solid rgb(233, 162, 29)", precio: 1},
+        {id: 5, fuente: "https://cdn.discordapp.com/attachments/981331949501181962/991144416666468463/comprado.png", color: "3px solid rgb(29, 77, 233)", precio: 1},
+        {id: 6, fuente: "https://cdn.discordapp.com/attachments/981331949501181962/991144416666468463/comprado.png", color: "3px solid white", precio: 0},
+    ]
+
     const cookies = new Cookies();
     const [username, setUsername] = useState([]);
     const [estrellas, setEstrellas] = useState(0);
@@ -232,7 +242,7 @@ function Tienda() {
                                     <div className="ticketypro">
                                         <button type='button' className="botoneti " onClick={() => Compra(0)}>
                                             <img className="img-fluid etiqueta"
-                                            src="https://media.discordapp.net/attachments/741712963601432617/988609464355684352/etiqueta1.png"/>
+                                            src="https://cdn.discordapp.com/attachments/981331949501181962/991146568541536256/compra6.png"/>
                                         </button>
                                             <Card.Img variant="top" className="venta1" 
                                             src={items[0].fuente}/>
@@ -242,7 +252,7 @@ function Tienda() {
                                     <div className="ticketypro">
                                         <button type='button' className="botoneti " onClick={() => Compra(1)}>
                                             <img className="img-fluid etiqueta"
-                                            src="https://media.discordapp.net/attachments/741712963601432617/988609464355684352/etiqueta1.png"/>
+                                            src="https://cdn.discordapp.com/attachments/981331949501181962/991146568541536256/compra6.png"/>
                                         </button>
                                             <Card.Img variant="top" className="venta2" 
                                             src={items[1].fuente} />
@@ -252,7 +262,7 @@ function Tienda() {
                                     <div className="ticketypro">
                                         <button type='button' className="botoneti " onClick={() => Compra(2)}>
                                             <img className="img-fluid etiqueta"
-                                            src="https://media.discordapp.net/attachments/741712963601432617/988609464355684352/etiqueta1.png"/>
+                                            src="https://cdn.discordapp.com/attachments/981331949501181962/991146568541536256/compra6.png"/>
                                         </button>
                                             <Card.Img variant="top" className="venta3" 
                                             src={items[2].fuente} />
@@ -267,7 +277,7 @@ function Tienda() {
                                     <div className="ticketypro">
                                         <button type='button' className="botoneti " onClick={() => Compra(3)}>
                                             <img className="img-fluid etiqueta"
-                                            src="https://media.discordapp.net/attachments/741712963601432617/988609464355684352/etiqueta1.png"/>
+                                            src="https://cdn.discordapp.com/attachments/981331949501181962/991146568776425503/compra3.png"/>
                                         </button>
                                             <Card.Img variant="top" className="venta4" 
                                             src={items[3].fuente} />
@@ -277,7 +287,7 @@ function Tienda() {
                                     <div className="ticketypro">
                                         <button type='button' className="botoneti" onClick={() => Compra(4)}>
                                             <img className="img-fluid etiqueta"
-                                            src="https://media.discordapp.net/attachments/741712963601432617/988609464355684352/etiqueta1.png"/>
+                                            src="https://cdn.discordapp.com/attachments/981331949501181962/991146568776425503/compra3.png"/>
                                         </button>
                                             <Card.Img variant="top" className="venta5"
                                             src={items[4].fuente} />
@@ -287,7 +297,7 @@ function Tienda() {
                                     <div className="ticketypro">
                                         <button type='button' className="botoneti" onClick={() => Compra(5)}>
                                             <img className="img-fluid etiqueta" width="200px"
-                                            src="https://media.discordapp.net/attachments/741712963601432617/988609464355684352/etiqueta1.png"/>
+                                            src="https://cdn.discordapp.com/attachments/981331949501181962/991146568776425503/compra3.png"/>
                                         </button>
                                             <Card.Img variant="top" className="venta6" 
                                             src={items[5].fuente} />
