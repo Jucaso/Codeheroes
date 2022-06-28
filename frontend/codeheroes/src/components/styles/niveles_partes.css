@@ -4,7 +4,7 @@
     background-image: url("https://cdn.discordapp.com/attachments/981331949501181962/990354345205837874/escena-espacio-exterior-nave-espacial-estacion_1308-64557.webp");
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    height: 100%;
+    height: auto;
     padding-left: 50px;
     padding-right: 50px;
   }
@@ -46,13 +46,14 @@
     display: flex;
     color: white;
     width: 100%;
+    height: auto;
     justify-content: space-around;
   }
   
   .MapaInicioNP{
     display: block;
     text-align: center;
-    margin: 25px;
+    margin-bottom: 17px;
   }
   
   .ContenidoMapaInicioNP{
@@ -61,17 +62,22 @@
     height: 300px;
     text-align: center;
     justify-content: center;
+    
   }
   
   .TituloMapaInicioNP{
     display: flex;
     justify-content: center;
     width: 200px;
-    height: auto;
+    height: 100px;
     background: radial-gradient(circle, rgba(57,55,55,1) 4%, rgba(0,0,0,1) 71%);
     color: whitesmoke;
     border-radius: 25px;
-    padding: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-top: 4px;
+
     box-shadow: 10px 10px 42px 0px rgba(26, 66, 54, 0.75);
   }
   
@@ -102,6 +108,7 @@
     border-radius: 15px;
     
   }
+
   .DescripcionNP{
     display: flex;
     align-items: center;
@@ -173,6 +180,48 @@
       background: radial-gradient(circle, rgba(78,117,175,1) 0%, rgba(13,26,54,1) 80%); 
       color: white;
   }
+  .button6{
+    position:relative;
+    padding:5px 5px;
+    border:none;
+    background:radial-gradient(circle, rgba(18,62,70,1) 0%, rgba(18,27,38,1) 100%);
+    cursor:pointer;
+    outline:0;
+    font-size:18px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.button6.type1{
+    color:#fcfcfc;
+}
+
+.button6.type1.type1::after,.button6.type1.type1::before{
+    content:"";
+    display:block;
+    position:absolute;
+    width:20%;
+    height:20%;
+    border:2px solid;
+    transition:all .6s ease;
+    border-radius:2px
+}
+.button6.type1.type1::after{
+    bottom:0;
+    right:0;
+    border-color:transparent #fcfcfc #fcfcfc transparent
+}
+.button6.type1.type1::before{
+    top:0;
+    left:0;
+    border-color:#fcfcfc transparent transparent #fcfcfc
+}
+.button6.type1.type1:hover:after,.button6.type1.type1:hover:before{
+    width:100%;
+    height:100%
+}
+
+
   .btncitoNP{
       position: relative;
       display: block;

@@ -8,6 +8,29 @@
     display: flex;
 }
 
+.headertienda{
+    display: flex;
+    justify-content: space-between;
+    background: radial-gradient(circle, rgba(78,117,175,1) 0%, rgba(13,26,54,1) 80%);
+    margin-bottom: 5px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.codigotienda{
+    display: flex;
+    width: 300px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.codigoticket{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
 .venta{
     width: 120px;
     height: 120px;
@@ -70,7 +93,14 @@
 .titulotienda{
     color:#fff;
     font-family: monospace;
-    background: #121b26;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+}
+
+.ingresacodigo{
+    color:#fff;
+    font-size: 20px;
 }
 
 .tienda_container{
@@ -202,6 +232,6 @@
     width: 100%;
     background-size: 100%;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 91vh;
     z-index: 1000;
 }

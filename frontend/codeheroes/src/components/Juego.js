@@ -76,12 +76,13 @@ function Juego() {
             )
         {
             Swal.fire({
-                title: '¡El mensaje se ha enviado, guarda el código de este tickect para reclamar cosas increíbles dentro de la nave!',
+                title: '¡Gracias, el mensaje se ha enviado, guarda el código de este ticket para reclamar cosas increíbles dentro de la nave!',
                 width: 700,
                 icon: 'success',
+                iconColor: 'green',
                 padding: '20px',
-                color: '#black',
-                background: '#fff',
+                color: '#2c7d71',
+                background: 'radial-gradient(circle, rgba(217,218,238,1) 0%, rgba(189,189,198,1) 71%)',
                 // eslint-disable-next-line no-multi-str
                 html: '<img src="https://media.discordapp.net/attachments/981331949501181962/988559765477163018/ticket.png"/> \
                         </br> </br>\
@@ -94,12 +95,12 @@ function Juego() {
                 title: 'Hmm... al parecer hay un error en el mensaje, ¡intenta de nuevo!',
                 width: 700,
                 icon: 'warning',
-                iconColor: '#f44336',
+                iconColor: 'green',
                 padding: '20px',
-                color: '#black',
-                background: '#fff',
-                confirmButtonText: 'Intentar de nuevo',
-                confirmButtonColor: 'orange',
+                color: '#2c7d71',
+                background: 'radial-gradient(circle, rgba(217,218,238,1) 0%, rgba(189,189,198,1) 71%)',
+                confirmButtonText: 'Intentemos de nuevo',
+                confirmButtonColor: 'green',
                 })
 
         }

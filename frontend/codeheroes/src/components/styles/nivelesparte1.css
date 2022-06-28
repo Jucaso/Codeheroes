@@ -6,14 +6,20 @@
   width: 100%;
   height: auto;
   z-index: 1000;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
   padding-top: 50px;
+}
+
+body{
+  background: #121b26;
 }
 
 .contenidoAco{
     width: 90%;
-    height: auto;
     display: block;
+    margin-top: 50px;
+    margin-bottom: 42px;
+    height: 100%;
 
 }
 .n1p1titulo{
@@ -21,6 +27,7 @@
     font-weight: bold;
     color: rgb(200, 255, 225);
     text-align: center;
+    margin: 50px;
 }
 .n1p1acordeon{
     width: 100%;
