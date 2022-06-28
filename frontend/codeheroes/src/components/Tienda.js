@@ -17,6 +17,7 @@ function Tienda() {
         {id: 4, fuente: "https://www.nacionflix.com/__export/1608862619334/sites/debate/img/2020/12/24/la-razxn-por-la-que-gal-gadot-es-tan-importante-para-mujer-maravilla.jpg_2062789929.jpg", color: "3px solid rgb(233, 162, 29)", precio: 3},
         {id: 5, fuente: "https://images-ext-2.discordapp.net/external/P0jnDvbql44x53NBa72fkkzxgGWVUaNW9oLCM1ebVbY/https/supercpps.com/assets/images/avatars/super-club-penguin-avatar.jpg", color: "3px solid rgb(29, 77, 233)", precio: 3},
         {id: 6, fuente: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", color: "3px solid white", precio: 3, estado: 0},
+        {id: 7, fuente: "https://media.discordapp.net/attachments/981331949501181962/991168923510775908/pepe.jpg?width=473&height=473", color: "3px solid white", precio: 0, estado: 0},
     ]
 
     var etiquetas = [
@@ -131,17 +132,66 @@ function Tienda() {
 
 
     const Canjear = () => {
-
-        console.log(codigo);
-        Swal.fire({
-                title: 'Canjeao mano',
+        if(codigo == "TYPYTHON"){
+            if(!itemsJugador.includes(7)){
+                var newItemsJugador = itemsJugador + "," + 7;
+                try {
+                    fetch("http://127.0.0.1:8000/usuarios/"+cookies.get('idUsuarioStats')+"/", {
+                    'method':'PUT',
+                    headers: {
+                        'Content-Type':'application/json',           
+                    }, 
+                    body:JSON.stringify({itemsIds: newItemsJugador,
+                                        user: cookies.get('idUsuario')
+                                        })
+                    }).then(() => {
+                        getData()
+                        console.log(codigo);
+                        
+                        Swal.fire({
+                                title: '¡Felicidades! Revisa tu inventario y equipa el item super especial.',
+                                width: 400,
+                                icon: 'success',
+                                padding: '20px',
+                                color: '#green',
+                                background: '#fff',
+                                showConfirmButton: true,
+                        })
+                        //setMode(true);
+                        //navigate('/nivel_1_parte2');
+                    })
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+            else{
+                Swal.fire({
+                    title: 'Uh, el código que ingresaste ya fue canjeado.',
+                    width: 400,
+                    icon: 'error',
+                    padding: '20px',
+                    color: '#green',
+                    background: '#fff',
+                    showConfirmButton: true,
+            })
+            }
+            
+            
+        }
+        else{
+            Swal.fire({
+                title: 'Ups, ese código no existe.',
                 width: 400,
-                icon: 'success',
+                icon: 'error',
                 padding: '20px',
                 color: '#green',
                 background: '#fff',
                 showConfirmButton: true,
         })
+        }
+        setCodigo("");
+        
+        
     }
 
     const Compra = (id) => {
@@ -349,7 +399,7 @@ function Tienda() {
             <Modal.Body className="modalEditarContainer">
            
             {itemsJugador.map(item => (
-                <Card style={{ background: 'transparent', border: 'none' }}>             
+                <Card key={item} style={{ background: 'transparent', border: 'none' }}>             
                     <Card.Img variant="top" className="venta5" style={{ border: items[item].color}}
                     src={items[item].fuente} />
                     <button type='button' className="editarPerfilBtn" onClick={() => equipar(item)}>
