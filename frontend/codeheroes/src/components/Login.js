@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useState, useContext } from 'react';
 import { useNavigate } from "react-router-dom";
 import "./styles/Login.css";
+import Swal from 'sweetalert2';
 //import Context from './Context';
 import Cookies from 'universal-cookie';
 import { motion } from 'framer-motion';
@@ -42,7 +43,18 @@ function Login() {
             setPassword("");
             cookies.set('idUsuario', user.id, {path: '/'});
             navigate('/inicio');
-        }          
+        }   
+        else{
+            Swal.fire({
+                title: 'Los datos que ingresaste son incorrectos.',
+                width: 400,
+                icon: 'error',
+                padding: '20px',
+                color: '#green',
+                background: '#fff',
+                showConfirmButton: true,
+             })
+        }       
     } 
     
     async function handleRegister(e){
