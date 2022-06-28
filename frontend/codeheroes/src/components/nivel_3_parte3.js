@@ -212,6 +212,8 @@ export default function Nivel_3_parte3() {
                   html: '<a type="button" class="btn btn-success" href="/nivel_3_parte3"> CONTINUAR </a>',
                   showConfirmButton: false,
                   })
+                  ConteoEstrellas();
+                  navigate('/nivel_3_partes');
             }
             else {
                 Swal.fire({
@@ -226,7 +228,7 @@ export default function Nivel_3_parte3() {
                     confirmButtonColor: 'orange',
                 })
             }
-            ConteoEstrellas();
+            
     }
 
     const ayuda = () => {
