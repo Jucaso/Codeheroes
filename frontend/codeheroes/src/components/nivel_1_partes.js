@@ -70,13 +70,14 @@ export default function Nivel_1_partes() {
                 <Card.Body className="bodycardinicioNP">
                     <Card.Title className='TituloNP'>TEORÍA</Card.Title>
                     <Card.Text className="DescripcionNP">
-                    Prepárate para iniciar la campaña con la cual aprenderás mientras te diviertes!
+                    ¡Aquí esta el manual de instrucciones!
+                    vamos a leerlo para pasar las pruebas sin problemas.
                     </Card.Text>
                     <div>
                         <img className="img-fluid fotico" width="110px" src={mostrar[estrella1].fuente}/>
                     </div>
 
-                    <img className='ImagenMapaInicioNP' width='150px' src="https://media.discordapp.net/attachments/981331949501181962/990273487660798012/unknown.png" />
+                    <img className='ImagenMapaInicioNP' width='150px' src="https://media.discordapp.net/attachments/981331949501181962/991197736441499648/19001827.png?width=473&height=473" />
                 </Card.Body>
                 <Link to="/nivel_1_parte1" className="btn button6 type1">
                             ¡VAMOS!
@@ -89,12 +90,13 @@ export default function Nivel_1_partes() {
                 <Card.Body className="bodycardinicioNP">
                     <Card.Title className='TituloNP'>QUIZ</Card.Title>
                     <Card.Text className="DescripcionNP">
-                    Prepárate para iniciar la campaña con la cual aprenderás mientras te diviertes!
+                    ¡Pongamos en practica los conceptos adquiridos!
+                    esto te servirá mucho para la prueba final.
                     </Card.Text>
                     <div>
                         <img className="img-fluid fotico" width="110px" src={mostrar[estrella2].fuente}/>
                     </div>
-                    <img className='ImagenMapaInicioNP' width='150px' src="https://media.discordapp.net/attachments/981331949501181962/990273487660798012/unknown.png" />
+                    <img className='ImagenMapaInicioNP' width='150px' src="https://media.discordapp.net/attachments/981331949501181962/991197735896219728/19001826.png?width=473&height=473" />
                 </Card.Body>
                 <Link to="/nivel_1_parte2" className="btn button6 type1">
                             ¡VAMOS!
@@ -107,12 +109,12 @@ export default function Nivel_1_partes() {
                 <Card.Body className="bodycardinicioNP">
                     <Card.Title className='TituloNP'>PRUEBA</Card.Title>
                     <Card.Text className="DescripcionNP">
-                    Canjea tus estrellas por tus avatars favoritos!
+                    Para esta misión se requiere enviar un mensaje con la cantidad de perros que tiene María.
                     </Card.Text>
                     <div>
                         <img className="img-fluid fotico" width="110px" src={mostrar[estrella3].fuente}/>
                     </div>
-                    <img className='ImagenMapaInicioNP' width='150px' height="140px" src="https://media.discordapp.net/attachments/981331949501181962/989959945418047568/Sin_titulo4.png?width=473&height=473" />
+                    <img className='ImagenMapaInicioNP' width='150px' height="140px" src="https://media.discordapp.net/attachments/981331949501181962/991197736118530048/190018289.png?width=473&height=473" />
                 </Card.Body>
                 <Link to="/nivel_1_parte3" className="btn button6 type1">
                     ¡VAMOS!
