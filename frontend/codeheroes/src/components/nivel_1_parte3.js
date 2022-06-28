@@ -183,6 +183,7 @@ export default function Nivel_1_parte3() {
               showConfirmButton: false,
               })
               ConteoEstrellas();
+              navigate('/nivel_1_partes');
         }
         else {
             Swal.fire({

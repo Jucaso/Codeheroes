@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import Cookies from 'universal-cookie';
 import 'animate.css';
 import { motion } from 'framer-motion';
+import { useNavigate } from "react-router-dom";
 
 export default function Nivel_2_parte3() {
     
@@ -42,6 +43,7 @@ export default function Nivel_2_parte3() {
         },  
       ];
 
+      let navigate = useNavigate();
     const cookies = new Cookies();
     const [estrellas, setEstrellas] = useState(0);
     const [puntaje, setPuntaje] = useState(0);
@@ -217,6 +219,8 @@ export default function Nivel_2_parte3() {
               html: '<a type="button" class="btn btn-success" href="/nivel_1_parte3"> CONTINUAR </a>',
               showConfirmButton: false,
               })
+              ConteoEstrellas();
+              navigate('/nivel_2_partes');
         }
         else {
             Swal.fire({
@@ -231,7 +235,7 @@ export default function Nivel_2_parte3() {
                 confirmButtonColor: 'orange',
             })
         }
-        ConteoEstrellas();
+        
     }
 
     const ayuda = () => {
