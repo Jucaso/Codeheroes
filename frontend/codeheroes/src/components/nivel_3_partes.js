@@ -69,12 +69,13 @@ export default function Nivel_2_partes() {
                 <Card.Body className="bodycardinicioNP">
                     <Card.Title className='TituloNP'>TEORÍA</Card.Title>
                     <Card.Text className="DescripcionNP">
-                    Prepárate para iniciar la campaña con la cual aprenderás mientras te diviertes!
+                    ¡Aquí esta el manual de instrucciones!
+                        vamos a leerlo para pasar las pruebas sin problemas.
                     </Card.Text>
                     <div>
                         <img className="img-fluid fotico" width="110px" src={mostrar[estrella1].fuente}/>
                     </div>
-                    <img className='ImagenMapaInicioNP' width='150px' src="https://media.discordapp.net/attachments/981331949501181962/990273487660798012/unknown.png" />
+                    <img className='ImagenMapaInicioNP' width='130px' src="https://media.discordapp.net/attachments/981331949501181962/991191047499681923/1900182.png?width=473&height=473" />
                 </Card.Body>
                 <Link to="/nivel_3_parte1" className="btn button5 type1">
                             ¡VAMOS!
@@ -87,12 +88,13 @@ export default function Nivel_2_partes() {
                 <Card.Body className="bodycardinicioNP">
                     <Card.Title className='TituloNP'>QUIZ</Card.Title>
                     <Card.Text className="DescripcionNP">
-                    Prepárate para iniciar la campaña con la cual aprenderás mientras te diviertes!
+                    ¡Pongamos en practica los conceptos adquiridos!
+                    esto te servirá mucho para la prueba final.
                     </Card.Text>
                     <div>
                         <img className="img-fluid fotico" width="110px" src={mostrar[estrella2].fuente}/>
                     </div>
-                    <img className='ImagenMapaInicioNP' width='150px' src="https://media.discordapp.net/attachments/981331949501181962/990273487660798012/unknown.png" />
+                    <img className='ImagenMapaInicioNP' width='130px' src="https://media.discordapp.net/attachments/981331949501181962/991192275533176852/19001821.png?width=473&height=473" />
                 </Card.Body>
                 <Link to="/nivel_3_parte2" className="btn button5 type1">
                             ¡VAMOS!
@@ -105,12 +107,12 @@ export default function Nivel_2_partes() {
                 <Card.Body className="bodycardinicioNP">
                     <Card.Title className='TituloNP'>PRUEBA</Card.Title>
                     <Card.Text className="DescripcionNP">
-                    Canjea tus estrellas por tus avatars favoritos!
+                    Para esta misión se requiere una función que nos determine el precio de las manzanas espaciales.
                     </Card.Text>
                     <div>
                         <img className="img-fluid fotico" width="110px" src={mostrar[estrella3].fuente}/>
                     </div>
-                    <img className='ImagenMapaInicioNP' width='150px' height="140px" src="https://media.discordapp.net/attachments/981331949501181962/989959945418047568/Sin_titulo4.png?width=473&height=473" />
+                    <img className='ImagenMapaInicioNP' width='130px' height="130px" src="https://media.discordapp.net/attachments/981331949501181962/991199194117324831/190018210.png?width=473&height=473" />
                 </Card.Body>
                 <Link to="/nivel_3_parte3" className="btn button5 type1">
                     ¡VAMOS!
