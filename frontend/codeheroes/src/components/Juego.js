@@ -76,7 +76,7 @@ function Juego() {
             )
         {
             Swal.fire({
-                title: '¡Gracias, el mensaje se ha enviado, guarda el código de este tickect para reclamar cosas increíbles dentro de la nave!',
+                title: '¡Gracias, el mensaje se ha enviado, guarda el código de este ticket para reclamar cosas increíbles dentro de la nave!',
                 width: 700,
                 icon: 'success',
                 iconColor: 'green',

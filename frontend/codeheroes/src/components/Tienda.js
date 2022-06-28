@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import "./styles/Tienda.css";
 import { DragDropContext, Droppable, Draggable}  from 'react-beautiful-dnd';
 import {Link} from 'react-router-dom';	
-import {Card, Button, Modal, Spinner} from 'react-bootstrap';
+import {Card, Button, Modal, Spinner, FloatingLabel, Form} from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import Cookies from 'universal-cookie';
 import { motion } from 'framer-motion';
@@ -97,6 +97,18 @@ function Tienda() {
         return false;
     }
 
+    const Canjear = () => {
+        Swal.fire({
+                title: 'Canjeao mano',
+                width: 400,
+                icon: 'success',
+                padding: '20px',
+                color: '#green',
+                background: '#fff',
+                showConfirmButton: true,
+        })
+    }
+
     const Compra = (id) => {
         
         if(verificaTiene(id)){
@@ -185,13 +197,13 @@ function Tienda() {
                     </div>
                     <div className="contperfilusu">
                         <img className="img-fluid"  width="30px" height="50px"
-                        src="https://cdn.discordapp.com/attachments/981331949501181962/988649441101774859/nombre.png"/>   <h2 className="perfilusu"> Nombre:
-                        </h2> <h4 className="perfilusu user"> {username} </h4>
+                        src="https://cdn.discordapp.com/attachments/981331949501181962/988649441101774859/nombre.png"/>   <h5 className="perfilusu"> Nombre:
+                        </h5> <h5 className="perfilusu user"> {username} </h5>
                     </div>
                     <div className="contperfilusu">
                         <img className="img-fluid"  width="30px" height="50px"
-                        src="https://cdn.discordapp.com/attachments/981331949501181962/988638636402679868/estrella.png"/><h2 className="perfilusu"> Estrellas:
-                        </h2> <h4 className="perfilusu user"> {estrellas} </h4>
+                        src="https://cdn.discordapp.com/attachments/981331949501181962/988638636402679868/estrella.png"/><h5 className="perfilusu"> Estrellas:
+                        </h5> <h5 className="perfilusu user"> {estrellas} </h5>
                     </div>
                         <h5 className="tiendasc"> Codeheroe <img className="img-fluid" width="30px" src="https://cdn.discordapp.com/attachments/981331949501181962/988648592598257674/medalla.png"/> </h5>           
                     <div className="editarPerfil">
@@ -199,7 +211,20 @@ function Tienda() {
                     </div>      
                 </div>
                 <div className="titletienda">
-                    <h1 className="titulotienda"> TIENDA  </h1>
+                    <div className="headertienda">
+                        <h1 className="titulotienda"> TIENDA  </h1>
+                        <div className="codigotienda">
+                            <h5 className="ingresacodigo"> Ingresa tu código </h5>
+                            <FloatingLabel
+                                controlId="floatingInput"
+                                label="Código"
+                                className="mb-3 codigoticket"
+                            >
+                                <Form.Control type="text" />
+                            </FloatingLabel>
+                            <button className="btn btn-primary" onClick={() => Canjear()}> Canjear </button>
+                        </div> 
+                    </div>
                     <div className="tienda_container">
                         <div className="juegoimgcont">       
                             <div className="juegoimgcont3">
@@ -275,13 +300,13 @@ function Tienda() {
                 </div>
             </div>
                     <div className="burbujas">
-                        <div className="burbuja"></div>
-                        <div className="burbuja"></div>
-                        <div className="burbuja"></div>
-                        <div className="burbuja"></div>
-                        <div className="burbuja"></div>
-                        <div className="burbuja"></div>
-                        <div className="burbuja"></div>
+                        <div className="burbuja2"></div>
+                        <div className="burbuja2"></div>
+                        <div className="burbuja2"></div>
+                        <div className="burbuja2"></div>
+                        <div className="burbuja2"></div>
+                        <div className="burbuja2"></div>
+                        <div className="burbuja2"></div>
                     </div>
        </div>
 
@@ -295,11 +320,9 @@ function Tienda() {
                 <Card style={{ background: 'transparent', border: 'none' }}>             
                     <Card.Img variant="top" className="venta5" style={{ border: items[item].color}}
                     src={items[item].fuente} />
-
                     <button type='button' className="editarPerfilBtn" onClick={() => equipar(item)}>
-                            Equipar 
-                        </button>
-                    
+                        Equipar 
+                    </button>      
                 </Card>
             ))}
             </Modal.Body>
