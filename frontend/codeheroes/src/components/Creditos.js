@@ -14,9 +14,12 @@ export default function creditos() {
     return (
         <div className='fonditofinal'>
             <div onClick={() => sound.pause()}>clickme </div>
-            <div className='linkcito fade-in-text'>
-            <a type='button' href='/inicio'>SOMOS CODEHEROES.</a> 
+            <div className="codeheroes">
+                <div className='linkcito fade-in-text'>
+                <a className='textocodeheroes' type='button' href='/inicio'>SOMOS CODEHEROES.</a> 
+                </div>
             </div>
+            <div className='textocreditos'>
             <div className="wrappercred bodycred"> 
                 <div className="scroll-text">
                     <h1>CODEHEROES</h1>
@@ -38,9 +41,10 @@ export default function creditos() {
                     <br></br>
                     <br></br>
                     <br></br>
-                   
                 </div>
             </div>
+            </div>
+            
             
         </div>
         );
