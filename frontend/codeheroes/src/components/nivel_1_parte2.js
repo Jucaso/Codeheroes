@@ -107,7 +107,7 @@ export default function Nivel_1_parte2() {
               title: '¡Estás son las estrellas que obtuviste!',
               width: 700,
               color: 'white',
-              background: ' url("/imgmapa/fondologin.gif")',
+              background: 'radial-gradient(circle, rgba(44,125,113,1) 0%, rgba(18,27,38,1) 100%)',
               html: ' <img class="animate__animated animate__fadeInDown"  width="50px" \
                 src="https://cdn.discordapp.com/attachments/981331949501181962/988638636402679868/estrella.png"/>',
                 confirmButtonColor: '#0d2736',
@@ -236,7 +236,7 @@ export default function Nivel_1_parte2() {
       } 
       }
       else{
-       // navigate('/nivel_1_parte3');
+        navigate('/nivel_1_partes');
       }
 
       ConteoEstrellas();

@@ -23,7 +23,7 @@ export default function Inicio() {
 
     const cookies = new Cookies();
     const [username, setUsername] = useState([]);
-    const [estrellas, setEstrellas] = useState(0);
+    const [puntaje, setPuntaje] = useState(0);
     const [itemsJugador, setItemsJugador] = useState();
     const [itemActivo, setItemActivo] = useState(0);
     const [loading, setLoading] = useState(true);
@@ -73,6 +73,12 @@ export default function Inicio() {
         if (data[i].user == cookies.get('idUsuario')) {
             //console.log("User:", data[i]);
             setUserStats(data[i]);
+            if(data[i].puntaje > 300) {
+            setPuntaje(300);
+            }
+            else{
+                setPuntaje(data[i].puntaje);
+            }
             setItemActivo(data[i].itemActivo);
             console.log("userStats:",data[i]);
             cookies.set('idUsuarioStats', data[i].id, {path: '/'});
@@ -117,7 +123,7 @@ export default function Inicio() {
                 <div className="UsuarioInicio">
                     <img className="img-fluid"  width="30px" height="50px"
                     src="https://cdn.discordapp.com/attachments/981331949501181962/989709486019207219/PUNTOS.png"/><h5 className="TextoInicio"> Puntos:
-                    </h5> <h5 className="TextoInicio"> {userStats.puntaje} </h5>
+                    </h5> <h5 className="TextoInicio"> {puntaje} </h5>
                 </div>
                 <div className="UsuarioInicio">
                     <img className="img-fluid"  width="30px" height="50px"

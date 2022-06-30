@@ -5,6 +5,7 @@ import './styles/niveles_partes.css';
 import Cookies from 'universal-cookie';
 import Nav from "./navbar.js";
 import { motion } from 'framer-motion';
+import Swal from 'sweetalert2';
 
 export default function Nivel_2_partes() {
 
@@ -19,6 +20,45 @@ export default function Nivel_2_partes() {
         {id: 2, fuente: "https://cdn.discordapp.com/attachments/981331949501181962/991133839965565008/dosestrellas1.png"},
         {id: 3, fuente: "https://cdn.discordapp.com/attachments/981331949501181962/991133839621636186/tresestrellas1.png"},
     ]
+
+    function comprobacionfinal(puntos){
+        if(puntos === 300)
+        {
+        Swal.fire({
+            title: '¡Genial! ¡Te has pasado el juego!',
+            width: 700,
+            icon: 'success',
+            iconColor: 'green',
+            padding: '20px',
+            color: '#2c7d71',
+            background: 'radial-gradient(circle, rgba(217,218,238,1) 0%, rgba(189,189,198,1) 71%)',
+            // eslint-disable-next-line no-multi-str
+            html: ' \
+                    </br> </br>\
+                    <a type="button" class="btn btn-success" href="/creditos"> CONTINUAR </a> ',
+            showConfirmButton: false,
+            })
+        }
+        try {
+            fetch("http://127.0.0.1:8000/usuarios/"+cookies.get('idUsuarioStats')+"/", {
+            'method':'PUT',
+            headers: {
+                'Content-Type':'application/json',           
+            }, 
+            body:JSON.stringify({puntaje: 301,
+                                user: cookies.get('idUsuario')
+                                })
+            })
+        } catch (error) {
+            console.log(error);
+        } 
+
+    }
+
+
+
+
+
 
     async function getData(){
         try {
@@ -35,6 +75,7 @@ export default function Nivel_2_partes() {
             setEstrella1(vector[0]);
             setEstrella2(vector[1]);
             setEstrella3(vector[2]);
+            comprobacionfinal(data.puntaje);
         } catch (error) {
             console.log(error);
         }

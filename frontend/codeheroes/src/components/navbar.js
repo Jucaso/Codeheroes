@@ -28,6 +28,9 @@ function Nav() {
                         <li className="nav-item active">
                             <a className="nav-link text-white" href="/mapa">Campaña<span className="visually-hidden">(current)</span></a>
                         </li>
+                        <li className="nav-item active">
+                            <a className="nav-link text-white" href="/creditos">creditos<span className="visually-hidden">(current)</span></a>
+                        </li>
                     </ul>
                     <ul className="nav navbar-nav">
                         <li className="nav-item active">

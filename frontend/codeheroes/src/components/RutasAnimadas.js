@@ -13,6 +13,7 @@ import Nivel_3_parte1 from './nivel_3_parte1';
 import Nivel_3_parte2 from './nivel_3_parte2';
 import Nivel_3_parte3 from './nivel_3_parte3';
 import Onboarding from './Onboarding';
+import Creditos from './Creditos';
 import Juego from './Juego';
 import Inicio from './Inicio';
 import Mapa from './mapa';
@@ -48,6 +49,7 @@ export default function RutasAnimadas(){
                         <Route  path = "/inicio" element = {<Inicio/>}/>
                         <Route  path = "/mapa" element = {<Mapa/>}/>
                         <Route  path = "/prueba" element = {<Prueba/>}/>
+                        <Route  path = "/creditos" element = {<Creditos/>}/>
                     </Routes>
             </AnimatePresence>
         );
