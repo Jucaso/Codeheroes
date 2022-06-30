@@ -1,0 +1,272 @@
+.contenidoInicioNP{
+    display:flex;
+    width: 100%;
+    background-image: url("https://cdn.discordapp.com/attachments/981331949501181962/990354345205837874/escena-espacio-exterior-nave-espacial-estacion_1308-64557.webp");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+.contenidoInicioNP2{
+    display:flex;
+    width: 100%;
+    background-image: url("https://cdn.discordapp.com/attachments/924106496059539557/990360700021010442/xdddddd.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.contenidoInicioNP3{
+    display:flex;
+    width: 100%;
+    background-image: url("https://cdn.discordapp.com/attachments/924106496059539557/990361664492797982/paisaje-juego-espacial-fantasia_87749-202.webp");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+  
+  .IzquierdaAbajoNP{
+    display: flex;
+  }
+  
+  .imageninicioNP{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .bodycardinicioNP{
+    height: 400px;
+  }
+  .CampañaInicioNP{
+    display: flex;
+    color: white;
+    width: 100%;
+    height: auto;
+    justify-content: space-around;
+  }
+  
+  .MapaInicioNP{
+    display: block;
+    text-align: center;
+    margin-bottom: 17px;
+  }
+  
+  .ContenidoMapaInicioNP{
+    display: flex;
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    justify-content: center;
+    
+  }
+  
+  .TituloMapaInicioNP{
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(57,55,55,1) 4%, rgba(0,0,0,1) 71%);
+    color: whitesmoke;
+    border-radius: 25px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-top: 4px;
+
+    box-shadow: 10px 10px 42px 0px rgba(26, 66, 54, 0.75);
+  }
+  
+  .ImagenMapaInicioNP{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-left: 15px;
+    border-radius: 10px;
+    
+  }
+  
+  .DerechaInicioNP{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .BotonesNP{
+    margin-top: 80px;
+  }
+  
+  .TituloNP{
+    background:  rgba(57,55,55,1); 
+    padding: 10px;
+    border-radius: 15px;
+    
+  }
+
+  .DescripcionNP{
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    padding: 5px;
+    font-size: 14px;
+    height: 100px;
+  }
+  
+  .cardperfilinicioNP{
+    width: 600px;
+    height:150px;
+    border-radius: 15px;
+    background: radial-gradient(circle, rgba(57,55,55,1) 4%, rgba(0,0,0,1) 71%);
+    box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
+    display:flex;
+    margin-right: 50px;
+    justify-content: space-around;
+    z-index: 1000;
+    align-items: center;
+    margin-top: 80px;
+  }
+  
+  .img_perfilinicioNP{
+    width: 100px;
+    height: 100px;
+    border-radius: 75px;
+    border: 3px solid rgb(0, 0, 0);
+    display: flex;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
+  }
+  
+  .UsuarioInicioNP{
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    margin-left: 10px;
+    align-items: center;
+    color:#fff;
+  
+     
+    width: 100px; 
+    height: auto;
+  }
+  
+  .contenidocardinicioNP{
+    background:  rgba(57,55,55,1); 
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
+  }
+  
+  .TextoInicioNP{
+    font-size: 14px;
+  }
+  .fondoiniciojajaNP{
+    /* background-image: url("/imgmapa/fondologin.gif"); */
+    background: whitesmoke;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100%;
+      color: black;
+  }
+  .cardbackgroundNP{
+      background: radial-gradient(circle, rgba(78,117,175,1) 0%, rgba(13,26,54,1) 80%); 
+      color: white;
+  }
+  .button6{
+    position:relative;
+    padding:5px 5px;
+    border:none;
+    background:radial-gradient(circle, rgba(18,62,70,1) 0%, rgba(18,27,38,1) 100%);
+    cursor:pointer;
+    outline:0;
+    font-size:18px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.button6.type1{
+    color:#fcfcfc;
+}
+
+.button6.type1.type1::after,.button6.type1.type1::before{
+    content:"";
+    display:block;
+    position:absolute;
+    width:20%;
+    height:20%;
+    border:2px solid;
+    transition:all .6s ease;
+    border-radius:2px
+}
+.button6.type1.type1::after{
+    bottom:0;
+    right:0;
+    border-color:transparent #fcfcfc #fcfcfc transparent
+}
+.button6.type1.type1::before{
+    top:0;
+    left:0;
+    border-color:#fcfcfc transparent transparent #fcfcfc
+}
+.button6.type1.type1:hover:after,.button6.type1.type1:hover:before{
+    width:100%;
+    height:100%
+}
+
+
+  .btncitoNP{
+      position: relative;
+      display: block;
+      height: 77px;
+      width: 300px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      background-color: black;
+      color: #fff;
+      font-size: 18px;
+      overflow: hidden;
+      transition: all 500ms ease;
+      border: 2px solid #1da5bd;
+      margin-bottom: 40px;
+      z-index: 0;
+      font-weight: 700;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    .btncitoNP::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      margin: auto;
+      background-color: #1da5bd;
+      transition: all 500ms ease;
+      z-index: -1;
+    }
+   
+    .btncito--3NP:hover {
+      animation: shadow-pulse 1000ms 1;
+      background-color: #1da5bd;
+      color: #ffffff;
+    }
+    .buttonbackNP{
+      background: radial-gradient(circle, rgba(11,79,61,1) 0%, rgba(11,33,33,1) 71%);
+      color: white;
+    }
+    @keyframes shadow-pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(32, 226, 215, 0.6);
+      }
+      100% {
+        box-shadow: 0 0 8px 16px rgba(32, 226, 215, 0);
+      }
+    }

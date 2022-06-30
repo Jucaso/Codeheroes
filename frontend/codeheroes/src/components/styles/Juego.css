@@ -1,11 +1,26 @@
 .app1{
-    text-align: center;
-    display: block;
+    width: 700px;
+    /* background: radial-gradient(circle, rgba(118,119,142,1) 0%, rgba(56,56,77,1) 71%);  */
+    background-image: url('https://cdn.discordapp.com/attachments/981331949501181962/990334889624748132/tablet.png');
+    background-size: 650px 450px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 450px;
     padding: 20px;
-    background: radial-gradient(circle, rgba(18,62,70,1) 0%, rgba(18,27,38,1) 100%);
     z-index: 1000;
-    border-radius: 50px;
-    box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
+}
+
+.dentrodetablet{
+  background-position: center;
+  display: block;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 0.1px;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+
 }
 
 .bation{
@@ -13,7 +28,8 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 10px;
+  margin-top: 5px;
+  border-radius: 50px;
 }
 
 .imgas{
@@ -30,9 +46,6 @@
 
 .juegoimgcont2{
   display: flex;
-    background: linear-gradient(135deg,
-    #121b26, #123e4d, #1da5bd,
-     #123e4d);
      background-size: 500%;
     animation: fanimado 10s infinite;
   z-index: 1000;
@@ -51,12 +64,14 @@
 
 .lvl3-container{
   width: 100%;
-  height: auto;
-  padding: 100px;
+  height: 100%;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 41px;
+  padding-bottom: 41px;
   background-color: #121b26;
   display: flex;
   justify-content: center;
-  
   align-items: center;
   flex-direction: column;
   z-index: 1000;
@@ -66,34 +81,44 @@
 
 
 .titulomision{
-    padding: 20px;
     font-size: 30px;
     font-weight: bold;
-    color: #fff;
-    text-shadow: 0 0 5px #000;
+    background: radial-gradient(circle, rgba(18,62,70,1) 0%, rgba(18,27,38,1) 100%);
+  border-radius: 50px;
+  box-shadow: 5px 5px 10px 5px rgba(7, 49, 40, 0.425);
+    color: #fdfdfd;
     text-align: center;
     display: block;
     z-index: 1000;
+    padding: 10px;
 }
 
 .textomision{
-  color: #fff;
-  font-size: 15px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+.textomision2{
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
 }
 
 .bg_animate2{
-  background: #121b26;
   z-index: 1000;
 }
 
-.ContenedorJuego{
+.ContenedorJuego2{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #121b26;
+    background-image: url('https://cdn.discordapp.com/attachments/924106496059539557/990333141820530698/fondo4.jpg');
     width: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
     height: 100vh;
     z-index: 1000;
 }
@@ -161,7 +186,7 @@
 
 .task-item-levels:focus{
   outline: none;
-  border: 2px solid #4a9af5;
+  border: 2px solid #2f3842;
   z-index: 1000;
 }
 
@@ -177,8 +202,8 @@ z-index: 1000;
 .botin{
   color: white;
   z-index: 1000;
-  border: 2px solid black;
-  background: radial-gradient(circle, rgba(18,62,70,1) 0%, rgba(18,27,38,1) 100%);
+  border: 2px solid rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.623);
 }
 
 .botin-levels{
@@ -220,12 +245,12 @@ z-index: 1000;
     width: 300px;
     border-radius: 4px;
     text-transform: uppercase;
-    background-color: black;
+    background-color: #f30808;
     color: #fff;
     font-size: 18px;
     overflow: hidden;
     transition: all 500ms ease;
-    border: 2px solid #1da5bd;
+    border: 2px solid #f30808;
     margin-bottom: 40px;
     z-index: 0;
     font-weight: 700;
@@ -239,28 +264,102 @@ z-index: 1000;
     right: 0;
     top: 0;
     margin: auto;
-    background-color: #1da5bd;
+    background-color: #f3ef08;
     transition: all 500ms ease;
     z-index: -1;
   }
  
-  .btncito--3:hover {
-    animation: shadow-pulse 1000ms 1;
-    background-color: #1da5bd;
+  .btncito--4:hover {
+    animation: shadow-pulse 1000ms 2;
+    background: rgba(18,62,70,1);
     color: #ffffff;
   }
 
-  .btncito--3-levels:hover {
-    animation: shadow-pulse 1000ms 1;
-    background-color: #0d5a68;
+  .btncito--4-levels:hover {
+    animation: shadow-pulse 1000ms 2;
+    background-color: rgba(18,62,70,1);
     color: #ffffff;
   }
   
   @keyframes shadow-pulse {
     0% {
-      box-shadow: 0 0 0 0 rgba(32, 226, 215, 0.6);
+      box-shadow: 0 0 0 0 #f30808;
     }
     100% {
-      box-shadow: 0 0 8px 16px rgba(32, 226, 215, 0);
+      box-shadow: 0 0 8px 16px #f30808;
     }
   }
+
+  .burbuja2{
+    z-index: 1;
+    opacity: 0.3;
+    border-radius: 50px;
+    position: absolute;
+    bottom: 0;
+    background:rgb(0, 0, 0);
+    animation: burbujas 3s linear infinite;
+}
+.burbuja2:nth-child(1){
+    width: 80px;
+    height: 80px;
+    left: 5%;
+    
+    animation-duration: 3s;
+    z-index: 1;
+}
+.burbuja2:nth-child(2){
+    width: 30px;
+    height: 30px;
+    left: 35%;
+    animation-duration: 4s;
+    z-index: 1;
+}
+.burbuja2:nth-child(3){
+    width: 80px;
+    height: 80px;
+    left: 25%;
+    animation-duration: 5s;
+    z-index: 1;
+}
+.burbuja2:nth-child(4){
+    width: 30px;
+    height: 30px;
+    left: 45%;
+    animation-duration: 3s;
+    z-index: 1;
+}
+.burbuja2:nth-child(5){
+    width: 80px;
+    height: 80px;
+    left: 65%;
+    animation-duration: 4,5s;
+    z-index: 1;
+}
+.burbuja2:nth-child(6){
+    width: 80px;
+    height: 80px;
+    left: 75%;
+    animation-duration: 5s;
+    z-index: 1;
+}
+.burbuja2:nth-child(7){
+    width: 30px;
+    height: 30px;
+    left: 90%;
+    animation-duration: 4s;
+    z-index: 1;
+}
+
+@keyframes burbujas{
+    0%{
+        bottom: 100vh;
+        opacity: 0;
+    }
+    5%{
+        opacity: .4;
+    }
+    100%{
+        bottom: 0;
+        opacity: 0;
+    }
+}

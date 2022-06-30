@@ -4,6 +4,8 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import Swal from 'sweetalert2';
 import Cookies from 'universal-cookie';
 import { useNavigate } from "react-router-dom";
+import 'animate.css';
+import { motion } from 'framer-motion';
 
 export default function Nivel_3_parte3() {
     
@@ -88,6 +90,43 @@ export default function Nivel_3_parte3() {
     };
         
     const [tasks, setTasks] = useState(initialTasks);
+
+    function ConteoEstrellas(){
+
+      Swal.fire({
+        title: '¡Hemos terminado!',
+        text: "Ahora, echemos un vistazo a los resultados",
+        width: 700,
+        height: 700,
+        icon: 'success',
+        iconColor: 'orange',
+        color: 'white',
+        background: 'radial-gradient(circle, rgba(44,125,113,1) 0%, rgba(18,27,38,1) 100%)',
+        confirmButtonColor: '#0d2736',
+                confirmButtonText: '<img width="20px" src="https://cdn.discordapp.com/attachments/981331949501181962/989673233072672798/bien.png"/>  ¡Vamos allá!'
+      }).then((result) => {
+        if (result.isConfirmed) {     
+              Swal.fire({
+                title: '¡Estás son las estrellas que obtuviste!',
+                width: 700,
+                color: 'white',
+                background: 'radial-gradient(circle, rgba(44,125,113,1) 0%, rgba(18,27,38,1) 100%)',
+                html: ' <div style={{height: "400px"}}>\
+                <img class="animate__animated animate__fadeInBottomLeft"  width="50px" \
+                src="https://cdn.discordapp.com/attachments/981331949501181962/988638636402679868/estrella.png"/>\
+                <img class="animate__animated animate__fadeInDown"  width="50px" \
+                src="https://cdn.discordapp.com/attachments/981331949501181962/988638636402679868/estrella.png"/>\
+                <img class="animate__animated animate__fadeInBottomRight"  width="50px" \
+                src="https://cdn.discordapp.com/attachments/981331949501181962/988638636402679868/estrella.png"/>\
+                </div>',
+                confirmButtonColor: '#0d2736',
+                confirmButtonText: '<img width="20px" src="https://cdn.discordapp.com/attachments/981331949501181962/989673233072672798/bien.png"/>  ¡Genial, sigamos!'
+              })         
+        }
+      })
+
+    }
+
     
     const Verificar = () => {  
         //console.log(tasks);
@@ -173,6 +212,8 @@ export default function Nivel_3_parte3() {
                   html: '<a type="button" class="btn btn-success" href="/nivel_3_parte3"> CONTINUAR </a>',
                   showConfirmButton: false,
                   })
+                  ConteoEstrellas();
+                  navigate('/nivel_3_partes');
             }
             else {
                 Swal.fire({
@@ -187,6 +228,7 @@ export default function Nivel_3_parte3() {
                     confirmButtonColor: 'orange',
                 })
             }
+            
     }
 
     const ayuda = () => {
@@ -195,15 +237,19 @@ export default function Nivel_3_parte3() {
             width: 500,
             icon: 'question',
             padding: '20px',
-            color: '#black',
-            background: '#fff',
+            color: 'white',
+            background: 'radial-gradient(circle, rgba(44,125,113,1) 0%, rgba(18,27,38,1) 100%)',
             confirmButtonText: 'VALE',
             showConfirmButton: true,
             confirmButtonColor: 'blue',
             })
     }
     return(
-        <div className="lvl3-container">
+        <motion.div 
+        
+        initial={{width: 0}}
+        animate={{width: "100%"}}
+        exit={ {x: window.innerWidth, transition: {duration: 1}}} className="lvl3-container">
             <DragDropContext
         onDragEnd={(result) => {
           const { source, destination } = result;
@@ -264,6 +310,6 @@ export default function Nivel_3_parte3() {
                 </button>
                       
             </div>
-        </div>
+        </motion.div>
     );
 }

@@ -5,6 +5,7 @@ import './styles/Inicio.css';
 import Nav from "./navbar.js";
 import Cookies from 'universal-cookie';
 //import Context from './Context';
+import { motion } from 'framer-motion';
 
 export default function Inicio() {
 
@@ -16,12 +17,13 @@ export default function Inicio() {
         {id: 4, fuente: "https://www.nacionflix.com/__export/1608862619334/sites/debate/img/2020/12/24/la-razxn-por-la-que-gal-gadot-es-tan-importante-para-mujer-maravilla.jpg_2062789929.jpg", color: "3px solid rgb(233, 162, 29)", precio: 1, colorcard: "10px 10px 42px 0px rgba(233, 162, 29, 0.75)"},
         {id: 5, fuente: "https://images-ext-2.discordapp.net/external/P0jnDvbql44x53NBa72fkkzxgGWVUaNW9oLCM1ebVbY/https/supercpps.com/assets/images/avatars/super-club-penguin-avatar.jpg", color: "3px solid rgb(29, 77, 233)", precio: 1, colorcard: "10px 10px 42px 0px rgba(29, 77, 233, 0.75)"},
         {id: 6, fuente: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", color: "3px solid white", precio: 0, colorcard: "10px 10px 42px 0px gba(255, 255, 255, 0.75)"},
+        {id: 7, fuente: "https://media.discordapp.net/attachments/981331949501181962/991168923510775908/pepe.jpg?width=473&height=473", color: "3px solid white", precio: 0, estado: 0}
     ]
 
 
     const cookies = new Cookies();
     const [username, setUsername] = useState([]);
-    const [estrellas, setEstrellas] = useState(0);
+    const [puntaje, setPuntaje] = useState(0);
     const [itemsJugador, setItemsJugador] = useState();
     const [itemActivo, setItemActivo] = useState(0);
     const [loading, setLoading] = useState(true);
@@ -71,6 +73,12 @@ export default function Inicio() {
         if (data[i].user == cookies.get('idUsuario')) {
             //console.log("User:", data[i]);
             setUserStats(data[i]);
+            if(data[i].puntaje > 300) {
+            setPuntaje(300);
+            }
+            else{
+                setPuntaje(data[i].puntaje);
+            }
             setItemActivo(data[i].itemActivo);
             console.log("userStats:",data[i]);
             cookies.set('idUsuarioStats', data[i].id, {path: '/'});
@@ -84,7 +92,12 @@ export default function Inicio() {
     }
     
     return (
-        <div>
+        <motion.div 
+        
+        initial={{width: 0}}
+        animate={{width: "100%"}}
+        exit={ {x: window.innerWidth, transition: {duration: 1}}}
+        >
             {loading ?
              (<div className="d-flex justify-content-center">
              <Spinner animation="border" />
@@ -110,7 +123,7 @@ export default function Inicio() {
                 <div className="UsuarioInicio">
                     <img className="img-fluid"  width="30px" height="50px"
                     src="https://cdn.discordapp.com/attachments/981331949501181962/989709486019207219/PUNTOS.png"/><h5 className="TextoInicio"> Puntos:
-                    </h5> <h5 className="TextoInicio"> {userStats.puntaje} </h5>
+                    </h5> <h5 className="TextoInicio"> {puntaje} </h5>
                 </div>
                 <div className="UsuarioInicio">
                     <img className="img-fluid"  width="30px" height="50px"
@@ -120,8 +133,8 @@ export default function Inicio() {
             </div>
         </div>
             <div className="imageninicio">
-            <img className="img-fluid"  width="250px" 
-                    src="https://cdn.discordapp.com/attachments/981331949501181962/989711499192832071/0ec989dde8b5fc0deef4e5b09292b6-unscreen.gif"/>
+            <img className="img-fluid"  width="600px" 
+                    src="https://media.discordapp.net/attachments/981331949501181962/990090359214325790/Sin_titulo.png?width=1025&height=364"/>
             </div>
             
         </div>
@@ -130,13 +143,13 @@ export default function Inicio() {
             <div className="CampañaInicio">
                 <div className="MapaInicio">
                 <Card className="TituloMapaInicio" style={{ width: '15rem', height: '27rem' }}>
-                <img className='ImagenMapaInicio' width='150px' src="https://cdn-icons.flaticon.com/png/512/3946/premium/3946036.png?token=exp=1656037499~hmac=484e43fecc79fab7135a8d47e53a2cb1" />
+                
                 <Card.Body className="bodycardinicio">
                     <Card.Title className='Titulo'>CAMPAÑA</Card.Title>
                     <Card.Text className="Descripcion">
                     Prepárate para iniciar la campaña con la cual aprenderás mientras te diviertes!
                     </Card.Text>
-
+                    <img className='ImagenMapaInicio' width='150px' src="https://media.discordapp.net/attachments/981331949501181962/990273487660798012/unknown.png" />
                 </Card.Body>
                 <Link to="/mapa" className="btn button5 type1">
                             ¡VAMOS!
@@ -146,13 +159,13 @@ export default function Inicio() {
             </div>
             <div className="MapaInicio">
             <Card className="TituloMapaInicio" style={{ width: '15rem', height: '27rem' }}>
-            <img className='ImagenMapaInicio' width='150px' src="https://cdn-icons.flaticon.com/png/512/3946/premium/3946036.png?token=exp=1656037499~hmac=484e43fecc79fab7135a8d47e53a2cb1" />
+           
                 <Card.Body className="bodycardinicio">
                     <Card.Title className='Titulo'>TIENDA</Card.Title>
                     <Card.Text className="Descripcion">
                     Canjea tus estrellas por tus avatars favoritos!
                     </Card.Text>
-                    
+                    <img className='ImagenMapaInicio' width='150px' height="140px" src="https://media.discordapp.net/attachments/981331949501181962/989959945418047568/Sin_titulo4.png?width=473&height=473" />
                 </Card.Body>
                 <Link to="/tienda" className="btn button5 type1">
                     ¡VAMOS!
@@ -167,6 +180,6 @@ export default function Inicio() {
     </div>
                 )
             }
-        </div>
+        </motion.div>
     );
 }

@@ -8,6 +8,38 @@
     display: flex;
 }
 
+.botonagrio{
+    background: radial-gradient(circle, rgba(78,117,175,1) 0%, rgba(13,26,54,1) 80%);
+    border-color: black;
+    border-radius: 10px; 
+}
+
+.headertienda{
+    display: flex;
+    justify-content: space-between;
+    background: radial-gradient(circle, rgba(78,117,175,1) 0%, rgba(13,26,54,1) 80%);
+    margin-bottom: 5px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.codigotienda{
+    display: flex;
+    width: 400px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.codigoticket{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
 .venta{
     width: 120px;
     height: 120px;
@@ -19,6 +51,7 @@
     height: 120px;
     border: 3px solid rgb(219, 55, 55);
     border-radius: 100px;
+    margin-right: 4px;
 }
 
 .venta2{
@@ -26,6 +59,7 @@
     height: 120px;
     border: 3px solid rgb(99, 98, 98);
     border-radius: 70px;
+    margin-right: 4px;
 }
 
 .venta3{
@@ -33,6 +67,7 @@
     height: 120px;
     border: 3px solid rgb(233, 229, 29);
     border-radius: 70px;
+    margin-right: 4px;
 }
 
 .venta4{
@@ -40,6 +75,7 @@
     height: 120px;
     border: 3px solid rgb(43, 73, 24);
     border-radius: 70px;
+    margin-right: 4px;
 }
 
 .venta5{
@@ -47,6 +83,7 @@
     height: 120px;
     border: 3px solid rgb(233, 162, 29);
     border-radius: 70px;
+    margin-right: 4px;
 }
 
 .venta6{
@@ -54,6 +91,7 @@
     height: 120px;
     border: 3px solid rgb(29, 77, 233);
     border-radius: 70px;
+  
 }
 .juegoimgcont3{
     display: flex;
@@ -70,6 +108,14 @@
 .titulotienda{
     color:#fff;
     font-family: monospace;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+}
+
+.ingresacodigo{
+    color:#fff;
+    font-size: 20px;
 }
 
 .tienda_container{
@@ -87,6 +133,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    
 }
 
 .img_perfil{
@@ -159,8 +206,8 @@
 
 .etiqueta{
     height: 60px;
+    width: 140px;
     display:flex;
-    margin-left: 20px;
 }
 
 .editarPerfil{
@@ -189,4 +236,17 @@
 .modalSides{
     background: radial-gradient(circle, rgba(78,117,175,1) 0%, rgba(13,26,54,1) 80%);
     color: white;
+}
+.ContenedorJuego{
+    background-image: url("/imgmapa/p5.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 90.5vh;
+    z-index: 1000;
 }
