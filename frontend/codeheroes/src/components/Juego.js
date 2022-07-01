@@ -76,12 +76,13 @@ function Juego() {
             )
         {
             Swal.fire({
-                title: '¡El mensaje se ha enviado, guarda el código de este tickect para reclamar cosas increíbles dentro de la nave!',
+                title: '¡Gracias, el mensaje se ha enviado, guarda el código de este ticket para reclamar cosas increíbles dentro de la nave!',
                 width: 700,
                 icon: 'success',
+                iconColor: 'green',
                 padding: '20px',
-                color: '#black',
-                background: '#fff',
+                color: '#2c7d71',
+                background: 'radial-gradient(circle, rgba(217,218,238,1) 0%, rgba(189,189,198,1) 71%)',
                 // eslint-disable-next-line no-multi-str
                 html: '<img src="https://media.discordapp.net/attachments/981331949501181962/988559765477163018/ticket.png"/> \
                         </br> </br>\
@@ -94,19 +95,19 @@ function Juego() {
                 title: 'Hmm... al parecer hay un error en el mensaje, ¡intenta de nuevo!',
                 width: 700,
                 icon: 'warning',
-                iconColor: '#f44336',
+                iconColor: 'green',
                 padding: '20px',
-                color: '#black',
-                background: '#fff',
-                confirmButtonText: 'Intentar de nuevo',
-                confirmButtonColor: 'orange',
+                color: '#2c7d71',
+                background: 'radial-gradient(circle, rgba(217,218,238,1) 0%, rgba(189,189,198,1) 71%)',
+                confirmButtonText: 'Intentemos de nuevo',
+                confirmButtonColor: 'green',
                 })
 
         }
     }
 
     return (
-    <div className="ContenedorJuego">
+    <div className="ContenedorJuego2">
         <div className="bg_animate2">
             <div className="juegoimgcont">
                 <div className="juegoimgcont2">
@@ -128,10 +129,16 @@ function Juego() {
                 }}
             >
             <div className="app1">
-                <h1 className="titulomision"> MISIÓN IMPORTANTE </h1>
-                <div className="textomision">
-                    Por favor, ordena los siguientes elementos de acuerdo a la secuencia correcta:
+                <div className="dentrodetablet">
+                    <h1 className="titulomision"> ¡MISIÓN IMPORTANTE! </h1>
+                    <div className="textomision">
+                        ¡Necesitamos enviar un "Hola Mundo" a nuestro centro espacial!
+                    </div>
+                    <div className="textomision2">
+                        Ordena los elementos en el orden correcto
+                    </div>
                 </div>
+                <div>
                     <div className="contenidomision">
                         <Droppable droppableId="tasks" direction="horizontal">
                             {(provided) => (
@@ -156,30 +163,34 @@ function Juego() {
                         ))}
                                 {provided.placeholder}
                             </ul>
-                    )}
+                            )}
                         </Droppable>
                     </div>
-            </div>
-            </DragDropContext>
-            <img className='img-fluid imgas' width="280px" src='https://media.discordapp.net/attachments/981331949501181962/988548899952283658/Sin_titulo.png'/>
-            </div>
-            <div className="bation">
+                
+                
                 <div className='bation'>
-                    <button  onClick={Verificar} className="btn btncito--3 botin bation">
+                    <button  onClick={Verificar} className="btn btncito--4 botin bation">
                         ENVIAR MENSAJE
                     </button>
                 </div>
+           </div>
+
+                </div>
+            </DragDropContext>
+
+            
             </div>
+                
             </div>
             
                 <div className="burbujas">
-                    <div className="burbuja"></div>
-                    <div className="burbuja"></div>
-                    <div className="burbuja"></div>
-                    <div className="burbuja"></div>
-                    <div className="burbuja"></div>
-                    <div className="burbuja"></div>
-                    <div className="burbuja"></div>
+                    <div className="burbuja2"></div>
+                    <div className="burbuja2"></div>
+                    <div className="burbuja2"></div>
+                    <div className="burbuja2"></div>
+                    <div className="burbuja2"></div>
+                    <div className="burbuja2"></div>
+                    <div className="burbuja2"></div>
                 </div>
         </div>
     </div>

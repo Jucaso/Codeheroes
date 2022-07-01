@@ -3,24 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
-import {Route, Routes, BrowserRouter} from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
 import Context from './components/Context';
-import Login from './components/Login';
-import Nivel_1_parte1 from './components/nivel_1_parte1';
-import Nivel_1_parte2 from './components/nivel_1_parte2';
-import Nivel_1_parte3 from './components/nivel_1_parte3';
-import Nivel_2_parte1 from './components/nivel_2_parte1';
-import Nivel_2_parte2 from './components/nivel_2_parte2';
-import Nivel_2_parte3 from './components/nivel_2_parte3';
-import Nivel_3_parte1 from './components/nivel_3_parte1';
-import Nivel_3_parte2 from './components/nivel_3_parte2';
-import Nivel_3_parte3 from './components/nivel_3_parte3';
-import Onboarding from './components/Onboarding';
-import Juego from './components/Juego';
-import Inicio from './components/Inicio';
+import RutasAnimadas from './components/RutasAnimadas';
 import './App.css';
-import Mapa from './components/mapa';
-import Tienda from './components/Tienda';
 
 function Routers() {
   const [id, setId] = React.useState(0);
@@ -28,23 +14,7 @@ function Routers() {
     <Context.Provider value={{id, setId}}>
       <BrowserRouter>
       {/* navbar iria aqui cuando login sirva */}
-        <Routes>
-          <Route  path = "/nivel_1_parte1" element = {<Nivel_1_parte1/>}/>
-          <Route  path = "/nivel_1_parte2" element = {<Nivel_1_parte2/>}/>
-          <Route  path = "/nivel_1_parte3" element = {<Nivel_1_parte3/>}/>
-          <Route  path = "/nivel_2_parte1" element = {<Nivel_2_parte1/>}/>
-          <Route  path = "/nivel_2_parte2" element = {<Nivel_2_parte2/>}/>
-          <Route  path = "/nivel_2_parte3" element = {<Nivel_2_parte3/>}/>  
-          <Route  path = "/nivel_3_parte1" element = {<Nivel_3_parte1/>}/>
-          <Route  path = "/nivel_3_parte2" element = {<Nivel_3_parte2/>}/>
-          <Route  path = "/nivel_3_parte3" element = {<Nivel_3_parte3/>}/>
-          <Route  path = "/tienda" element = {<Tienda/>}/>          
-          <Route  path = "/login" element = {<Login/>}/>
-          <Route  path = "/" element = {<Onboarding/>}/>
-          <Route  path = "/juego" element = {<Juego/>}/>
-          <Route  path = "/inicio" element = {<Inicio/>}/>
-          <Route  path = "/mapa" element = {<Mapa/>}/>
-        </Routes>
+        <RutasAnimadas/>
       </BrowserRouter>
       </Context.Provider>
   )
