@@ -38,20 +38,21 @@ export default function Nivel_2_partes() {
                     <a type="button" class="btn btn-success" href="/creditos"> CONTINUAR </a> ',
             showConfirmButton: false,
             })
+            try {
+                fetch("http://127.0.0.1:8000/usuarios/"+cookies.get('idUsuarioStats')+"/", {
+                'method':'PUT',
+                headers: {
+                    'Content-Type':'application/json',           
+                }, 
+                body:JSON.stringify({puntaje: 301,
+                                    user: cookies.get('idUsuario')
+                                    })
+                })
+            } catch (error) {
+                console.log(error);
+            }
         }
-        try {
-            fetch("http://127.0.0.1:8000/usuarios/"+cookies.get('idUsuarioStats')+"/", {
-            'method':'PUT',
-            headers: {
-                'Content-Type':'application/json',           
-            }, 
-            body:JSON.stringify({puntaje: 301,
-                                user: cookies.get('idUsuario')
-                                })
-            })
-        } catch (error) {
-            console.log(error);
-        } 
+         
 
     }
 
