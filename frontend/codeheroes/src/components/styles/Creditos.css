@@ -3,9 +3,29 @@
 
 .fonditofinal{
     background-image: url("/imgmapa/fondologin.gif");
+    display: block;
 }
+
+.textocodeheroes{
+  font-size: 50px;
+  color: #fff;
+}
+.codeheroes{
+  position: relative;
+  top: 250px;
+  font-size: 50px;
+  z-index: 20;
+}
+
+.textocreditos{
+  display: flex;
+  justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
 .linkcito{
-    position: relative;
     color: #ffffff;
     display: flex;
     justify-content: center;
@@ -20,26 +40,28 @@
   position: relative;
   overflow: hidden;
   overflow-y: hidden;
+  z-index: 20;
 }
 .bodycred::after {
   content: '';
-  position: fixed;
   top: 0;
   width: 100%;
   height: 50%;
   /* background to fade out the text as it goes up */
-  
 }
 .wrappercred {
   display: flex;
   height: 100vh;
-  width: 60%;
-  margin: 0 auto;
+  width: 70%;
+  /* Arriba | Derecha | Abajo | Izquierda */
+  margin: 0 0 auto 0;
   /* perspective gives us a 3d space within the element to work with*/
   /* perspective also has the effect of pushing the content "down" */
   perspective: 350px;
-
+  z-index: 10;
 }
+
+
 .fade-in-text {
     opacity: 0;
     color: #ffffff;
@@ -50,7 +72,6 @@
     text-align: center;
     animation: fadeIn 5s linear forwards;
     animation-delay: 27s; /*27*/
-
   }
 .scroll-text {
   color: #ffffff;
@@ -61,6 +82,8 @@
   position: relative;
   animation: scroll 120s linear forwards;
   text-align: center;
+ left: 120px;
+
 }
 
 @keyframes scroll {
